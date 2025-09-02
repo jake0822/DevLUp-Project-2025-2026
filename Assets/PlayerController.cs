@@ -11,23 +11,46 @@ public class PlayerController : MonoBehaviour
     public new Transform camera;
 
     private CharacterController _controller;
+    private Rigidbody rb;
+    private CapsuleCollider _collider;
     private Vector2 _moveInput;
     private Vector3 _velocity;
+
+    private float castHeight;
+    private float castOffset;
+
+    private bool _grounded = false;
 
 
     private void Start()
     {
+        _collider = GetComponent<CapsuleCollider>();
+        rb = GetComponent<Rigidbody>();
         _controller = GetComponent<CharacterController>();
+        
+        castHeight = _collider.height / 2 * transform.localScale.y;
+        castOffset = _collider.radius * transform.localScale.x;
+    }
+
+    private bool isGrounded()
+    {
+        bool isGrounded = Physics.Raycast(transform.position - new Vector3(0, castHeight),
+            Vector3.down, 0.2f, LayerMask.GetMask("ground"));
+        Debug.DrawRay(transform.position - new Vector3(0, castHeight),
+            Vector3.down, Color.lawnGreen );
+        
+        return isGrounded;
     }
 
     private void Update() //this function runs once every frame
     {
-        print(_controller.isGrounded);
-        if (!_controller.isGrounded)
-        {
-            _velocity.y += gravity * Time.deltaTime; //calculates gravity
-            _controller.Move(_velocity * Time.deltaTime); //applies gravity
-        }
+        _grounded = isGrounded();
+        print(_grounded);
+        
+        
+        _velocity.y += gravity * Time.deltaTime; //calculates gravity
+        _controller.Move(_velocity * Time.deltaTime); //applies gravity
+        
 
         Vector3 forward = camera.forward;
         Vector3 right = camera.right;
@@ -53,7 +76,7 @@ public class PlayerController : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context) //detects input for jump
     {
-        if (_controller.isGrounded && context.performed)
+        if (_grounded && context.performed)
         {
            // print("Jump!");
             _velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity); //applies jump force
