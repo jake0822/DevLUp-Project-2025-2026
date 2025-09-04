@@ -453,10 +453,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f257c0ae41c61c043afd9f7e0c88da0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  speed: 5
+  speed: 7
+  jumpDelay: 0.5
   jumpHeight: 2
   gravity: -9.8
   camera: {fileID: 1032148523}
+  coyoteJump: 0
 --- !u!143 &326110241
 CharacterController:
   m_ObjectHideFlags: 0

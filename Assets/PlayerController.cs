@@ -1,35 +1,35 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float speed = 5f;
+    [SerializeField] private float jumpDelay = 0.5f;
     [SerializeField] private float jumpHeight = 2f;
     [SerializeField] private float gravity = -9.8f;
 
     public new Transform camera;
 
     private CharacterController _controller;
-    private Rigidbody rb;
     private CapsuleCollider _collider;
     private Vector2 _moveInput;
     private Vector3 _velocity;
 
     private float castHeight;
-    private float castOffset;
 
     private bool _grounded = false;
+    public bool coyoteJump = false; //allows buffered jump
 
 
     private void Start()
     {
         _collider = GetComponent<CapsuleCollider>();
-        rb = GetComponent<Rigidbody>();
         _controller = GetComponent<CharacterController>();
         
         castHeight = _collider.height / 2 * transform.localScale.y;
-        castOffset = _collider.radius * transform.localScale.x;
+        
     }
 
     private bool isGrounded()
@@ -37,22 +37,24 @@ public class PlayerController : MonoBehaviour
         bool isGrounded = Physics.Raycast(transform.position - new Vector3(0, castHeight),
             Vector3.down, 0.2f, LayerMask.GetMask("ground"));
         Debug.DrawRay(transform.position - new Vector3(0, castHeight),
-            Vector3.down, Color.lawnGreen );
+            Vector3.down *0.2f, Color.lawnGreen );
         
         return isGrounded;
     }
 
     private void Update() //this function runs once every frame
     {
-        _grounded = isGrounded();
-        print(_grounded);
-        
+        _grounded = isGrounded(); //checks if the player is grounded
+        if (_grounded && coyoteJump) //checks if need to do coyote jump
+        {
+            _velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity); //applies jump force for coyote jump
+        }
         
         _velocity.y += gravity * Time.deltaTime; //calculates gravity
         _controller.Move(_velocity * Time.deltaTime); //applies gravity
         
 
-        Vector3 forward = camera.forward;
+        Vector3 forward = camera.forward; //code for keeping the same direction forward when you turn
         Vector3 right = camera.right;
 
         forward.y = 0f;
@@ -71,19 +73,28 @@ public class PlayerController : MonoBehaviour
     public void Move(InputAction.CallbackContext context) //detects input for movement
     {
         _moveInput = context.ReadValue<Vector2>();
-       // print("Move Input: " + _moveInput);
     }
 
     public void Jump(InputAction.CallbackContext context) //detects input for jump
     {
+        
         if (_grounded && context.performed)
         {
-           // print("Jump!");
             _velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity); //applies jump force
-            //_controller.attachedRigidbody.AddForce(0, 2, 0, ForceMode.Impulse);
+            coyoteJump = false;
         }
-        else
-            print("not grounded");
+        else if (context.performed)
+        {
+            StartCoroutine(CoyoteJumpTimer());
+        }
+    }
+
+    private IEnumerator CoyoteJumpTimer()
+    {
+        coyoteJump = true;
+        yield return new WaitForSeconds(jumpDelay);
+        coyoteJump = false;
+        
     }
 }
 
