@@ -457,6 +457,10 @@ MonoBehaviour:
   jumpDelay: 0.5
   jumpHeight: 1.2
   gravity: -13
+  groundDeceleration: 70
+  airDeceleration: 4
+  groundAcceleration: 50
+  airAcceleration: 13
   camera: {fileID: 1032148523}
   coyoteJump: 0
 --- !u!143 &326110241

@@ -5,22 +5,24 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float speed = 5f;
-    [SerializeField] private float jumpDelay = 0.5f;
-    [SerializeField] private float jumpHeight = 2f;
-    [SerializeField] private float gravity = -9.8f;
+    [SerializeField] protected float speed = 5f;
+    [SerializeField] protected float jumpDelay = 0.5f;
+    [SerializeField] protected float jumpHeight = 2f;
+    [SerializeField] protected float gravity = -9.8f;
+    [SerializeField] protected float groundDeceleration, airDeceleration, groundAcceleration, airAcceleration;
 
     public new Transform camera;
 
-    private CharacterController _controller;
-    private CapsuleCollider _collider;
+    protected CharacterController _controller;
+    protected CapsuleCollider _collider;
     private Vector2 _moveInput;
     private Vector3 _velocity;
+    private Vector3 _horizontalVelocity = Vector3.zero;
 
     private float castHeight;
     private float radius;
 
-    private bool _grounded = false;
+    protected bool _grounded = false;
     public bool coyoteJump = false; //allows buffered jump
 
 
@@ -84,9 +86,31 @@ public class PlayerController : MonoBehaviour
         right.y = 0f;
         forward.Normalize();
         right.Normalize();
-
+        
         Vector3 moveDirection = forward * _moveInput.y + right * _moveInput.x;
-        _controller.Move(moveDirection * speed * Time.deltaTime);
+        
+        float accel = _grounded ? groundAcceleration : airAcceleration;
+        float decel = _grounded ? groundDeceleration : airDeceleration;
+        
+        if (moveDirection.magnitude > 0f)
+        {
+            // Accelerate toward target velocity
+            Vector3 targetVelocity = moveDirection * speed;
+            _horizontalVelocity = Vector3.MoveTowards(_horizontalVelocity, targetVelocity, accel * Time.deltaTime);
+        }
+        else
+        {
+            // Decelerate to stop
+            _horizontalVelocity = Vector3.MoveTowards(_horizontalVelocity, Vector3.zero, decel * Time.deltaTime);
+        }
+
+        // --- Combine horizontal + vertical ---
+        Vector3 finalVelocity = _horizontalVelocity + Vector3.up * _velocity.y;
+
+        // --- Move controller ---
+        _controller.Move(finalVelocity * Time.deltaTime);
+        
+        //_controller.Move(moveDirection * speed * Time.deltaTime);
 
         // Rotate player to face same direction as camera 
         transform.rotation = Quaternion.Euler(0f, camera.eulerAngles.y, 0f);
