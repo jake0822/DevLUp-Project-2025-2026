@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 _velocity;
 
     private float castHeight;
+    private float radius;
 
     private bool _grounded = false;
     public bool coyoteJump = false; //allows buffered jump
@@ -28,16 +29,38 @@ public class PlayerController : MonoBehaviour
         _collider = GetComponent<CapsuleCollider>();
         _controller = GetComponent<CharacterController>();
         
-        castHeight = _collider.height / 2 * transform.localScale.y;
-        
+        castHeight = (_collider.height / 2 * transform.localScale.y)-_collider.height*0.25f;
+        radius = _collider.radius;
+
     }
 
-    private bool isGrounded()
+    private bool isGrounded() //This is raycast based grounded function. It creates four raycasts below the player to detect the ground
     {
-        bool isGrounded = Physics.Raycast(transform.position - new Vector3(0, castHeight),
-            Vector3.down, 0.2f, LayerMask.GetMask("ground"));
-        Debug.DrawRay(transform.position - new Vector3(0, castHeight),
-            Vector3.down *0.2f, Color.lawnGreen );
+        bool isGrounded = Physics.Raycast(transform.position - new Vector3(radius, castHeight),
+            Vector3.down, 0.6f, LayerMask.GetMask("ground"));
+        Debug.DrawRay(transform.position - new Vector3(radius, castHeight),
+            Vector3.down *0.6f, Color.lawnGreen );
+        if (isGrounded)
+            return isGrounded;
+        
+        isGrounded = Physics.Raycast(transform.position - new Vector3(-radius, castHeight),
+            Vector3.down, 0.6f, LayerMask.GetMask("ground"));
+        Debug.DrawRay(transform.position - new Vector3(-radius, castHeight),
+            Vector3.down *0.6f, Color.lawnGreen );
+        if (isGrounded)
+            return isGrounded;
+        
+        isGrounded = Physics.Raycast(transform.position - new Vector3(0, castHeight, radius),
+            Vector3.down, 0.6f, LayerMask.GetMask("ground"));
+        Debug.DrawRay(transform.position - new Vector3(0, castHeight, radius),
+            Vector3.down *0.6f, Color.lawnGreen );
+        if (isGrounded)
+            return isGrounded;
+        
+        isGrounded = Physics.Raycast(transform.position - new Vector3(0, castHeight, -radius),
+            Vector3.down, 0.6f, LayerMask.GetMask("ground"));
+        Debug.DrawRay(transform.position - new Vector3(0, castHeight, -radius),
+            Vector3.down *0.6f, Color.lawnGreen );
         
         return isGrounded;
     }
@@ -49,8 +72,8 @@ public class PlayerController : MonoBehaviour
         {
             _velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity); //applies jump force for coyote jump
         }
-        
-        _velocity.y += gravity * Time.deltaTime; //calculates gravity
+        if (!_grounded)
+            _velocity.y += gravity * Time.deltaTime; //calculates gravity
         _controller.Move(_velocity * Time.deltaTime); //applies gravity
         
 
