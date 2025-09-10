@@ -5,16 +5,16 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] protected float speed = 5f;
-    [SerializeField] protected float jumpDelay = 0.5f;
-    [SerializeField] protected float jumpHeight = 2f;
-    [SerializeField] protected float gravity = -9.8f;
-    [SerializeField] protected float groundDeceleration, airDeceleration, groundAcceleration, airAcceleration;
+    [SerializeField] public float speed = 5f;
+    [SerializeField] private float jumpDelay = 0.5f;
+    [SerializeField] private float jumpHeight = 2f;
+    [SerializeField] private float gravity = -9.8f;
+    [SerializeField] private float groundDeceleration, airDeceleration, groundAcceleration, airAcceleration;
 
     public new Transform camera;
 
-    protected CharacterController _controller;
-    protected CapsuleCollider _collider;
+    private CharacterController _controller;
+    private CapsuleCollider _collider;
     private Vector2 _moveInput;
     private Vector3 _velocity;
     private Vector3 _horizontalVelocity = Vector3.zero;
@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     private float castHeight;
     private float radius;
 
-    protected bool _grounded = false;
+    [HideInInspector] public bool _grounded = false;
     public bool coyoteJump = false; //allows buffered jump
 
 
@@ -33,6 +33,9 @@ public class PlayerController : MonoBehaviour
         
         castHeight = (_collider.height / 2 * transform.localScale.y)-_collider.height*0.25f;
         radius = _collider.radius;
+        
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
 
     }
 
