@@ -74,7 +74,7 @@ public class crouchAndSlide : MonoBehaviour
     {
         _isSliding = true;
         slideDirection = new Vector3(cc.velocity.x, 0, cc.velocity.z).normalized;
-        slideDirection *= (player.speed + 3);
+        slideDirection *= (player.speed + 12);
 
         
     }
