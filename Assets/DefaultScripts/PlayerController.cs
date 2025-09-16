@@ -25,7 +25,13 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public bool _grounded = false;
     public bool coyoteJump = false; //allows buffered jump
 
+    private Vector3 _externalMomentum = Vector3.zero;
 
+
+    public void SetExternalMomentum(Vector3 momentum) // this is called from slide script
+    {
+        _externalMomentum = momentum;
+    }
     private void Start()
     {
         _collider = GetComponent<CapsuleCollider>();
@@ -72,6 +78,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update() //this function runs once every frame
     {
+        print(_externalMomentum);
         _grounded = isGrounded(); //checks if the player is grounded
         if (_grounded && coyoteJump) //checks if need to do coyote jump
         {
@@ -98,7 +105,7 @@ public class PlayerController : MonoBehaviour
         if (moveDirection.magnitude > 0f)
         {
             // Accelerate toward target velocity
-            Vector3 targetVelocity = moveDirection * speed;
+            Vector3 targetVelocity = _externalMomentum.magnitude > moveDirection.magnitude ? _externalMomentum * speed : moveDirection * speed;
             _horizontalVelocity = Vector3.MoveTowards(_horizontalVelocity, targetVelocity, accel * Time.deltaTime);
         }
         else

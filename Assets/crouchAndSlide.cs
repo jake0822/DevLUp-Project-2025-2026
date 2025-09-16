@@ -83,10 +83,15 @@ public class crouchAndSlide : MonoBehaviour
     {
         cc.Move(slideDirection * Time.deltaTime);
         
+        
+        
         slideDirection = Vector3.Lerp(slideDirection, Vector3.zero, slideDecay * Time.deltaTime);
         if (slideDirection.magnitude < 0.1f || !_isCrouched)
         {
             _isSliding = false;
+            slideDirection = Vector3.zero;
         }
+        player.SetExternalMomentum(slideDirection);
     }
+    
 }
