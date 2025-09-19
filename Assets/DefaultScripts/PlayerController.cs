@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Start()
     {
+        print("Hello!!!!");
         _collider = GetComponent<CapsuleCollider>();
         _controller = GetComponent<CharacterController>();
         
