@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update() //this function runs once every frame
     {
-        print(_externalMomentum);
+        //print(_externalMomentum);
         _grounded = isGrounded(); //checks if the player is grounded
         if (_grounded && coyoteJump) //checks if need to do coyote jump
         {
