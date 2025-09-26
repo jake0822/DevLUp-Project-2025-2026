@@ -1334,8 +1334,8 @@ MonoBehaviour:
   playerController: {fileID: 1643928096}
   playerFpsCamera: {fileID: 344189826}
   playerFacingTransform: {fileID: 1154160690}
-  dashDuration: 60
-  dashStrength: 0.3
+  dashDuration: 0.5
+  dashStrength: 0.1
   dashStrengthCurve:
     serializedVersion: 2
     m_Curve:
