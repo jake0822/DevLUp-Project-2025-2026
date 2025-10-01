@@ -1,0 +1,100 @@
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class PlayerLightCrystal : MonoBehaviour {
+    private const string LIGHT_CRYSTAL_TAG = "LightCrystal";
+    private const string CRYSTAL_OUTLINE_LAYER = "CrystalOutline";
+
+    [Header("Raycast Settings")]
+    public float rayDistance = 100f;
+
+    [Header("Animation Settings")]
+    public float spriteMoveTime = 1.0f;
+    public AnimationCurve spriteMoveCurve;
+
+    private Camera playerCamera;
+    private GameObject currentLookedAtObject = null;
+    private GameObject inhabitedCrystal = null;
+
+    private LightSprite spriteController;
+
+    void Start() {
+        playerCamera = GetComponentInChildren<Camera>();
+        if (playerCamera == null) {
+            playerCamera = Camera.main;
+        }
+        spriteController = GetComponent<LightSprite>();
+    }
+
+    void Update() {
+        CastLookRay();
+    }
+
+    void CastLookRay() {
+        // Create a ray from the center of the camera's view
+        Ray lookRay = playerCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
+        RaycastHit hit;
+
+        // Cast the ray
+        if (Physics.Raycast(lookRay, out hit, rayDistance)) {
+            if (hit.collider.CompareTag(LIGHT_CRYSTAL_TAG)) {
+                if (currentLookedAtObject != hit.collider.gameObject) {
+                    LookAtCrystal(hit.collider.gameObject);
+                    currentLookedAtObject = hit.collider.gameObject;
+                }
+            }
+            else {
+                if (currentLookedAtObject != null) {
+                    StopLookAtCrystal(currentLookedAtObject);
+                    currentLookedAtObject = null;
+                }
+            }
+        }
+        else {
+            if (currentLookedAtObject != null) {
+                StopLookAtCrystal(currentLookedAtObject);
+                currentLookedAtObject = null;
+            }
+        }
+
+        // Optional: Draw the ray in the scene view for debugging
+        Debug.DrawRay(lookRay.origin, lookRay.direction * rayDistance, Color.red);
+    }
+
+    // Called when we start looking at a target object
+    void LookAtCrystal(GameObject targetObject) {
+        targetObject.layer = LayerMask.NameToLayer(CRYSTAL_OUTLINE_LAYER);
+    }
+
+    // Called when we stop looking at a target object
+    void StopLookAtCrystal(GameObject targetObject) {
+        targetObject.layer = LayerMask.NameToLayer("ground");
+    }
+
+
+    public void OnClick(InputAction.CallbackContext context) {
+        if (context.performed) {
+            bool hasSprite = spriteController.HasSprite();
+
+            if (hasSprite) {
+                if (currentLookedAtObject != null) {
+                    // Throw the sprite into the crystal
+                    inhabitedCrystal = currentLookedAtObject;
+                    spriteController.RemoveSprite();
+                    spriteController.MoveSprite(inhabitedCrystal.transform.position, spriteMoveTime, spriteMoveCurve, () => {
+                        LightCrystal crystal = inhabitedCrystal.GetComponent<LightCrystal>();
+                        crystal.StartGlow();
+                    });
+                }
+            }
+            else {
+                // Return the sprite back to the player
+                spriteController.GiveSprite();
+                spriteController.ReturnSprite(spriteMoveTime, spriteMoveCurve);
+                LightCrystal crystal = inhabitedCrystal.GetComponent<LightCrystal>();
+                crystal.StopGlow();
+                inhabitedCrystal = null;
+            }
+        }
+    }
+}

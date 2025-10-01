@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 
 public class LightDash : MonoBehaviour {
-    public CharacterController playerController;
+    public CharacterController characterController;
     public CinemachineCamera playerFpsCamera;
     public Transform playerFacingTransform;
 
@@ -19,7 +19,7 @@ public class LightDash : MonoBehaviour {
     // Dash data
     private float baseFov = 60;
 
-    private bool hasDash = false;
+    private bool canDash = false;
     private bool isDashing = false;
     private float dashTimer = 0.0f;
     private Vector3 dashVector;
@@ -28,13 +28,11 @@ public class LightDash : MonoBehaviour {
         baseFov = playerFpsCamera.Lens.FieldOfView;
     }
 
-
     void Update() {
         if (isDashing) {
             float t = dashTimer / dashDuration;
-            float dashStrengthT = dashStrengthCurve.Evaluate(t);
-            Debug.Log(dashStrengthT);
-            playerController.Move(dashVector * dashStrengthT);
+            float dashStrengthT = dashStrengthCurve.Evaluate(t) * Time.deltaTime;
+            characterController.Move(dashVector * dashStrengthT);
 
             float fovT = fovCurve.Evaluate(t);
             float fov = Mathf.Lerp(baseFov + fovChange, baseFov, fovT);
@@ -45,14 +43,14 @@ public class LightDash : MonoBehaviour {
                 isDashing = false;
             }
         }
-        else if (playerController.isGrounded) {
-            hasDash = true;
+        else if (characterController.isGrounded) {
+            canDash = true;
         }
     }
 
     public void Dash(InputAction.CallbackContext context) {
-        if (hasDash && context.performed) {
-            hasDash = false;
+        if (canDash && context.performed) {
+            canDash = false;
             isDashing = true;
             dashTimer = 0.0f;
             dashVector = playerFacingTransform.rotation * Vector3.forward * dashStrength;
