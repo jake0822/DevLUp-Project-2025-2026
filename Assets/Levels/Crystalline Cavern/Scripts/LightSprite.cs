@@ -8,9 +8,6 @@ using UnityEngine;
     of the light attached to the player.
 */
 public class LightSprite : MonoBehaviour {
-    public float intensityNoSprite = 2.0f;
-    public float intensityWithSprite = 15.0f;
-
     private bool hasSprite = true;
 
     private Transform spriteTransform;
@@ -18,7 +15,7 @@ public class LightSprite : MonoBehaviour {
     private Transform spriteReturnTransform;
 
     private Vector3 animStartPos;
-    private Vector3 animEndPos;
+    private Transform animEndTransform;
     private float animTimer = -1f;
     private float animDuration;
     private AnimationCurve animCurve;
@@ -36,10 +33,10 @@ public class LightSprite : MonoBehaviour {
         hasSprite = false;
     }
 
-    public void MoveSprite(Vector3 destination, float duration, AnimationCurve curve, Action arriveCallback = null) {
+    public void MoveSprite(Transform destination, float duration, AnimationCurve curve, Action arriveCallback = null) {
         animTimer = 0f;
         animStartPos = spriteTransform.position;
-        animEndPos = destination;
+        animEndTransform = destination;
         animDuration = duration;
         animCurve = curve;
         animFinishCallback = arriveCallback;
@@ -48,7 +45,7 @@ public class LightSprite : MonoBehaviour {
 
     // Returns the sprite back to the player
     public void ReturnSprite(float duration, AnimationCurve curve) {
-        MoveSprite(spriteReturnTransform.position, duration, curve, () => {
+        MoveSprite(spriteReturnTransform, duration, curve, () => {
             spriteTransform.SetParent(spriteParent);  // Reattach the sprite to the player
         });
     }
@@ -62,7 +59,7 @@ public class LightSprite : MonoBehaviour {
     void Update() {
         if (animTimer != -1f) {
             float t = animCurve.Evaluate(animTimer / animDuration);
-            spriteTransform.position = Vector3.Lerp(animStartPos, animEndPos, t);
+            spriteTransform.position = Vector3.Lerp(animStartPos, animEndTransform.position, t);
 
             animTimer += Time.deltaTime;
             if (animTimer >= animDuration) {

@@ -81,7 +81,7 @@ public class PlayerLightCrystal : MonoBehaviour {
                     // Throw the sprite into the crystal
                     inhabitedCrystal = currentLookedAtObject;
                     spriteController.RemoveSprite();
-                    spriteController.MoveSprite(inhabitedCrystal.transform.position, spriteMoveTime, spriteMoveCurve, () => {
+                    spriteController.MoveSprite(inhabitedCrystal.transform, spriteMoveTime, spriteMoveCurve, () => {
                         LightCrystal crystal = inhabitedCrystal.GetComponent<LightCrystal>();
                         crystal.StartGlow();
                     });
