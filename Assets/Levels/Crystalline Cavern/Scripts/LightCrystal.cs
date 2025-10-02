@@ -29,16 +29,14 @@ public class LightCrystal : MonoBehaviour {
 
     void Update() {
         if (glowState != GlowState.IDLE) {
-            float t = 0.0f;
+            glowAnimTimer = Mathf.Clamp(glowAnimTimer + Time.deltaTime, 0, glowAnimDuration);
+
             if (glowState == GlowState.GLOW) {
-                t = MapRange(glowAnimTimer, 0, glowAnimDuration, 0, 1);
+                lightObject.intensity = MapRange(glowAnimTimer, 0, glowAnimDuration, 0, lightIntensity);
             } else if (glowState == GlowState.UNGLOW) {
-                t = MapRange(glowAnimTimer, 0, glowAnimDuration, 1, 0);
+                lightObject.intensity = MapRange(glowAnimTimer, 0, glowAnimDuration, lightIntensity, 0);
             }
 
-            lightObject.intensity = t * lightIntensity;
-
-            glowAnimTimer += Time.deltaTime;
             if (glowAnimTimer >= glowAnimDuration) {
                 glowState = GlowState.IDLE;
             }
