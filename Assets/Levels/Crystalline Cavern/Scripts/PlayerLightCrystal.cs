@@ -18,6 +18,7 @@ public class PlayerLightCrystal : MonoBehaviour {
     private Camera playerCamera;
     private GameObject currentLookedAtObject = null;
     private GameObject inhabitedCrystal = null;
+    private bool spriteIsMoving = false;
 
     private LightSprite spriteController;
 
@@ -67,26 +68,34 @@ public class PlayerLightCrystal : MonoBehaviour {
         targetObject.layer = LayerMask.NameToLayer("ground");
     }
 
-
     public void OnClick(InputAction.CallbackContext context) {
         if (context.performed) {
-            bool hasSprite = spriteController.HasSprite();
+            if (spriteIsMoving) {
+                return;
+            }
 
+            bool hasSprite = spriteController.HasSprite();
             if (hasSprite) {
                 if (currentLookedAtObject != null) {
                     // Throw the sprite into the crystal
                     inhabitedCrystal = currentLookedAtObject;
+                    spriteIsMoving = true;
                     spriteController.RemoveSprite();
                     spriteController.MoveSprite(inhabitedCrystal.transform, spriteMoveTime, spriteMoveCurve, () => {
                         LightCrystal crystal = inhabitedCrystal.GetComponent<LightCrystal>();
                         crystal.StartGlow();
+                        spriteIsMoving = false;
                     });
                 }
             }
             else {
                 // Return the sprite back to the player
+                spriteIsMoving = true;
                 spriteController.GiveSprite();
-                spriteController.ReturnSprite(spriteMoveTime, spriteMoveCurve);
+                spriteController.ReturnSprite(spriteMoveTime, spriteMoveCurve, () => {
+                    spriteIsMoving = false;
+                    Debug.Log(spriteIsMoving);
+                });
                 LightCrystal crystal = inhabitedCrystal.GetComponent<LightCrystal>();
                 crystal.StopGlow();
                 inhabitedCrystal = null;

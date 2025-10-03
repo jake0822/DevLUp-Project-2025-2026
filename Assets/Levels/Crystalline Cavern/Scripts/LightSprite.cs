@@ -44,9 +44,10 @@ public class LightSprite : MonoBehaviour {
     }
 
     // Returns the sprite back to the player
-    public void ReturnSprite(float duration, AnimationCurve curve) {
+    public void ReturnSprite(float duration, AnimationCurve curve, Action returnCallback = null) {
         MoveSprite(spriteReturnTransform, duration, curve, () => {
             spriteTransform.SetParent(spriteParent);  // Reattach the sprite to the player
+            returnCallback?.Invoke();
         });
     }
 
