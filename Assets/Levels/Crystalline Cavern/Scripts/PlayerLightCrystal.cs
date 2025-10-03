@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/*
+    Controls player interations with light crystals.
+*/
 public class PlayerLightCrystal : MonoBehaviour {
     private const string LIGHT_CRYSTAL_TAG = "LightCrystal";
     private const string CRYSTAL_OUTLINE_LAYER = "CrystalOutline";
@@ -31,11 +34,9 @@ public class PlayerLightCrystal : MonoBehaviour {
     }
 
     void CastLookRay() {
-        // Create a ray from the center of the camera's view
         Ray lookRay = playerCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
         RaycastHit hit;
 
-        // Cast the ray
         if (Physics.Raycast(lookRay, out hit, rayDistance)) {
             if (hit.collider.CompareTag(LIGHT_CRYSTAL_TAG)) {
                 if (currentLookedAtObject != hit.collider.gameObject) {
@@ -56,17 +57,12 @@ public class PlayerLightCrystal : MonoBehaviour {
                 currentLookedAtObject = null;
             }
         }
-
-        // Optional: Draw the ray in the scene view for debugging
-        Debug.DrawRay(lookRay.origin, lookRay.direction * rayDistance, Color.red);
     }
 
-    // Called when we start looking at a target object
     void LookAtCrystal(GameObject targetObject) {
         targetObject.layer = LayerMask.NameToLayer(CRYSTAL_OUTLINE_LAYER);
     }
 
-    // Called when we stop looking at a target object
     void StopLookAtCrystal(GameObject targetObject) {
         targetObject.layer = LayerMask.NameToLayer("ground");
     }
