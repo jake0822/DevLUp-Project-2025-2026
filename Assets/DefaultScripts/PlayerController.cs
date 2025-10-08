@@ -50,28 +50,28 @@ public class PlayerController : MonoBehaviour
         bool isGrounded = Physics.Raycast(transform.position - new Vector3(radius, castHeight),
             Vector3.down, 0.6f, LayerMask.GetMask("ground"));
         Debug.DrawRay(transform.position - new Vector3(radius, castHeight),
-            Vector3.down *0.6f, Color.lawnGreen );
+            Vector3.down *0.6f, Color.green);
         if (isGrounded)
             return isGrounded;
         
         isGrounded = Physics.Raycast(transform.position - new Vector3(-radius, castHeight),
             Vector3.down, 0.6f, LayerMask.GetMask("ground"));
         Debug.DrawRay(transform.position - new Vector3(-radius, castHeight),
-            Vector3.down *0.6f, Color.lawnGreen );
+            Vector3.down *0.6f, Color.green );
         if (isGrounded)
             return isGrounded;
         
         isGrounded = Physics.Raycast(transform.position - new Vector3(0, castHeight, radius),
             Vector3.down, 0.6f, LayerMask.GetMask("ground"));
         Debug.DrawRay(transform.position - new Vector3(0, castHeight, radius),
-            Vector3.down *0.6f, Color.lawnGreen );
+            Vector3.down *0.6f, Color.green );
         if (isGrounded)
             return isGrounded;
         
         isGrounded = Physics.Raycast(transform.position - new Vector3(0, castHeight, -radius),
             Vector3.down, 0.6f, LayerMask.GetMask("ground"));
         Debug.DrawRay(transform.position - new Vector3(0, castHeight, -radius),
-            Vector3.down *0.6f, Color.lawnGreen );
+            Vector3.down *0.6f, Color.green );
         
         return isGrounded;
     }
