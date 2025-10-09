@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public float speed = 5f;
     [SerializeField] private float jumpDelay = 0.5f;
     [SerializeField] private float jumpHeight = 2f;
-    [SerializeField] private float gravity = -9.8f;
+    [SerializeField] public float gravity = -9.8f;
     [SerializeField] private float groundDeceleration, airDeceleration, groundAcceleration, airAcceleration;
 
     public new Transform camera;
@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     private CharacterController _controller;
     private CapsuleCollider _collider;
     private Vector2 _moveInput;
-    private Vector3 _velocity;
+    public Vector3 _velocity;
     private Vector3 _horizontalVelocity = Vector3.zero;
 
     private float castHeight;
@@ -50,35 +50,35 @@ public class PlayerController : MonoBehaviour
         bool isGrounded = Physics.Raycast(transform.position - new Vector3(radius, castHeight),
             Vector3.down, 0.6f, LayerMask.GetMask("ground"));
         Debug.DrawRay(transform.position - new Vector3(radius, castHeight),
-            Vector3.down *0.6f, Color.lawnGreen );
+            Vector3.down *0.6f, Color.green );
         if (isGrounded)
             return isGrounded;
         
         isGrounded = Physics.Raycast(transform.position - new Vector3(-radius, castHeight),
             Vector3.down, 0.6f, LayerMask.GetMask("ground"));
         Debug.DrawRay(transform.position - new Vector3(-radius, castHeight),
-            Vector3.down *0.6f, Color.lawnGreen );
+            Vector3.down *0.6f, Color.green );
         if (isGrounded)
             return isGrounded;
         
         isGrounded = Physics.Raycast(transform.position - new Vector3(0, castHeight, radius),
             Vector3.down, 0.6f, LayerMask.GetMask("ground"));
         Debug.DrawRay(transform.position - new Vector3(0, castHeight, radius),
-            Vector3.down *0.6f, Color.lawnGreen );
+            Vector3.down *0.6f, Color.green );
         if (isGrounded)
             return isGrounded;
         
         isGrounded = Physics.Raycast(transform.position - new Vector3(0, castHeight, -radius),
             Vector3.down, 0.6f, LayerMask.GetMask("ground"));
         Debug.DrawRay(transform.position - new Vector3(0, castHeight, -radius),
-            Vector3.down *0.6f, Color.lawnGreen );
+            Vector3.down *0.6f, Color.green );
         
         return isGrounded;
     }
 
     private void Update() //this function runs once every frame
     {
-        print(_externalMomentum);
+        //print(_externalMomentum);
         _grounded = isGrounded(); //checks if the player is grounded
         if (_grounded && coyoteJump) //checks if need to do coyote jump
         {
