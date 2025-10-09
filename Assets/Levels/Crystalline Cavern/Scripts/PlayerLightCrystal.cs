@@ -91,9 +91,9 @@ public class PlayerLightCrystal : MonoBehaviour {
             else {
                 // Return the sprite back to the player
                 spriteIsMoving = true;
-                spriteController.GiveSprite();
                 spriteController.ReturnSprite(spriteMoveTime, spriteMoveCurve, () => {
                     spriteIsMoving = false;
+                    spriteController.GiveSprite();
                 });
                 LightCrystal crystal = inhabitedCrystal.GetComponent<LightCrystal>();
                 crystal.StopGlow();

@@ -16,6 +16,11 @@ public class LightDash : MonoBehaviour {
     public float fovChange = 5.0f;  // How many degrees the FOV changes during a dash
     public AnimationCurve fovCurve;  // Determines how the fov changes over the course of the dash
 
+    public float glowIntensity = 20;
+    public AnimationCurve glowCurve;
+
+    private LightSprite spriteController;
+
     // Dash data
     private float baseFov = 60;
 
@@ -25,6 +30,7 @@ public class LightDash : MonoBehaviour {
     private Vector3 dashVector;
 
     void Start() {
+        spriteController = GetComponent<LightSprite>();
         baseFov = playerFpsCamera.Lens.FieldOfView;
     }
 
@@ -49,11 +55,13 @@ public class LightDash : MonoBehaviour {
     }
 
     public void Dash(InputAction.CallbackContext context) {
-        if (canDash && context.performed) {
+        if (canDash && context.performed && spriteController.HasSprite()) {
             canDash = false;
             isDashing = true;
             dashTimer = 0.0f;
             dashVector = playerFacingTransform.rotation * Vector3.forward * dashStrength;
+
+            spriteController.GlowSprite(glowIntensity, dashDuration, glowCurve);
         }
     }
 }
