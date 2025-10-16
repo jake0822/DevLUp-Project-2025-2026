@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: cb6977cc9ebc49943b1e6cc7017ca16d
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305701
+  packageName: Mines and Cave Set
+  packageVersion: 1.0
+  assetPath: Assets/LoafbrrAssets/MInesAndCaveSet/Materials/A_MineWalls.mat
+  uploadId: 718441

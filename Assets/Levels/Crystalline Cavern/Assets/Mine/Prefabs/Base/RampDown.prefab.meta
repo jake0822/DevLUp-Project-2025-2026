@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a1c6dc8e84ded3c4fb88df867e83a271
+timeCreated: 1496605867
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 92461
+  packageName: Mine
+  packageVersion: 1.0
+  assetPath: Assets/Mine/Prefabs/Base/RampDown.prefab
+  uploadId: 183947

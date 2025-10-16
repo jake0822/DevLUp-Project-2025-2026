@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 49561c9ced9a8a14a9aa40be4dd8248c
+timeCreated: 1496607740
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 92461
+  packageName: Mine
+  packageVersion: 1.0
+  assetPath: Assets/Mine/Prefabs/Base/TurnL.prefab
+  uploadId: 183947

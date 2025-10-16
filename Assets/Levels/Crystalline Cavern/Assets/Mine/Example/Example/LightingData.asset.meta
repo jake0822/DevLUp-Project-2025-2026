@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e350c7cd62b9c9c4aaf91f646c9f811b
+timeCreated: 1496787568
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 92461
+  packageName: Mine
+  packageVersion: 1.0
+  assetPath: Assets/Mine/Example/Example/LightingData.asset
+  uploadId: 183947

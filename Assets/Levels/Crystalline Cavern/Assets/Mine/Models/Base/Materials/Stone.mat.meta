@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ed7e9c97e9f2dd840998071a478c0009
+timeCreated: 1496444621
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 92461
+  packageName: Mine
+  packageVersion: 1.0
+  assetPath: Assets/Mine/Models/Base/Materials/Stone.mat
+  uploadId: 183947
