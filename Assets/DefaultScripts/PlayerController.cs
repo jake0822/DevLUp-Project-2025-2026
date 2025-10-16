@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public float speed = 5f;
     [SerializeField] private float jumpDelay = 0.5f;
     [SerializeField] private float jumpHeight = 2f;
-    [SerializeField] private float gravity = -9.8f;
+    [SerializeField] public float gravity = -9.8f;
     [SerializeField] private float groundDeceleration, airDeceleration, groundAcceleration, airAcceleration;
 
     public new Transform camera;
@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update() //this function runs once every frame
     {
-        print(_externalMomentum);
+        // print(_externalMomentum);
         _grounded = isGrounded(); //checks if the player is grounded
         if (_grounded && coyoteJump) //checks if need to do coyote jump
         {
