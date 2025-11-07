@@ -16,6 +16,7 @@ public class LightCrystal : MonoBehaviour {
     private Light lightObject;
     private GlowState glowState = GlowState.IDLE;
     private float glowAnimTimer = 0.0f;
+    private float baseLightIntensity;
 
 
     float MapRange(float input, float lower, float upper, float toLower, float toUpper) {
@@ -25,6 +26,7 @@ public class LightCrystal : MonoBehaviour {
 
     void Start() {
         lightObject = GetComponentInChildren<Light>();
+        baseLightIntensity = lightObject.intensity;
     }
 
     void Update() {
@@ -32,9 +34,9 @@ public class LightCrystal : MonoBehaviour {
             glowAnimTimer = Mathf.Clamp(glowAnimTimer + Time.deltaTime, 0, glowAnimDuration);
 
             if (glowState == GlowState.GLOW) {
-                lightObject.intensity = MapRange(glowAnimTimer, 0, glowAnimDuration, 0, lightIntensity);
+                lightObject.intensity = MapRange(glowAnimTimer, 0, glowAnimDuration, baseLightIntensity, lightIntensity);
             } else if (glowState == GlowState.UNGLOW) {
-                lightObject.intensity = MapRange(glowAnimTimer, 0, glowAnimDuration, lightIntensity, 0);
+                lightObject.intensity = MapRange(glowAnimTimer, 0, glowAnimDuration, lightIntensity, baseLightIntensity);
             }
 
             if (glowAnimTimer >= glowAnimDuration) {
