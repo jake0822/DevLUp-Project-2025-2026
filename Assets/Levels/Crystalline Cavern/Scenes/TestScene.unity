@@ -1924,6 +1924,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LightCrystal
       objectReference: {fileID: 0}
+    - target: {fileID: 2473768280726475868, guid: a4f7a3a2e178dc2d0910d521823f1acd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

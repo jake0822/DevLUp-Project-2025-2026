@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 */
 public class PlayerLightCrystal : MonoBehaviour {
     private const string LIGHT_CRYSTAL_TAG = "LightCrystal";
-    private const string CRYSTAL_OUTLINE_LAYER = "CrystalOutline";
 
     [Header("Raycast Settings")]
     public float rayDistance = 100f;
@@ -61,11 +60,13 @@ public class PlayerLightCrystal : MonoBehaviour {
     }
 
     void LookAtCrystal(GameObject targetObject) {
-        targetObject.layer = LayerMask.NameToLayer(CRYSTAL_OUTLINE_LAYER);
+        Outline outline = targetObject.GetComponent<Outline>();
+        outline.enabled = true;
     }
 
     void StopLookAtCrystal(GameObject targetObject) {
-        targetObject.layer = LayerMask.NameToLayer("ground");
+        Outline outline = targetObject.GetComponent<Outline>();
+        outline.enabled = false;
     }
 
     public void OnClick(InputAction.CallbackContext context) {
