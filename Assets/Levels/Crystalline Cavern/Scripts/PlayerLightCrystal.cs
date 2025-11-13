@@ -60,12 +60,12 @@ public class PlayerLightCrystal : MonoBehaviour {
     }
 
     void LookAtCrystal(GameObject targetObject) {
-        Outline outline = targetObject.GetComponent<Outline>();
+        Outline outline = targetObject.GetComponentInChildren<Outline>();
         outline.enabled = true;
     }
 
     void StopLookAtCrystal(GameObject targetObject) {
-        Outline outline = targetObject.GetComponent<Outline>();
+        Outline outline = targetObject.GetComponentInChildren<Outline>();
         outline.enabled = false;
     }
 

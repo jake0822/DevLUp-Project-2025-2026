@@ -10,8 +10,10 @@ enum GlowState {
 
 public class LightCrystal : MonoBehaviour {
 
-    public float lightIntensity = 20.0f;
-    public float glowAnimDuration = 0.5f;
+    [SerializeField] private float lightIntensity = 20.0f;
+    [SerializeField] private float glowAnimDuration = 0.5f;
+
+    [SerializeField] private MeshRenderer crystalMesh;
 
     private Light lightObject;
     private GlowState glowState = GlowState.IDLE;
@@ -35,8 +37,12 @@ public class LightCrystal : MonoBehaviour {
 
             if (glowState == GlowState.GLOW) {
                 lightObject.intensity = MapRange(glowAnimTimer, 0, glowAnimDuration, baseLightIntensity, lightIntensity);
+                float emission = MapRange(glowAnimTimer, 0, glowAnimDuration, 0, 1.5f);
+                crystalMesh.material.SetColor("_EmissionColor", lightObject.color * emission);
             } else if (glowState == GlowState.UNGLOW) {
                 lightObject.intensity = MapRange(glowAnimTimer, 0, glowAnimDuration, lightIntensity, baseLightIntensity);
+                float emission = MapRange(glowAnimTimer, 0, glowAnimDuration, 1.5f, 0);
+                crystalMesh.material.SetColor("_EmissionColor", lightObject.color * emission);
             }
 
             if (glowAnimTimer >= glowAnimDuration) {
