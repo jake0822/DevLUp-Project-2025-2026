@@ -40,66 +40,67 @@ public class PlayerLightCrystal : MonoBehaviour {
         if (Physics.Raycast(lookRay, out hit, rayDistance)) {
             if (hit.collider.CompareTag(LIGHT_CRYSTAL_TAG)) {
                 if (currentLookedAtObject != hit.collider.gameObject) {
+                    if (currentLookedAtObject != null) {
+                        StopLookAtCrystal();
+                    }
                     LookAtCrystal(hit.collider.gameObject);
-                    currentLookedAtObject = hit.collider.gameObject;
                 }
             }
             else {
-                if (currentLookedAtObject != null) {
-                    StopLookAtCrystal(currentLookedAtObject);
-                    currentLookedAtObject = null;
-                }
+                StopLookAtCrystal();
             }
         }
         else {
-            if (currentLookedAtObject != null) {
-                StopLookAtCrystal(currentLookedAtObject);
-                currentLookedAtObject = null;
-            }
+            StopLookAtCrystal();
         }
     }
 
     void LookAtCrystal(GameObject targetObject) {
         Outline outline = targetObject.GetComponentInChildren<Outline>();
         outline.enabled = true;
+        currentLookedAtObject = targetObject;
     }
 
-    void StopLookAtCrystal(GameObject targetObject) {
-        Outline outline = targetObject.GetComponentInChildren<Outline>();
-        outline.enabled = false;
+    void StopLookAtCrystal() {
+        if (currentLookedAtObject != null) {
+            Outline outline = currentLookedAtObject.GetComponentInChildren<Outline>();
+            outline.enabled = false;
+            currentLookedAtObject = null;
+        }
     }
 
     public void OnClick(InputAction.CallbackContext context) {
-        if (context.performed) {
-            if (spriteIsMoving) {
-                return;
-            }
+        if (!context.performed) {
+            return;
+        }
+        if (spriteIsMoving) {
+            return;
+        }
 
-            bool hasSprite = spriteController.HasSprite();
-            if (hasSprite) {
-                if (currentLookedAtObject != null) {
-                    // Throw the sprite into the crystal
-                    inhabitedCrystal = currentLookedAtObject;
-                    spriteIsMoving = true;
-                    spriteController.RemoveSprite();
-                    spriteController.MoveSprite(inhabitedCrystal.transform, spriteMoveTime, spriteMoveCurve, () => {
-                        LightCrystal crystal = inhabitedCrystal.GetComponent<LightCrystal>();
-                        crystal.StartGlow();
-                        spriteIsMoving = false;
-                    });
-                }
-            }
-            else {
-                // Return the sprite back to the player
+        bool hasSprite = spriteController.HasSprite();
+        if (hasSprite) {
+            if (currentLookedAtObject != null) {
+                // Throw the sprite into the crystal
+                inhabitedCrystal = currentLookedAtObject;
                 spriteIsMoving = true;
-                spriteController.ReturnSprite(spriteMoveTime, spriteMoveCurve, () => {
+                spriteController.RemoveSprite();
+                spriteController.MoveSprite(inhabitedCrystal.transform, spriteMoveTime, spriteMoveCurve, () => {
+                    LightCrystal crystal = inhabitedCrystal.GetComponent<LightCrystal>();
+                    crystal.StartGlow();
                     spriteIsMoving = false;
-                    spriteController.GiveSprite();
                 });
-                LightCrystal crystal = inhabitedCrystal.GetComponent<LightCrystal>();
-                crystal.StopGlow();
-                inhabitedCrystal = null;
             }
+        }
+        else {
+            // Return the sprite back to the player
+            spriteIsMoving = true;
+            spriteController.ReturnSprite(spriteMoveTime, spriteMoveCurve, () => {
+                spriteIsMoving = false;
+                spriteController.GiveSprite();
+            });
+            LightCrystal crystal = inhabitedCrystal.GetComponent<LightCrystal>();
+            crystal.StopGlow();
+            inhabitedCrystal = null;
         }
     }
 }

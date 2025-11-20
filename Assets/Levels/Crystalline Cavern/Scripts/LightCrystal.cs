@@ -13,12 +13,14 @@ public class LightCrystal : MonoBehaviour {
     [SerializeField] private float lightIntensity = 20.0f;
     [SerializeField] private float glowAnimDuration = 0.5f;
 
-    [SerializeField] private MeshRenderer crystalMesh;
+    [SerializeField] private Renderer crystalMesh;
 
     private Light lightObject;
     private GlowState glowState = GlowState.IDLE;
     private float glowAnimTimer = 0.0f;
     private float baseLightIntensity;
+    
+    private Color baseEmissionColor;
 
 
     float MapRange(float input, float lower, float upper, float toLower, float toUpper) {
@@ -29,6 +31,7 @@ public class LightCrystal : MonoBehaviour {
     void Start() {
         lightObject = GetComponentInChildren<Light>();
         baseLightIntensity = lightObject.intensity;
+        baseEmissionColor = crystalMesh.material.GetColor("_EmissionColor");
     }
 
     void Update() {
@@ -37,12 +40,12 @@ public class LightCrystal : MonoBehaviour {
 
             if (glowState == GlowState.GLOW) {
                 lightObject.intensity = MapRange(glowAnimTimer, 0, glowAnimDuration, baseLightIntensity, lightIntensity);
-                float emission = MapRange(glowAnimTimer, 0, glowAnimDuration, 0, 1.5f);
-                crystalMesh.material.SetColor("_EmissionColor", lightObject.color * emission);
+                float emission = MapRange(glowAnimTimer, 0, glowAnimDuration, 0, 3);
+                crystalMesh.material.SetColor("_EmissionColor", baseEmissionColor * emission);
             } else if (glowState == GlowState.UNGLOW) {
                 lightObject.intensity = MapRange(glowAnimTimer, 0, glowAnimDuration, lightIntensity, baseLightIntensity);
-                float emission = MapRange(glowAnimTimer, 0, glowAnimDuration, 1.5f, 0);
-                crystalMesh.material.SetColor("_EmissionColor", lightObject.color * emission);
+                float emission = MapRange(glowAnimTimer, 0, glowAnimDuration, 3, 0);
+                crystalMesh.material.SetColor("_EmissionColor", baseEmissionColor * emission);
             }
 
             if (glowAnimTimer >= glowAnimDuration) {
