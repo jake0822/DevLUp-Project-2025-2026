@@ -7,13 +7,14 @@ public class DialogManager : MonoBehaviour
     public TextMeshProUGUI Text;
 
     private bool inCollider;
+    private bool inDialog;
     public GameObject DialogPanel;
     public DialogSystem ds;
 
     private void OnTriggerEnter(Collider other)
     {
         print(other.tag);
-        if (other.CompareTag("player"))
+        if (other.CompareTag("player") && !inDialog)
         {
             Text.enabled = true;
             inCollider = true;
@@ -28,19 +29,22 @@ public class DialogManager : MonoBehaviour
             ds.canGoNext = false;
             ds.activeIndex = 0;
             DialogPanel.SetActive(false);
+            inDialog = false;
             
         }
     }
 
     public void startDialog(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && Time.timeScale != 0 && !inDialog)
         {
+            inDialog = true;
             DialogPanel.SetActive(true);
             ds.activeText.text = string.Empty;
-            ds.nextDialog();
+           
             ds.canGoNext = true;
             Text.enabled = false;
+            ds.nextDialog();
         }
     }
 }

@@ -9,7 +9,6 @@ public class DialogSystem : MonoBehaviour
     public TextMeshProUGUI activeText;
     public float textspeed = 0.1f;
 
-    
     public bool canGoNext = false;
 
     public int activeIndex = 0;
