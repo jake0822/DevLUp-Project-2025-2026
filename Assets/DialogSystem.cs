@@ -9,19 +9,13 @@ public class DialogSystem : MonoBehaviour
     public TextMeshProUGUI activeText;
     public float textspeed = 0.1f;
 
-    public bool test = false;
-    private bool canGoNext = false;
+    
+    public bool canGoNext = false;
+
+    public int activeIndex = 0;
 
     private void Update()
     {
-        if (!Application.isPlaying) return;
-
-        if (test)
-        {
-            test = false;
-            StartCoroutine(typeDialog(DialogLines[0]));
-
-        }
        
     }
 
@@ -29,6 +23,7 @@ public class DialogSystem : MonoBehaviour
     {
         if (!Application.isPlaying) yield break;
 
+        canGoNext = false;
         int i = 0;
         activeText.text = string.Empty;
         while(i < text.Length)
@@ -37,9 +32,18 @@ public class DialogSystem : MonoBehaviour
             i++;
             yield return new WaitForSeconds(textspeed);
         }
+        canGoNext = true;
+        activeIndex++;
     }
     public void nextDialog()
     {
-        print("next Dialog");
+        if(canGoNext && activeIndex < DialogLines.Length)
+            StartCoroutine(typeDialog(DialogLines[activeIndex]));
+        else
+        {
+            print("No active Dialog");
+
+        }
+            
     }
 }
