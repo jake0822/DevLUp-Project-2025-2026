@@ -10,6 +10,7 @@ public class DialogSystem : MonoBehaviour
     public float textspeed = 0.1f;
 
     public bool test = false;
+    private bool canGoNext = false;
 
     private void Update()
     {
@@ -21,6 +22,7 @@ public class DialogSystem : MonoBehaviour
             StartCoroutine(typeDialog(DialogLines[0]));
 
         }
+       
     }
 
     IEnumerator typeDialog(string text)
@@ -35,5 +37,9 @@ public class DialogSystem : MonoBehaviour
             i++;
             yield return new WaitForSeconds(textspeed);
         }
+    }
+    public void nextDialog()
+    {
+        print("next Dialog");
     }
 }
