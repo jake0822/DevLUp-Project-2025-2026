@@ -43,6 +43,9 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Glide",
+                    "type": "Button",
+                    "id": "9f474d3c-d7e6-44d9-b201-f4312daf984a",
                     "name": "LeftClick",
                     "type": "Button",
                     "id": "df4d5355-73df-447e-b3b8-d04202ca91a2",
@@ -216,6 +219,12 @@
                 },
                 {
                     "name": "",
+                    "id": "f286d8e0-d7dc-4ea2-88bd-97ae3876d3d1",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Glide",
                     "id": "f3251271-8ca6-4097-9601-ea3cbe830585",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
@@ -227,6 +236,12 @@
                 },
                 {
                     "name": "",
+                    "id": "6bbc960f-e120-4a88-a2ab-52a49bb4c596",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Glide",
                     "id": "3b134e00-4e32-4830-a51a-11a0337bf35c",
                     "path": "<Gamepad>/buttonWest",
                     "interactions": "",

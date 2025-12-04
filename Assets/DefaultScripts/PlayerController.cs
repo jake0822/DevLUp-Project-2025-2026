@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public float speed = 5f;
     [SerializeField] private float jumpDelay = 0.5f;
     [SerializeField] private float jumpHeight = 2f;
-    [SerializeField] private float gravity = -9.8f;
+    [SerializeField] public float gravity = -9.8f;
     [SerializeField] private float groundDeceleration, airDeceleration, groundAcceleration, airAcceleration;
 
     public new Transform camera;
@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     private CharacterController _controller;
     private CapsuleCollider _collider;
     private Vector2 _moveInput;
-    private Vector3 _velocity;
+    public Vector3 _velocity;
     private Vector3 _horizontalVelocity = Vector3.zero;
 
     private float castHeight;
