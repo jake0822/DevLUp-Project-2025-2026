@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 512245daca745f64693d790c6c69d575
+timeCreated: 1496614904
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 92461
+  packageName: Mine
+  packageVersion: 1.0
+  assetPath: Assets/Mine/Prefabs/Rocks/Rock1.prefab
+  uploadId: 183947

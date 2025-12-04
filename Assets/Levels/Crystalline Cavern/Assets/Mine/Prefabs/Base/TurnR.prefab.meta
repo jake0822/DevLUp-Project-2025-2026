@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2b41853036497ac4fa1d212a15ccff4c
+timeCreated: 1496607734
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 92461
+  packageName: Mine
+  packageVersion: 1.0
+  assetPath: Assets/Mine/Prefabs/Base/TurnR.prefab
+  uploadId: 183947

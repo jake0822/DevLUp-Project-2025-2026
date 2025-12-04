@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3f70d5382860aa44c938a82c847e6ffa
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305701
+  packageName: Mines and Cave Set
+  packageVersion: 1.0
+  assetPath: Assets/LoafbrrAssets/MInesAndCaveSet/Materials/A_MinesGround.mat
+  uploadId: 718441
