@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
         bool isGrounded = Physics.Raycast(transform.position - new Vector3(radius, castHeight),
             Vector3.down, 0.6f, LayerMask.GetMask("ground"));
         Debug.DrawRay(transform.position - new Vector3(radius, castHeight),
-            Vector3.down *0.6f, Color.green);
+            Vector3.down *0.6f, Color.green );
         if (isGrounded)
             return isGrounded;
         
@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update() //this function runs once every frame
     {
-        //print(_externalMomentum);
+        // print(_externalMomentum);
         _grounded = isGrounded(); //checks if the player is grounded
         if (_grounded && gliding)
         {
