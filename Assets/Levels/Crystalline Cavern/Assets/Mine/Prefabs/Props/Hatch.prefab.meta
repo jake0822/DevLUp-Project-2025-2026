@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1f136777da95ba641be965f3b39286ce
+timeCreated: 1496683399
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 92461
+  packageName: Mine
+  packageVersion: 1.0
+  assetPath: Assets/Mine/Prefabs/Props/Hatch.prefab
+  uploadId: 183947

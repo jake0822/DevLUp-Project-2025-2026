@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: aa9633eae3ce4df4598f940e0feb4a03
+timeCreated: 1496683183
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 92461
+  packageName: Mine
+  packageVersion: 1.0
+  assetPath: Assets/Mine/Models/Props/Materials/Hatch.mat
+  uploadId: 183947
