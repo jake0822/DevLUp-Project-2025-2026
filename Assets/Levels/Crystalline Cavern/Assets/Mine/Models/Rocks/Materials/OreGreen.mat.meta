@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d43ae590d6f04de48817c416343eaba7
+timeCreated: 1496761107
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 92461
+  packageName: Mine
+  packageVersion: 1.0
+  assetPath: Assets/Mine/Models/Rocks/Materials/OreGreen.mat
+  uploadId: 183947

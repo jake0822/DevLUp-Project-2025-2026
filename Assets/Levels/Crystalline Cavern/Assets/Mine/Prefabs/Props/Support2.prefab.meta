@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b53586081307f1543bb0315828b57953
+timeCreated: 1496607865
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 92461
+  packageName: Mine
+  packageVersion: 1.0
+  assetPath: Assets/Mine/Prefabs/Props/Support2.prefab
+  uploadId: 183947
