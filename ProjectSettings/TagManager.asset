@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Deadly
   - LightCrystal
-  - player
   layers:
   - Default
   - TransparentFX

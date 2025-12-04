@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Levels/Volcano Escape/Scenes/VolcanoScene.unity
     guid: 835aaccbd66f922449f8d69752a93a16
+  - enabled: 1
+    path: Assets/Levels/Stone Cold/Scenes/LevelWithArt.unity
+    guid: f75576c59212df3498dc230b3ecfe1d1
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

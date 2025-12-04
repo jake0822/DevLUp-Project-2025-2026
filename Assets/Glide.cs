@@ -44,7 +44,7 @@ public class Glide : MonoBehaviour
         else
             gliding = false;
 
-        print(gliding);
+        //print(gliding);
 
         //gliding logic
 
