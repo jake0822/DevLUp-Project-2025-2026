@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f61b2bee68d853c4ab7baf6062cda8d4
+timeCreated: 1496607964
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 92461
+  packageName: Mine
+  packageVersion: 1.0
+  assetPath: Assets/Mine/Prefabs/Props/Planks.prefab
+  uploadId: 183947

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 7a4e041ab060e0043a131d10421bdfda
+timeCreated: 1496608016
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 92461
+  packageName: Mine
+  packageVersion: 1.0
+  assetPath: Assets/Mine/Prefabs/Props/Pickaxe.prefab
+  uploadId: 183947

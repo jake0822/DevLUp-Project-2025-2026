@@ -16,11 +16,13 @@ public class PlayerController : MonoBehaviour
     private CharacterController _controller;
     private CapsuleCollider _collider;
     private Vector2 _moveInput;
-    private Vector3 _velocity;
+    public Vector3 _velocity;
     private Vector3 _horizontalVelocity = Vector3.zero;
 
     private float castHeight;
     private float radius;
+
+    private bool gliding = false;
 
     [HideInInspector] public bool _grounded = false;
     public bool coyoteJump = false; //allows buffered jump
@@ -80,6 +82,10 @@ public class PlayerController : MonoBehaviour
     {
         // print(_externalMomentum);
         _grounded = isGrounded(); //checks if the player is grounded
+        if (_grounded && gliding)
+        {
+            ToggleGlide();
+        }
         if (_grounded && coyoteJump) //checks if need to do coyote jump
         {
             _velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity); //applies jump force for coyote jump
@@ -134,11 +140,15 @@ public class PlayerController : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context) //detects input for jump
     {
-        
         if (_grounded && context.performed)
         {
+            print("condition 1");
             _velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity); //applies jump force
             coyoteJump = false;
+        }
+        else if (!_grounded && context.performed)
+        {
+            ToggleGlide();
         }
         else if (context.performed)
         {
@@ -146,6 +156,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void ToggleGlide() // toggles glide!
+    {
+        if (gliding)
+        {
+            gravity = -9.8f;
+        }
+        else
+        {
+            gravity = 0f;
+            _velocity.y = -1;
+        }
+            gliding = !gliding;
+    }
     private IEnumerator CoyoteJumpTimer()
     {
         coyoteJump = true;

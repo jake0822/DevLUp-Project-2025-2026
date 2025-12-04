@@ -1,0 +1,106 @@
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+/*
+    Controls player interations with light crystals.
+*/
+public class PlayerLightCrystal : MonoBehaviour {
+    private const string LIGHT_CRYSTAL_TAG = "LightCrystal";
+
+    [Header("Raycast Settings")]
+    public float rayDistance = 100f;
+
+    [Header("Animation Settings")]
+    public float spriteMoveTime = 1.0f;
+    public AnimationCurve spriteMoveCurve;
+
+    private Camera playerCamera;
+    private GameObject currentLookedAtObject = null;
+    private GameObject inhabitedCrystal = null;
+    private bool spriteIsMoving = false;
+
+    private LightSprite spriteController;
+
+    void Start() {
+        playerCamera = GetComponentInChildren<Camera>();
+        if (playerCamera == null) {
+            playerCamera = Camera.main;
+        }
+        spriteController = GetComponent<LightSprite>();
+    }
+
+    void Update() {
+        CastLookRay();
+    }
+
+    void CastLookRay() {
+        Ray lookRay = playerCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
+        RaycastHit hit;
+
+        if (Physics.Raycast(lookRay, out hit, rayDistance)) {
+            if (hit.collider.CompareTag(LIGHT_CRYSTAL_TAG)) {
+                if (currentLookedAtObject != hit.collider.gameObject) {
+                    if (currentLookedAtObject != null) {
+                        StopLookAtCrystal();
+                    }
+                    LookAtCrystal(hit.collider.gameObject);
+                }
+            }
+            else {
+                StopLookAtCrystal();
+            }
+        }
+        else {
+            StopLookAtCrystal();
+        }
+    }
+
+    void LookAtCrystal(GameObject targetObject) {
+        Outline outline = targetObject.GetComponentInChildren<Outline>();
+        outline.enabled = true;
+        currentLookedAtObject = targetObject;
+    }
+
+    void StopLookAtCrystal() {
+        if (currentLookedAtObject != null) {
+            Outline outline = currentLookedAtObject.GetComponentInChildren<Outline>();
+            outline.enabled = false;
+            currentLookedAtObject = null;
+        }
+    }
+
+    public void OnClick(InputAction.CallbackContext context) {
+        if (!context.performed) {
+            return;
+        }
+        if (spriteIsMoving) {
+            return;
+        }
+
+        bool hasSprite = spriteController.HasSprite();
+        if (hasSprite) {
+            if (currentLookedAtObject != null) {
+                // Throw the sprite into the crystal
+                inhabitedCrystal = currentLookedAtObject;
+                spriteIsMoving = true;
+                spriteController.RemoveSprite();
+                spriteController.MoveSprite(inhabitedCrystal.transform, spriteMoveTime, spriteMoveCurve, () => {
+                    LightCrystal crystal = inhabitedCrystal.GetComponent<LightCrystal>();
+                    crystal.StartGlow();
+                    spriteIsMoving = false;
+                });
+            }
+        }
+        else {
+            // Return the sprite back to the player
+            spriteIsMoving = true;
+            spriteController.ReturnSprite(spriteMoveTime, spriteMoveCurve, () => {
+                spriteIsMoving = false;
+                spriteController.GiveSprite();
+            });
+            LightCrystal crystal = inhabitedCrystal.GetComponent<LightCrystal>();
+            crystal.StopGlow();
+            inhabitedCrystal = null;
+        }
+    }
+}
