@@ -10,17 +10,10 @@ public class lavaDeath : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-           // StartCoroutine(playDeathSound());
             audio.Play();
             print("restart");
         }
     }
 
-    private IEnumerator playDeathSound()
-    {
-        print("started");
-        yield return new WaitForSeconds(0.1f);
-        audio.Play();
-        print("death audio");
-    }
+   
 }
