@@ -1,0 +1,26 @@
+This free lava shader adds a dynamic and visually striking lava effect to your 3D environment. Designed for use in Unity, this shader simulates the glowing, flowing appearance of molten lava with realistic textures and animations.
+
+Features:
+
+Realistic Lava Flow: Simulates the movement and texture of flowing lava, including surface waves.
+Dynamic Lighting: Includes glowing emissive properties to give the lava a realistic heat-based illumination.
+Customizable Textures: Allows for adjustments to texture maps for color, intensity, and pattern variations.
+Performance Optimized: Designed to run efficiently on a variety of hardware configurations, balancing visual fidelity with performance.
+Easy Integration: Simple setup and integration into existing projects, with straightforward documentation to guide you through the process.
+
+Lava :
+Lava Scale : Size of texture
+VoronoiScale = Lava Wave
+VoronoiAO = Wave Height
+VoronoiAmount = all above mix
+NoiseScale = obsidian amount
+NoiseSpeed = obsidian speed
+NoiseAmount = obsidian amount
+[[Power = cooled rock ratio]]
+
+Magma : 
+Magma Scale = Size of texture
+
+Flame :
+Noise Speed =Dissolve speed
+Dissolve Value = Dissolve Rate

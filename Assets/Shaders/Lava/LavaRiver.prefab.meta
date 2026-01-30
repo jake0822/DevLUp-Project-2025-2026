@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4c84835cacc985b4db6fdbabe3fa68e1
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 292492
+  packageName: Free Lava Shader
+  packageVersion: 1.0
+  assetPath: Assets/Shaders/Lava/LavaRiver.prefab
+  uploadId: 684944
