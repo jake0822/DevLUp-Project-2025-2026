@@ -13,7 +13,14 @@ public class Worm : MonoBehaviour
     [SerializeField] private Vector3 segmentRotationOffset;
 
     [SerializeField] private GameObject head;
-    [SerializeField] private List<GameObject> segments = new List<GameObject>();
+    [SerializeField] private GameObject segmentModel;
+    [SerializeField] private int segmentCount = 10;
+
+    [SerializeField] private AnimationCurve segmentSizeCurve;
+    
+    private List<GameObject> segments = new List<GameObject>();
+
+    private Vector3 headPositionOffset;
 
     private Vector3 prevPosition;
     private Queue<(Vector3, Quaternion)> pastTransforms = new Queue<(Vector3, Quaternion)>();
@@ -21,29 +28,39 @@ public class Worm : MonoBehaviour
 
     void Start()
     {
-        positionQueueSize = segmentMoveDelay * (segments.Count + 1);
+        headPositionOffset = head.transform.localPosition;
+
+        // Create the segments
+        for (int i = 0; i < segmentCount; i++) {
+            GameObject segmentObject = Instantiate(segmentModel);
+            segmentObject.transform.localScale = Vector3.one * segmentSizeCurve.Evaluate((float)i / segmentCount);
+            segments.Add(segmentObject);
+        }
+
+        positionQueueSize = segmentMoveDelay * (segmentCount+1);
     }
 
-    void Update()
-    {   
-        // Update head position
-        head.transform.position = transform.position;
-        
-        // Update head rotation
-        Vector3 lookDirection = prevPosition - transform.position;
-        lookDirection.Normalize();
-        lookDirection.y = 0f;
-        head.transform.eulerAngles = segmentRotationOffset;
-        head.transform.Rotate(lookDirection);
-    }
-
-    void FixedUpdate()
+    void UpdateHead()
     {
-        agent.SetDestination(playerTransform.position);
+        // Update head position
+        head.transform.position = transform.position + headPositionOffset;
 
+        // Update head rotation
+        Vector3 lookDirection = transform.position - prevPosition;
+        //lookDirection.y = 0f;
+        if (lookDirection.sqrMagnitude > 0.0001f)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(lookDirection);
+            targetRotation *= Quaternion.Euler(segmentRotationOffset);
+            head.transform.rotation = targetRotation;
+        }
+    }
+
+    void UpdateSegments()
+    {
         for (int i = 0; i < segments.Count; i++)
         {
-            var segment = segments[segments.Count-i-1];
+            var segment = segments[segments.Count - i - 1];
             int index = (i + 1) * segmentMoveDelay;
             if (index >= pastTransforms.Count)
             {
@@ -60,6 +77,20 @@ public class Worm : MonoBehaviour
         {
             pastTransforms.Dequeue();
         }
-        pastTransforms.Enqueue((transform.position, head.transform.rotation));
+        pastTransforms.Enqueue((head.transform.position, head.transform.rotation));
+        prevPosition = transform.position;
+    }
+
+
+    void FixedUpdate()
+    {   
+        // Update pathfinding
+        agent.SetDestination(playerTransform.position);
+        UpdateSegments();
+    }
+
+    void Update()
+    {
+        UpdateHead();
     }
 }
