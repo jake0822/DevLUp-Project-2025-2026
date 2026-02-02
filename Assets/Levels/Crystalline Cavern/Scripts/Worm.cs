@@ -29,11 +29,12 @@ public class Worm : MonoBehaviour
     void Start()
     {
         headPositionOffset = head.transform.localPosition;
+        float segmentScaleFactor = transform.localScale.x;
 
         // Create the segments
         for (int i = 0; i < segmentCount; i++) {
             GameObject segmentObject = Instantiate(segmentModel);
-            segmentObject.transform.localScale = Vector3.one * segmentSizeCurve.Evaluate((float)i / segmentCount);
+            segmentObject.transform.localScale = Vector3.one * segmentSizeCurve.Evaluate((float)i / segmentCount) * segmentScaleFactor;
             segments.Add(segmentObject);
         }
 
