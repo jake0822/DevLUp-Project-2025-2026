@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4e63dfed9b9057c4cb3e9fada2225efa
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 292492
+  packageName: Free Lava Shader
+  packageVersion: 1.0
+  assetPath: Assets/Shaders/Magma/Rock.prefab
+  uploadId: 684944

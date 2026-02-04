@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 3d1ef0dcd6ece7f4abdf37ad91441397
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 292492
+  packageName: Free Lava Shader
+  packageVersion: 1.0
+  assetPath: Assets/Shaders/ShaderPack.txt
+  uploadId: 684944
