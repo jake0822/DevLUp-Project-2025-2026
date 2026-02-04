@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 40ac17c208788914bab093fb00c04bfc
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 292492
+  packageName: Free Lava Shader
+  packageVersion: 1.0
+  assetPath: Assets/Shaders/TerrainTex(Delete)/Materials/Skybox.mat
+  uploadId: 684944

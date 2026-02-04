@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a37bb356f69bff140b566b6d74077693
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 112000000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 292492
+  packageName: Free Lava Shader
+  packageVersion: 1.0
+  assetPath: Assets/Scenes/Demo/LightingData.asset
+  uploadId: 684944

@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.PlayerLoop;
 
 public class DialogSystem : MonoBehaviour
@@ -12,6 +13,7 @@ public class DialogSystem : MonoBehaviour
     public bool canGoNext = false;
 
     public int activeIndex = 0;
+    public bool skip = false;
 
     private void Update()
     {
@@ -25,23 +27,35 @@ public class DialogSystem : MonoBehaviour
         canGoNext = false;
         int i = 0;
         activeText.text = string.Empty;
+        skip = false;
         while(i < text.Length)
         {
             activeText.text += text[i];
             i++;
+            if (skip)
+            {
+                activeText.text = text;
+                break;
+            }
             yield return new WaitForSeconds(textspeed);
+            
         }
+        skip = false;
         canGoNext = true;
         activeIndex++;
     }
-    public void nextDialog()
+    
+    public void nextDialog(InputAction.CallbackContext context)
     {
-        if(canGoNext && activeIndex < DialogLines.Length)
-            StartCoroutine(typeDialog(DialogLines[activeIndex]));
-        else
+        if (context.performed)
         {
-            print("No active Dialog");
-
+            if (canGoNext && activeIndex < DialogLines.Length)
+                StartCoroutine(typeDialog(DialogLines[activeIndex]));
+            else
+            {
+                print("No active Dialog");
+                skip = true;
+            }
         }
             
     }
