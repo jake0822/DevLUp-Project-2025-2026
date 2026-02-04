@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     private float radius;
 
     private bool gliding = false;
+    public bool canGlide = true;
 
     [HideInInspector] public bool _grounded = false;
     public bool coyoteJump = false; //allows buffered jump
@@ -82,7 +83,7 @@ public class PlayerController : MonoBehaviour
     {
         // print(_externalMomentum);
         _grounded = isGrounded(); //checks if the player is grounded
-        if (_grounded && gliding)
+        if (_grounded && gliding && canGlide)
         {
             ToggleGlide();
         }
@@ -146,7 +147,7 @@ public class PlayerController : MonoBehaviour
             _velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity); //applies jump force
             coyoteJump = false;
         }
-        else if (!_grounded && context.performed)
+        else if (!_grounded && context.performed && canGlide)
         {
             ToggleGlide();
         }
