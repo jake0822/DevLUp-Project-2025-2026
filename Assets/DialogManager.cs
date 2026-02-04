@@ -36,7 +36,7 @@ public class DialogManager : MonoBehaviour
 
     public void startDialog(InputAction.CallbackContext context)
     {
-        if (context.performed && Time.timeScale != 0 && !inDialog)
+        if (context.performed && Time.timeScale != 0 && !inDialog && inCollider)
         {
             inDialog = true;
             DialogPanel.SetActive(true);
@@ -44,7 +44,8 @@ public class DialogManager : MonoBehaviour
            
             ds.canGoNext = true;
             Text.enabled = false;
-            ds.nextDialog();
+            context = new InputAction.CallbackContext();
+            ds.nextDialog(context);
         }
     }
 }
