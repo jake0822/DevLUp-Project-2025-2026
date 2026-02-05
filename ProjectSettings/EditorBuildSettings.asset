@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/CanyonCollapse.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
     path: Assets/Levels/Volcano Escape/Scenes/VolcanoScene.unity
@@ -14,6 +14,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Levels/Stone Cold/Scenes/LevelWithArt.unity
     guid: f75576c59212df3498dc230b3ecfe1d1
+  - enabled: 1
+    path: Assets/Levels/Hub Level/Scenes/Main.unity
+    guid: 0a4fd7e507934ea44a81ed28b2622abe
+  - enabled: 1
+    path: Assets/Levels/Crystalline Cavern/Scenes/CaveScene.unity
+    guid: 34e5491f8d5e8685183bb024fdd941fc
+  - enabled: 1
+    path: Assets/Levels/Oasis/Scenes/Oasis.unity
+    guid: 0e373f0e784b10e469a8378ef80ac1ec
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
