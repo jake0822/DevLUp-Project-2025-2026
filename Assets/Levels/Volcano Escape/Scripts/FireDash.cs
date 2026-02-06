@@ -36,7 +36,8 @@ public class FireDash: MonoBehaviour {
     }
 
     void Update() {
-        if (isDashing) {
+        if (isDashing)
+        {
             float t = dashTimer / dashDuration;
             float dashStrengthT = dashStrengthCurve.Evaluate(t) * Time.deltaTime;
             characterController.Move(dashVector * dashStrengthT);
@@ -46,12 +47,17 @@ public class FireDash: MonoBehaviour {
             playerFpsCamera.Lens.FieldOfView = fov;
 
             dashTimer += Time.deltaTime;
-            if (dashTimer >= dashDuration) {
+            if (dashTimer >= dashDuration)
+            {
                 isDashing = false;
             }
         }
-        else if (!characterController.isGrounded) {
+        else if (!characterController.isGrounded)
+        {
             canDash = true;
+        }
+        else if (characterController.isGrounded) {
+            canDash = false;
         }
     }
 
