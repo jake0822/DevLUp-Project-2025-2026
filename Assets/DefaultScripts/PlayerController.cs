@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
         _controller = GetComponent<CharacterController>();
         
         castHeight = (_collider.height / 2 * transform.localScale.y)-_collider.height*0.25f;
+        Debug.Log("Cast height: " + castHeight);
         radius = _collider.radius;
         
         Cursor.visible = false;
