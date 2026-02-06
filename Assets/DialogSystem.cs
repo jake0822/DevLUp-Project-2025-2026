@@ -11,6 +11,8 @@ public class DialogSystem : MonoBehaviour
     public float textspeed = 0.1f;
 
     public bool canGoNext = false;
+    public bool finishedDialogue = false;
+
 
     public int activeIndex = 0;
     public bool skip = false;
@@ -51,10 +53,14 @@ public class DialogSystem : MonoBehaviour
         {
             if (canGoNext && activeIndex < DialogLines.Length)
                 StartCoroutine(typeDialog(DialogLines[activeIndex]));
+            else if (activeIndex >= DialogLines.Length) {
+                finishedDialogue = true;
+            }
             else
             {
                 print("No active Dialog");
                 skip = true;
+
             }
         }
             

@@ -48,4 +48,11 @@ public class DialogManager : MonoBehaviour
             ds.nextDialog(context);
         }
     }
+
+    public bool hasCompletedDialgue() {
+        if (ds.finishedDialogue) {
+            return true;
+        }
+        return false;
+    }
 }
