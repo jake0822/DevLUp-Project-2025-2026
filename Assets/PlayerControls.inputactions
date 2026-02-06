@@ -279,13 +279,11 @@
                 {
                     "name": "",
                     "id": "a615606c-d466-4ee5-b817-4540f0826803",
-                    "id": "1b577537-68a0-4ded-b5d3-aaa610af392d",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "LeftClick",
-                    "action": "LightThrow",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -297,6 +295,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "LightDash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "79a0f6ae-edc9-41f6-9964-3439ef37bc4d",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LightThrow",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
