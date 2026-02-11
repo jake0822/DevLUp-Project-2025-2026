@@ -44,8 +44,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 0.9819509, g: 0.36011142, b: 0.32371345, a: 1}
-  m_Intensity: 5
-  m_Range: 25
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -191,6 +191,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightIntensity: 50
   glowAnimDuration: 0.5
+  emissionStrength: 4
+  lightRange: 25
   crystalMesh: {fileID: 3201656027011058615}
 --- !u!1001 &2576716962825805838
 PrefabInstance:

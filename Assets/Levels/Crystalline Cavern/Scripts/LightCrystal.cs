@@ -13,6 +13,7 @@ public class LightCrystal : MonoBehaviour {
     [SerializeField] private float lightIntensity = 20.0f;
     [SerializeField] private float glowAnimDuration = 0.5f;
     [SerializeField] private float emissionStrength = 4.0f;
+    [SerializeField] private float lightRange = 25.0f;
 
     [SerializeField] private Renderer crystalMesh;
 
@@ -21,6 +22,7 @@ public class LightCrystal : MonoBehaviour {
     private GlowState glowState = GlowState.IDLE;
     private float glowAnimTimer = 0.0f;
     private float baseLightIntensity;
+    private float baseLightRange;
     
     private Color baseEmissionColor;
 
@@ -34,6 +36,7 @@ public class LightCrystal : MonoBehaviour {
         lightObject = GetComponentInChildren<Light>();
         baseLightIntensity = lightObject.intensity;
         baseEmissionColor = crystalMesh.material.GetColor("_EmissionColor");
+        baseLightRange = lightObject.range;
     }
 
     void Update() {
@@ -44,10 +47,13 @@ public class LightCrystal : MonoBehaviour {
                 lightObject.intensity = MapRange(glowAnimTimer, 0, glowAnimDuration, baseLightIntensity, lightIntensity);
                 float emission = MapRange(glowAnimTimer, 0, glowAnimDuration, 1, emissionStrength);
                 crystalMesh.material.SetColor("_EmissionColor", baseEmissionColor * emission);
+                lightObject.range = MapRange(glowAnimTimer, 0, glowAnimDuration, baseLightRange, lightRange);
             } else if (glowState == GlowState.UNGLOW) {
                 lightObject.intensity = MapRange(glowAnimTimer, 0, glowAnimDuration, lightIntensity, baseLightIntensity);
                 float emission = MapRange(glowAnimTimer, 0, glowAnimDuration, emissionStrength, 1);
                 crystalMesh.material.SetColor("_EmissionColor", baseEmissionColor * emission);
+                lightObject.range = MapRange(glowAnimTimer, 0, glowAnimDuration, lightRange, baseLightRange);
+
             }
 
             if (glowAnimTimer >= glowAnimDuration) {

@@ -44,8 +44,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 5
-  m_Range: 25
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -189,8 +189,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56b659b5d17746ce885f5ec41412004f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightIntensity: 50
+  lightIntensity: 10
   glowAnimDuration: 0.5
+  emissionStrength: 4
+  lightRange: 25
   crystalMesh: {fileID: 4134965600022033442}
 --- !u!1 &4852913419057805431
 GameObject:
