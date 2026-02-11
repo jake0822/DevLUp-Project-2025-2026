@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Windows;
 
 
 enum GlowState {
@@ -26,12 +27,6 @@ public class LightCrystal : MonoBehaviour {
     
     private Color baseEmissionColor;
 
-
-    float MapRange(float input, float lower, float upper, float toLower, float toUpper) {
-        float t = Mathf.InverseLerp(lower, upper, input);
-        return Mathf.Lerp(toLower, toUpper, t);
-    }
-
     void Start() {
         lightObject = GetComponentInChildren<Light>();
         baseLightIntensity = lightObject.intensity;
@@ -42,18 +37,19 @@ public class LightCrystal : MonoBehaviour {
     void Update() {
         if (glowState != GlowState.IDLE) {
             glowAnimTimer = Mathf.Clamp(glowAnimTimer + Time.deltaTime, 0, glowAnimDuration);
+            float t = Mathf.InverseLerp(0, glowAnimDuration, glowAnimTimer);
 
             if (glowState == GlowState.GLOW) {
-                lightObject.intensity = MapRange(glowAnimTimer, 0, glowAnimDuration, baseLightIntensity, lightIntensity);
-                float emission = MapRange(glowAnimTimer, 0, glowAnimDuration, 1, emissionStrength);
+                lightObject.intensity = Mathf.Lerp(baseLightIntensity, lightIntensity, t);
+                lightObject.range = Mathf.Lerp(baseLightRange, lightRange, t);
+                float emission = Mathf.Lerp(1, emissionStrength, t);
                 crystalMesh.material.SetColor("_EmissionColor", baseEmissionColor * emission);
-                lightObject.range = MapRange(glowAnimTimer, 0, glowAnimDuration, baseLightRange, lightRange);
-            } else if (glowState == GlowState.UNGLOW) {
-                lightObject.intensity = MapRange(glowAnimTimer, 0, glowAnimDuration, lightIntensity, baseLightIntensity);
-                float emission = MapRange(glowAnimTimer, 0, glowAnimDuration, emissionStrength, 1);
-                crystalMesh.material.SetColor("_EmissionColor", baseEmissionColor * emission);
-                lightObject.range = MapRange(glowAnimTimer, 0, glowAnimDuration, lightRange, baseLightRange);
 
+            } else if (glowState == GlowState.UNGLOW) {
+                lightObject.intensity = Mathf.Lerp(lightIntensity, baseLightIntensity, t);
+                lightObject.range = Mathf.Lerp(lightRange, baseLightRange, t);
+                float emission = Mathf.Lerp(emissionStrength, 1, t);
+                crystalMesh.material.SetColor("_EmissionColor", baseEmissionColor * emission);
             }
 
             if (glowAnimTimer >= glowAnimDuration) {
