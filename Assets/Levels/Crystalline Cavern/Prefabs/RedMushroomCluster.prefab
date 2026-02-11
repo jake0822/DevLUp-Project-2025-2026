@@ -1,0 +1,270 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3367102772534928391
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4979224777458698449}
+  m_Layer: 0
+  m_Name: RedMushroomCluster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4979224777458698449
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3367102772534928391}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7634579434915964381}
+  - {fileID: 7640674787473337444}
+  - {fileID: 7982741766013932333}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &7584866799658874054
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4979224777458698449}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.075
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.075
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.075
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.054
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.002
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.269
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6889425
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7167269
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.027522532
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.10441908
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -83.371
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -104.504
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 115.228
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_Name
+      value: RedMushroom (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+--- !u!4 &7982741766013932333 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+  m_PrefabInstance: {fileID: 7584866799658874054}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7891318380397644687
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4979224777458698449}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.075
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.075
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.075
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.289
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.065000005
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.208
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.68903226
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.70665854
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.025175152
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.15885335
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -74.977
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 100.942
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_Name
+      value: RedMushroom (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+--- !u!4 &7640674787473337444 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+  m_PrefabInstance: {fileID: 7891318380397644687}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7960605981918249526
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4979224777458698449}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.075
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.075
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.075
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.051
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.032
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.135
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.627673
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.76972264
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.0735744
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.090225175
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -107.638
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -49.75
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 48.384995
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+      propertyPath: m_Name
+      value: RedMushroom
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+--- !u!4 &7634579434915964381 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4abde40a2dafc0a6abf92096116d6dbc, type: 3}
+  m_PrefabInstance: {fileID: 7960605981918249526}
+  m_PrefabAsset: {fileID: 0}
