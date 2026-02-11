@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 753bf2dc69c25e44e9987f8830b45886
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 85098
+  packageName: RunesAndPortals
+  packageVersion: 5.0
+  assetPath: Assets/Levels/Hub Level/Assets/Materials/Mat_Portal_Effect.mat
+  uploadId: 609286

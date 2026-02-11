@@ -3610,6 +3610,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: -804731622281664130, guid: c5854e9a762113a4f8b6b46f78f6a5fa, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 753bf2dc69c25e44e9987f8830b45886, type: 2}
     - target: {fileID: 919132149155446097, guid: c5854e9a762113a4f8b6b46f78f6a5fa, type: 3}
       propertyPath: m_Name
       value: HubForest

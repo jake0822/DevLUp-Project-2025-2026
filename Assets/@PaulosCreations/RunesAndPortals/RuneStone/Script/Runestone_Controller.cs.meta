@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 85dd09458a73c0e4ebde37034f2b1fb3
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 85098
+  packageName: RunesAndPortals
+  packageVersion: 5.0
+  assetPath: Assets/@PaulosCreations/RunesAndPortals/RuneStone/Script/Runestone_Controller.cs
+  uploadId: 609286

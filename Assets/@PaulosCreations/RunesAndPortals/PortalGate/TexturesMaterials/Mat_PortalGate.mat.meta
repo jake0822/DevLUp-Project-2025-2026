@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f0ca4c361313d7d46a9868a9109186af
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 85098
+  packageName: RunesAndPortals
+  packageVersion: 5.0
+  assetPath: Assets/@PaulosCreations/RunesAndPortals/PortalGate/TexturesMaterials/Mat_PortalGate.mat
+  uploadId: 609286
