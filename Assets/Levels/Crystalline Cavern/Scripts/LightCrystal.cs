@@ -12,8 +12,10 @@ public class LightCrystal : MonoBehaviour {
 
     [SerializeField] private float lightIntensity = 20.0f;
     [SerializeField] private float glowAnimDuration = 0.5f;
+    [SerializeField] private float emissionStrength = 4.0f;
 
     [SerializeField] private Renderer crystalMesh;
+
 
     private Light lightObject;
     private GlowState glowState = GlowState.IDLE;
@@ -40,11 +42,11 @@ public class LightCrystal : MonoBehaviour {
 
             if (glowState == GlowState.GLOW) {
                 lightObject.intensity = MapRange(glowAnimTimer, 0, glowAnimDuration, baseLightIntensity, lightIntensity);
-                float emission = MapRange(glowAnimTimer, 0, glowAnimDuration, 0, 3);
+                float emission = MapRange(glowAnimTimer, 0, glowAnimDuration, 1, emissionStrength);
                 crystalMesh.material.SetColor("_EmissionColor", baseEmissionColor * emission);
             } else if (glowState == GlowState.UNGLOW) {
                 lightObject.intensity = MapRange(glowAnimTimer, 0, glowAnimDuration, lightIntensity, baseLightIntensity);
-                float emission = MapRange(glowAnimTimer, 0, glowAnimDuration, 3, 0);
+                float emission = MapRange(glowAnimTimer, 0, glowAnimDuration, emissionStrength, 1);
                 crystalMesh.material.SetColor("_EmissionColor", baseEmissionColor * emission);
             }
 
