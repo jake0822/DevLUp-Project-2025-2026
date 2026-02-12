@@ -25,6 +25,14 @@ public class Glide : MonoBehaviour
     private Vector3 boostVelocity;
     private bool boosting;
 
+    [Header("Boost Decay")]
+    [SerializeField] private float boostControlLock = 0.2f; // how long boost stays strong
+    [SerializeField] private float airDamping = 4f;         // how fast horizontal slows after
+
+    private float boostLockTimer;
+    private bool boostActive;
+
+
 
     private void Start()
     {
@@ -50,21 +58,52 @@ public class Glide : MonoBehaviour
 
         if (context.performed && !player._grounded && canGlideBoost)
         {
-            print("glide boost");
             canGlideBoost = false;
-            boosting = true;
-            boostTimer = boostDuration;
 
-            // Forward direction boost
             Vector3 forward = transform.forward;
+            Vector3 launch = (forward * boostForce) + (Vector3.up * boostUpwardForce);
 
-            boostVelocity = forward * boostForce;
-            boostVelocity.y = boostUpwardForce; // small lift
+            player._velocity += launch;
+
+            boostActive = true;
+            boostLockTimer = boostControlLock;
         }
     }
 
     private void Update()
     {
+        if (boostActive)
+        {
+            boostLockTimer -= Time.deltaTime;
+
+            if (boostLockTimer <= 0f)
+            {
+                // Smoothly damp horizontal velocity in air
+                if (!player._grounded)
+                {
+                    Vector3 horizontal = new Vector3(player._velocity.x, 0f, player._velocity.z);
+                    horizontal = Vector3.Lerp(horizontal, Vector3.zero, airDamping * Time.deltaTime);
+
+                    player._velocity.x = horizontal.x;
+                    player._velocity.z = horizontal.z;
+                }
+                else
+                {
+                    // Fully stop once grounded
+                    player._velocity.x = 0f;
+                    player._velocity.z = 0f;
+                    boostActive = false;
+                }
+
+                // Stop tracking once nearly zero
+                if (new Vector3(player._velocity.x, 0f, player._velocity.z).magnitude < 0.1f)
+                {
+                    boostActive = false;
+                }
+            }
+        }
+
+
         if (player._grounded) 
         {
             canGlideBoost = true;
@@ -96,30 +135,6 @@ public class Glide : MonoBehaviour
             // Reset player gravity and horizontal speed
             player.gravity = ogGravity;
             player.speed = ogSpeed;
-        }
-
-        // Apply boost movement
-        if (boosting)
-        {
-            boostTimer -= Time.deltaTime;
-
-            // Apply boost velocity
-            player._velocity += boostVelocity * Time.deltaTime;
-
-            // Smooth decay
-            boostVelocity = Vector3.Lerp(boostVelocity, Vector3.zero, boostDrag * Time.deltaTime);
-
-            if (boostTimer <= 0f)
-            {
-                boosting = false;
-
-                // 🔥 Reset horizontal velocity so no drifting remains
-                player._velocity.x = 0f;
-                player._velocity.z = 0f;
-
-                // Optional: also clear boostVelocity completely
-                boostVelocity = Vector3.zero;
-            }
         }
 
 

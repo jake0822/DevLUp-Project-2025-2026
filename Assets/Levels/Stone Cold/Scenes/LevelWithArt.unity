@@ -2333,10 +2333,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1778174837}
   cc: {fileID: 1778174838}
-  boostForce: 70
-  boostUpwardForce: 150
+  boostForce: 25
+  boostUpwardForce: 15
   boostDuration: 0.2
   boostDrag: 5
+  boostControlLock: 0.2
+  airDamping: 4
 --- !u!1 &1912670717
 GameObject:
   m_ObjectHideFlags: 0
