@@ -110,7 +110,6 @@ public class Worm : MonoBehaviour
     void WanderUpdate()
     {
         float distanceToTarget = Vector3.Distance(targetPosition, transform.position);
-        Debug.Log("Distance to target: " + distanceToTarget);
         if (distanceToTarget < wanderPointDistanceThreshold)
         {
             targetPosition = GetRandomWanderPosition();

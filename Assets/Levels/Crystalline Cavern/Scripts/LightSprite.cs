@@ -1,6 +1,4 @@
 using System;
-using TreeEditor;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 
@@ -11,9 +9,9 @@ using UnityEngine;
 public class LightSprite : MonoBehaviour {
     private bool hasSprite = true;
 
-    private Transform spriteTransform;
-    private Transform spriteParent;
-    private Transform spriteReturnTransform;
+    [SerializeField] private Transform spriteParent;
+    [SerializeField] private Transform spriteTransform;
+    [SerializeField] private Transform spriteReturnTransform;
     private Light spriteLight;
 
     private Vector3 animStartPos;
@@ -48,6 +46,7 @@ public class LightSprite : MonoBehaviour {
         animDuration = duration;
         animCurve = curve;
         animFinishCallback = arriveCallback;
+        spriteTransform.rotation = destination.rotation;
         spriteTransform.SetParent(null);  // Detach the sprite from the player
     }
 
@@ -68,9 +67,6 @@ public class LightSprite : MonoBehaviour {
     }
 
     void Start() {
-        spriteParent = GetComponent<Transform>();
-        spriteTransform = transform.Find("Sprite");
-        spriteReturnTransform = transform.Find("SpritePosition");
         spriteLight = GetComponentInChildren<Light>();
     }
 
