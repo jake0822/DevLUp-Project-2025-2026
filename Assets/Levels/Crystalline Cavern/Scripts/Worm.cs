@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class Worm : MonoBehaviour
 {
-    [SerializeField] private NavMeshAgent agent;    
+    [SerializeField] private NavMeshAgent agent;
     [SerializeField] private Transform playerTransform;
 
     [SerializeField] private int segmentMoveDelay = 10;  // Physics ticks
@@ -17,7 +17,17 @@ public class Worm : MonoBehaviour
     [SerializeField] private int segmentCount = 10;
 
     [SerializeField] private AnimationCurve segmentSizeCurve;
-    
+
+    [SerializeField] private GameObject wanderPointsParent;
+    [SerializeField] private float wanderPointDistanceThreshold = 1.0f;
+
+    enum State
+    {
+        Wander,
+        ChasePlayer,
+        ChaseCrystal
+    }
+
     private List<GameObject> segments = new List<GameObject>();
 
     private Vector3 headPositionOffset;
@@ -25,6 +35,10 @@ public class Worm : MonoBehaviour
     private Vector3 prevPosition;
     private Queue<(Vector3, Quaternion)> pastTransforms = new Queue<(Vector3, Quaternion)>();
     private int positionQueueSize = -1;
+
+    private State state = State.Wander;
+    private Vector3 targetPosition;
+    private List<Vector3> wanderPoints = new List<Vector3>();
 
     void Start()
     {
@@ -38,7 +52,14 @@ public class Worm : MonoBehaviour
             segments.Add(segmentObject);
         }
 
-        positionQueueSize = segmentMoveDelay * (segmentCount+1);
+        positionQueueSize = segmentMoveDelay * (segmentCount + 1);
+
+        // Create wander points
+        foreach (Transform child in wanderPointsParent.transform)
+        {
+            wanderPoints.Add(child.localPosition);
+        }
+        targetPosition = GetRandomWanderPosition();
     }
 
     void UpdateHead()
@@ -81,17 +102,60 @@ public class Worm : MonoBehaviour
         pastTransforms.Enqueue((head.transform.position, head.transform.rotation));
         prevPosition = transform.position;
     }
+    Vector3 GetRandomWanderPosition()
+    {
+        return wanderPoints[Random.Range(0, wanderPoints.Count)];
+    }
 
+    void WanderUpdate()
+    {
+        float distanceToTarget = Vector3.Distance(targetPosition, transform.position);
+        Debug.Log("Distance to target: " + distanceToTarget);
+        if (distanceToTarget < wanderPointDistanceThreshold)
+        {
+            targetPosition = GetRandomWanderPosition();
+        }
+    }
+
+
+    void ChasePlayerUpdate()
+    {
+        targetPosition = playerTransform.position;
+    }
+
+
+    void ChaseCrystalUpdate()
+    {
+
+    }
 
     void FixedUpdate()
-    {   
-        // Update pathfinding
-        agent.SetDestination(playerTransform.position);
+    {
+        switch (state)
+        {
+            case State.Wander:
+                WanderUpdate();
+                break;
+            case State.ChasePlayer:
+                ChasePlayerUpdate();
+                break;
+            case State.ChaseCrystal:
+                ChaseCrystalUpdate();
+                break;
+        }
+
+        agent.SetDestination(targetPosition);
         UpdateSegments();
     }
 
     void Update()
     {
         UpdateHead();
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawLine(transform.position, targetPosition);
     }
 }

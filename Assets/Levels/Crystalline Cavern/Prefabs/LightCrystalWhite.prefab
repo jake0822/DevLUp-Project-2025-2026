@@ -216,7 +216,7 @@ MonoBehaviour:
   lightIntensity: 10
   glowAnimDuration: 0.5
   emissionStrength: 4
-  lightRange: 25
+  lightRange: 30
   crystalMesh: {fileID: 4134965600022033442}
 --- !u!1 &4852913419057805431
 GameObject:
