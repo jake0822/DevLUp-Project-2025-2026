@@ -38,7 +38,8 @@ public class Worm : MonoBehaviour
 
     private State state = State.Wander;
     private Vector3 targetPosition;
-    private List<Vector3> wanderPoints = new List<Vector3>();
+    private WanderPoint originWanderPoint = null;
+    private WanderPoint targetWanderPoint;
 
     void Start()
     {
@@ -54,12 +55,14 @@ public class Worm : MonoBehaviour
 
         positionQueueSize = segmentMoveDelay * (segmentCount + 1);
 
-        // Create wander points
+        // Choose a random starting wander point
+        List<WanderPoint> wanderPoints = new List<WanderPoint>();
         foreach (Transform child in wanderPointsParent.transform)
         {
-            wanderPoints.Add(child.localPosition);
+            wanderPoints.Add(child.GetComponent<WanderPoint>());
         }
-        targetPosition = GetRandomWanderPosition();
+        targetWanderPoint = wanderPoints[Random.Range(0, wanderPoints.Count)];
+        targetPosition = targetWanderPoint.transform.position;
     }
 
     void UpdateHead()
@@ -102,9 +105,18 @@ public class Worm : MonoBehaviour
         pastTransforms.Enqueue((head.transform.position, head.transform.rotation));
         prevPosition = transform.position;
     }
-    Vector3 GetRandomWanderPosition()
+    
+    void NextWanderPoint()
     {
-        return wanderPoints[Random.Range(0, wanderPoints.Count)];
+        var neighboringPoints = targetWanderPoint.neighbors;
+        WanderPoint nextPoint;
+        // Choose a random neighboring point that isn't the one that we came from
+        do {
+            nextPoint = neighboringPoints[Random.Range(0, neighboringPoints.Count)];
+        } while (nextPoint == originWanderPoint);
+
+        originWanderPoint = targetWanderPoint;
+        targetWanderPoint = nextPoint;
     }
 
     void WanderUpdate()
@@ -112,7 +124,8 @@ public class Worm : MonoBehaviour
         float distanceToTarget = Vector3.Distance(targetPosition, transform.position);
         if (distanceToTarget < wanderPointDistanceThreshold)
         {
-            targetPosition = GetRandomWanderPosition();
+            NextWanderPoint();
+            targetPosition = targetWanderPoint.transform.position;
         }
     }
 
