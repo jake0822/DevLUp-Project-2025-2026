@@ -12,6 +12,10 @@ public class LightSprite : MonoBehaviour {
     [SerializeField] private Transform spriteParent;
     [SerializeField] private Transform spriteTransform;
     [SerializeField] private Transform spriteReturnTransform;
+
+    [Tooltip("The radius at which the sprite will be detected by the worm")]
+    [SerializeField] private float spriteDetectionRadius = 10.0f;
+
     private Light spriteLight;
 
     private Vector3 animStartPos;
@@ -66,6 +70,14 @@ public class LightSprite : MonoBehaviour {
         lightAnimCurve = curve;
     }
 
+    public bool IsDetected(Vector3 point) {
+        return Vector3.Distance(point, spriteTransform.position) <= spriteDetectionRadius;
+    }
+
+    public Vector3 GetPosition() {
+        return spriteTransform.position;
+    }
+
     void Start() {
         spriteLight = GetComponentInChildren<Light>();
     }
@@ -93,5 +105,10 @@ public class LightSprite : MonoBehaviour {
                 spriteLight.intensity = lightAnimBaseIntensity;
             }
         }
+    }
+
+    void OnDrawGizmos() {
+        Gizmos.color = new Color(1.0f, 1.0f, 0.3f, 0.2f);
+        Gizmos.DrawSphere(spriteTransform.position, spriteDetectionRadius);
     }
 }

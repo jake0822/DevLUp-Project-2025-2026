@@ -672,6 +672,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5278268396563590252, guid: 8498e14b1d759024fb989e9cddb05299, type: 3}
+      propertyPath: spriteDetectionRadius
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5540326779935312976, guid: 8498e14b1d759024fb989e9cddb05299, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -934,8 +938,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: -334000983
   m_Radius: 0.5
-  m_Speed: 7
-  m_Acceleration: 8
+  m_Speed: 10
+  m_Acceleration: 12
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -955,7 +959,7 @@ Transform:
   m_GameObject: {fileID: 831577975}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.452, y: 4.16, z: 35.477}
+  m_LocalPosition: {x: 26.73, y: 10.6, z: -29.35}
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -975,12 +979,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 831577976}
-  playerTransform: {fileID: 1832445525}
-  segmentMoveDelay: 11
-  segmentRotationOffset: {x: -90, y: 90, z: 0}
+  lightSprite: {fileID: 1832445526}
   head: {fileID: 2142915232}
   segmentModel: {fileID: 919132149155446097, guid: 4d2f7705bf135e44a99866c7ffd4617d, type: 3}
   segmentCount: 20
+  segmentMoveDelay: 9
+  segmentRotationOffset: {x: -90, y: 90, z: 0}
   segmentSizeCurve:
     serializedVersion: 2
     m_Curve:
@@ -1014,8 +1018,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  arrivalDistanceThreshold: 1
   wanderPointsParent: {fileID: 779562371}
-  wanderPointDistanceThreshold: 1.5
+  loseTargetWaitTime: 3
+  chaseCooldown: 5
 --- !u!4 &860005763 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: eea6f969cc188504398dcfe748d76c82, type: 3}
@@ -1591,7 +1597,7 @@ Transform:
   m_GameObject: {fileID: 1512183003}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.39, y: 8.123, z: 73.93}
+  m_LocalPosition: {x: -27.39, y: 8.666, z: 73.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1896,11 +1902,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7067b4f398f9aa9f2aca8504a411379b, type: 3}
---- !u!4 &1832445525 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4458573104617043183, guid: 8498e14b1d759024fb989e9cddb05299, type: 3}
+--- !u!114 &1832445526 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5278268396563590252, guid: 8498e14b1d759024fb989e9cddb05299, type: 3}
   m_PrefabInstance: {fileID: 662513752}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8735b35a90e95e65dbb97ec71e03444a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1907522785
 GameObject:
   m_ObjectHideFlags: 0
