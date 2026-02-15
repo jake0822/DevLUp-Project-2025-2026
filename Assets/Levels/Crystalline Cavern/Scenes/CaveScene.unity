@@ -650,19 +650,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 992958682567812962, guid: 8498e14b1d759024fb989e9cddb05299, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99508446
+      value: 0.9324018
       objectReference: {fileID: 0}
     - target: {fileID: 992958682567812962, guid: 8498e14b1d759024fb989e9cddb05299, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.09893483
+      value: -0.3510585
       objectReference: {fileID: 0}
     - target: {fileID: 992958682567812962, guid: 8498e14b1d759024fb989e9cddb05299, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.004320425
+      value: 0.08042379
       objectReference: {fileID: 0}
     - target: {fileID: 992958682567812962, guid: 8498e14b1d759024fb989e9cddb05299, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.00042955254
+      value: 0.030280354
       objectReference: {fileID: 0}
     - target: {fileID: 4422401315002873556, guid: 8498e14b1d759024fb989e9cddb05299, type: 3}
       propertyPath: m_Enabled
@@ -981,7 +981,7 @@ MonoBehaviour:
   agent: {fileID: 831577976}
   lightSprite: {fileID: 1832445526}
   head: {fileID: 2142915232}
-  segmentModel: {fileID: 919132149155446097, guid: 4d2f7705bf135e44a99866c7ffd4617d, type: 3}
+  segmentPrefab: {fileID: 5555063987258276957, guid: 64b353ec4887b7e3d97ea47ca147d20e, type: 3}
   segmentCount: 20
   segmentMoveDelay: 9
   segmentRotationOffset: {x: -90, y: 90, z: 0}

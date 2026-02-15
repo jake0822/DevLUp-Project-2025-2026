@@ -8,7 +8,7 @@ public class Worm : MonoBehaviour {
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private LightSprite lightSprite;
     [SerializeField] private GameObject head;
-    [SerializeField] private GameObject segmentModel;
+    [SerializeField] private GameObject segmentPrefab;
 
     [Header("Segment Settings")]
     [SerializeField] private int segmentCount = 10;
@@ -59,7 +59,7 @@ public class Worm : MonoBehaviour {
 
         // Create the segments
         for (int i = 0; i < segmentCount; i++) {
-            GameObject segmentObject = Instantiate(segmentModel);
+            GameObject segmentObject = Instantiate(segmentPrefab);
             segmentObject.transform.localScale = Vector3.one * segmentSizeCurve.Evaluate((float)i / segmentCount) * segmentScaleFactor;
             segments.Add(segmentObject);
         }
