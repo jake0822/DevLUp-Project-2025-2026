@@ -1501,7 +1501,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: -334000983
   m_Radius: 0.5
-  m_Speed: 10
+  m_Speed: 12
   m_Acceleration: 12
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1546,7 +1546,7 @@ MonoBehaviour:
   head: {fileID: 2142915232}
   segmentPrefab: {fileID: 5555063987258276957, guid: 64b353ec4887b7e3d97ea47ca147d20e, type: 3}
   segmentCount: 20
-  segmentMoveDelay: 9
+  segmentMoveDelay: 8
   segmentRotationOffset: {x: -90, y: 90, z: 0}
   segmentSizeCurve:
     serializedVersion: 2
