@@ -644,6 +644,10 @@ PrefabInstance:
       propertyPath: Lens.FieldOfView
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 7504768911179015158, guid: 017ed5ee22b91cf478d1d6997cac1956, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6940287467106301267, guid: 017ed5ee22b91cf478d1d6997cac1956, type: 3}
     m_RemovedGameObjects:
