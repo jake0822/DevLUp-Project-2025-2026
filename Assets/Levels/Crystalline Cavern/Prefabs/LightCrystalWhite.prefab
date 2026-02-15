@@ -215,7 +215,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightIntensity: 10
   glowAnimDuration: 0.5
-  emissionStrength: 4
+  emissionStrength: 10
+  emissionColor: {r: 11.313708, g: 11.313708, b: 11.313708, a: 1}
   lightRange: 30
   crystalMesh: {fileID: 4134965600022033442}
 --- !u!1 &4852913419057805431

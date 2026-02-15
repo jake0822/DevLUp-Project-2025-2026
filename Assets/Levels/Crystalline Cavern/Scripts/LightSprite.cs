@@ -12,9 +12,13 @@ public class LightSprite : MonoBehaviour {
     [SerializeField] private Transform spriteParent;
     [SerializeField] private Transform spriteTransform;
     [SerializeField] private Transform spriteReturnTransform;
+    [SerializeField] private Transform spriteModelTransform;
 
     [Tooltip("The radius at which the sprite will be detected by the worm")]
     [SerializeField] private float spriteDetectionRadius = 10.0f;
+
+    [SerializeField] private float spriteIdleFrequency = 0.5f;
+    [SerializeField] private float spriteIdleAmplitude = 0.05f;
 
     private Light spriteLight;
 
@@ -50,7 +54,6 @@ public class LightSprite : MonoBehaviour {
         animDuration = duration;
         animCurve = curve;
         animFinishCallback = arriveCallback;
-        spriteTransform.rotation = destination.rotation;
         spriteTransform.SetParent(null);  // Detach the sprite from the player
     }
 
@@ -82,10 +85,18 @@ public class LightSprite : MonoBehaviour {
         spriteLight = GetComponentInChildren<Light>();
     }
 
+    void UpdateIdleAnimation() {
+        float yOffset = Mathf.Sin(Time.time * spriteIdleFrequency) * spriteIdleAmplitude;
+        Vector3 newPosition = spriteModelTransform.localPosition;
+        newPosition.y = yOffset;
+        spriteModelTransform.localPosition = newPosition;
+    }
+
     void Update() {
         if (animTimer != -1f) {
             float t = animCurve.Evaluate(animTimer / animDuration);
             spriteTransform.position = Vector3.Lerp(animStartPos, animEndTransform.position, t);
+            spriteTransform.rotation = animEndTransform.rotation;
 
             animTimer += Time.deltaTime;
             if (animTimer >= animDuration) {
@@ -105,6 +116,8 @@ public class LightSprite : MonoBehaviour {
                 spriteLight.intensity = lightAnimBaseIntensity;
             }
         }
+
+        UpdateIdleAnimation();
     }
 
     void OnDrawGizmos() {
