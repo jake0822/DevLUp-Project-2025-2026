@@ -88,25 +88,44 @@ public class Worm : MonoBehaviour {
         }
     }
 
-    void UpdateSegments() {
-        for (int i = 0; i < segments.Count; i++) {
-            var segment = segments[segments.Count - i - 1];
-            int index = (i + 1) * segmentMoveDelay;
-            if (index >= pastTransforms.Count) {
-                continue;
-            }
-
-            var (pos, rot) = pastTransforms.ElementAt(index);
-            segment.transform.position = pos;
-            segment.transform.rotation = rot;
-        }
-
+    void UpdatePastTransforms() {
         // Update past positions queue
         if (pastTransforms.Count == positionQueueSize) {
             pastTransforms.Dequeue();
         }
         pastTransforms.Enqueue((head.transform.position, head.transform.rotation));
         prevPosition = transform.position;
+    }
+
+    void InterpolateSegments() {
+        float interpolationFactor = (Time.time - Time.fixedTime) / Time.fixedDeltaTime;
+        interpolationFactor = Mathf.Clamp01(interpolationFactor);
+        
+        for (int i = 0; i < segments.Count; i++) {
+            var segment = segments[segments.Count - i - 1];
+            int index = (i + 1) * segmentMoveDelay;
+            
+            if (index >= pastTransforms.Count) {
+                continue;
+            }
+            
+            var (currentPos, currentRot) = pastTransforms.ElementAt(index);
+            int prevIndex = index - 1;
+            Vector3 prevPos;
+            Quaternion prevRot;
+            
+            if (prevIndex >= 0) {
+                (prevPos, prevRot) = pastTransforms.ElementAt(prevIndex);
+            } 
+            else {
+                prevPos = currentPos;
+                prevRot = currentRot;
+            }
+            
+            // Interpolate between previous and current target
+            segment.transform.position = Vector3.Lerp(prevPos, currentPos, interpolationFactor);
+            segment.transform.rotation = Quaternion.Slerp(prevRot, currentRot, interpolationFactor);
+        }
     }
 
     void SetFrozen(bool isFrozen) {
@@ -199,12 +218,16 @@ public class Worm : MonoBehaviour {
 
         if (!frozen) {
             agent.SetDestination(targetPosition);
-            UpdateSegments();
+            UpdatePastTransforms();
         }
     }
 
     void Update() {
         UpdateHead();
+
+        if (!frozen) {
+            InterpolateSegments();
+        } 
     }
 
     private void OnDrawGizmos() {
