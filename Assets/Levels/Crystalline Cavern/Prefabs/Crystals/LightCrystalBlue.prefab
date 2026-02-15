@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 670097027205573406}
   - component: {fileID: 1555320278281370744}
   - component: {fileID: 6894486603050207419}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: LightCrystalBlue
   m_TagString: LightCrystal
   m_Icon: {fileID: 0}
@@ -171,7 +171,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightIntensity: 50
   glowAnimDuration: 0.5
-  emissionStrength: 10
   emissionColor: {r: 0.70987976, g: 0.97608465, b: 5.679038, a: 1}
   lightRange: 25
   crystalMesh: {fileID: 1132853004475496273}
@@ -206,7 +205,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5205911772501545240}
   - component: {fileID: 5635060053554084434}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5670109213115712980}
   - component: {fileID: 6169052877001557700}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 670097027205573406}
   - component: {fileID: 1555320278281370744}
   - component: {fileID: 6894486603050207419}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: LightCrystalGreen
   m_TagString: LightCrystal
   m_Icon: {fileID: 0}
