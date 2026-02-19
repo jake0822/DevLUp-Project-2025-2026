@@ -7,6 +7,9 @@ using UnityEngine.PlayerLoop;
 public class DialogSystem : MonoBehaviour
 {
     [SerializeField] private string[] DialogLines;
+    [SerializeField] private AudioClip[] DialogAudio;
+    public AudioSource audio;
+
     public TextMeshProUGUI activeText;
     public float textspeed = 0.1f;
 
@@ -23,6 +26,10 @@ public class DialogSystem : MonoBehaviour
     IEnumerator typeDialog(string text)
     {
         if (!Application.isPlaying) yield break;
+
+
+        audio.clip = DialogAudio[activeIndex];
+        audio.Play();
 
         canGoNext = false;
         int i = 0;
