@@ -119,6 +119,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1338886851248694645}
+  - component: {fileID: 5807192323710842996}
   m_Layer: 0
   m_Name: StalagtiteGroup1
   m_TagString: Untagged
@@ -145,6 +146,22 @@ Transform:
   - {fileID: 4537360006259297161}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &5807192323710842996
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6941683037944977851}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.935, y: 1.5, z: 1.685}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -1.81, y: 0.98, z: 0.48}
+  m_TimeToStationary: 0.5
 --- !u!1001 &6680424569962384170
 PrefabInstance:
   m_ObjectHideFlags: 0

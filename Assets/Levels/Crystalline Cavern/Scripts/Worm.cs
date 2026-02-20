@@ -193,7 +193,7 @@ public class Worm : MonoBehaviour {
                 ToWanderState();
             }
         }
-        else if (lightSprite.IsDetected(head.transform.position)) {
+        else if (lightSprite.IsDetected(head.transform.position) && !lightSprite.IsInCrystal()) {
             SetTargetPosition(lightSprite.GetPosition());
             stateChangeTimer = loseTargetWaitTime;
             SetFrozen(false);

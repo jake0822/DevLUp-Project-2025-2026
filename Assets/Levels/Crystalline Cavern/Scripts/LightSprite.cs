@@ -7,8 +7,6 @@ using UnityEngine;
     the intensity of its light.
 */
 public class LightSprite : MonoBehaviour {
-    private bool hasSprite = true;
-
     [SerializeField] private Transform spriteParent;
     [SerializeField] private Transform spriteTransform;
     [SerializeField] private Transform spriteReturnTransform;
@@ -20,6 +18,8 @@ public class LightSprite : MonoBehaviour {
     [SerializeField] private float spriteIdleFrequency = 0.5f;
     [SerializeField] private float spriteIdleAmplitude = 0.05f;
 
+    private bool hasSprite = true;
+    private bool inCrystal = false;
     private Light spriteLight;
 
     private Vector3 animStartPos;
@@ -45,6 +45,15 @@ public class LightSprite : MonoBehaviour {
 
     public void RemoveSprite() {
         hasSprite = false;
+    }
+
+    public void SetInCrystal(bool state) {
+        inCrystal = state;
+    }
+
+    public bool IsInCrystal()
+    {
+        return inCrystal;
     }
 
     public void MoveSprite(Transform destination, float duration, AnimationCurve curve, Action arriveCallback = null) {
