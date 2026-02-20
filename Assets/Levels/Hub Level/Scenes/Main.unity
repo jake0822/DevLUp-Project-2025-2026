@@ -5116,6 +5116,75 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: DialogAudio.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: DialogLines.Array.size
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogLines.Array.data[0]'
+      value: 'Hmm. Oh! You! A good wizard, finally! '
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogLines.Array.data[1]'
+      value: How lucky am I that you would travel to my realm out of coincidence.
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogLines.Array.data[2]'
+      value: This land scarcely receives travelers.
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogLines.Array.data[3]'
+      value: " Actually\u2026I don't know that we have ever received\u2026 "
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogLines.Array.data[4]'
+      value: "Well it has been a while.. forever\u2026since I have seen one\u2026heh."
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogLines.Array.data[5]'
+      value: "Anyhow! You may be able to help me if it wouldn\u2019t be too much
+        trouble."
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogLines.Array.data[6]'
+      value: As you can see, I am trapped.
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogLines.Array.data[7]'
+      value: 'The Evil Wizard, the menace that he is, ripped my '
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogLines.Array.data[8]'
+      value: elemental children from their dwellings and scattered them across the
+        land.
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogLines.Array.data[9]'
+      value: In most cases, I would be there to help my offspring and pulverize the
+        demon.
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogLines.Array.data[10]'
+      value: But he trapped me in this  before his assault, and I simply cannot pry
+        myself free.
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogLines.Array.data[11]'
+      value: I need you-or I need your help rather.
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogLines.Array.data[12]'
+      value: My children act like small babies, they cannot sustain themselves without
+        my guidance. So please, my good wizard.
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogLines.Array.data[13]'
+      value: Find my babes and help them, and free me from this horrible prison.
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7900900031532646435, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
     m_RemovedGameObjects: []
