@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e33f1e8091de82148acee723c2ccf018
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 170798
+  packageName: Sherbb's Particle Collection
+  packageVersion: 1.0
+  assetPath: Assets/Sherbbs Particle Collection/Materials/VertexUnlitDiffuseNoMaskAdditive.mat
+  uploadId: 379554
