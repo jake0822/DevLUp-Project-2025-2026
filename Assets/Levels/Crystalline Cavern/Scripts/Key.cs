@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Key : MonoBehaviour {
@@ -11,6 +12,8 @@ public class Key : MonoBehaviour {
 
     void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Player")) {
+            PlayerKeys keyHandler = other.gameObject.GetComponent<PlayerKeys>();
+            keyHandler.AddKey();
             Debug.Log("key collected");
             Destroy(gameObject);
         }
