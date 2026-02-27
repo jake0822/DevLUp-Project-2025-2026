@@ -764,6 +764,40 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -257278029260952120, guid: 31a8fe4a3c00f09e2835962653f0bb67, type: 3}
+--- !u!114 &439782786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439782781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff3d95ca5c1b6294b81f957e783c9070, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lava: {fileID: 1435606139}
+--- !u!65 &439782787
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439782781}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 8.54, y: 8.69, z: 1.5262725}
+  m_Center: {x: 1.0902293, y: 0.8675083, z: 0.82}
 --- !u!4 &551721044 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3611742105917704305, guid: 017ed5ee22b91cf478d1d6997cac1956, type: 3}
@@ -1892,6 +1926,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 23715fada5fb028429ce546a0e732168, type: 2}
+    - target: {fileID: -4699073531199927196, guid: 31a8fe4a3c00f09e2835962653f0bb67, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.4
+      objectReference: {fileID: 0}
     - target: {fileID: -4683669308469848369, guid: 31a8fe4a3c00f09e2835962653f0bb67, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -2151,6 +2189,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -7515429101286732190, guid: 31a8fe4a3c00f09e2835962653f0bb67, type: 3}
       insertIndex: -1
       addedObject: {fileID: 439782785}
+    - targetCorrespondingSourceObject: {fileID: -7515429101286732190, guid: 31a8fe4a3c00f09e2835962653f0bb67, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 439782787}
+    - targetCorrespondingSourceObject: {fileID: -7515429101286732190, guid: 31a8fe4a3c00f09e2835962653f0bb67, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 439782786}
     - targetCorrespondingSourceObject: {fileID: -5568371526223589888, guid: 31a8fe4a3c00f09e2835962653f0bb67, type: 3}
       insertIndex: -1
       addedObject: {fileID: 322928020}
