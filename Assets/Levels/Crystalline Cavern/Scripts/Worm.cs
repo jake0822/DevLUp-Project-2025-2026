@@ -7,6 +7,8 @@ public class Worm : MonoBehaviour {
     [Header("Game Objects")]
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private LightSprite lightSprite;
+    [SerializeField] private Transform playerTransform;
+
     [SerializeField] private GameObject head;
     [SerializeField] private GameObject segmentPrefab;
 
@@ -32,7 +34,8 @@ public class Worm : MonoBehaviour {
 
     enum State {
         Wander,
-        Chase
+        Chase,
+        PermaChase
     }
 
     private List<GameObject> segments = new List<GameObject>();
@@ -52,6 +55,11 @@ public class Worm : MonoBehaviour {
     private WanderPoint targetWanderPoint;
     List<WanderPoint> allWanderPoints = new List<WanderPoint>();
     private float chaseCooldownTimer = 0.0f;
+
+    public void StartChase()
+    {
+        state = State.PermaChase;
+    }
 
     void Start() {
         headPositionOffset = head.transform.localPosition;
@@ -185,15 +193,19 @@ public class Worm : MonoBehaviour {
         SetRandomWanderPoint();
     }
 
-    void ChaseUpdate() {
-        if (HasArrivedAtTarget()) {
+    void ChaseUpdate()
+    {
+        if (HasArrivedAtTarget())
+        {
             SetFrozen(true);
             stateChangeTimer = Mathf.MoveTowards(stateChangeTimer, 0.0f, Time.fixedDeltaTime);
-            if (stateChangeTimer == 0.0f) {
+            if (stateChangeTimer == 0.0f)
+            {
                 ToWanderState();
             }
         }
-        else if (lightSprite.IsDetected(head.transform.position) && !lightSprite.IsInCrystal()) {
+        else if (lightSprite.IsDetected(head.transform.position) && !lightSprite.IsInCrystal())
+        {
             SetTargetPosition(lightSprite.GetPosition());
             stateChangeTimer = loseTargetWaitTime;
             SetFrozen(false);
@@ -205,6 +217,12 @@ public class Worm : MonoBehaviour {
         state = State.Chase;
     }
 
+    void PermaChaseUpdate() {
+        SetTargetPosition(playerTransform.position);
+        stateChangeTimer = loseTargetWaitTime;
+        SetFrozen(false);
+    }
+
     void FixedUpdate() {
         switch (state) {
             case State.Wander:
@@ -213,6 +231,10 @@ public class Worm : MonoBehaviour {
             case State.Chase:
                 ChaseUpdate();
                 break;
+            case State.PermaChase:
+                PermaChaseUpdate();
+                break;
+                
         }
 
 
