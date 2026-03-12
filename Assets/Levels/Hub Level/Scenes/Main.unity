@@ -1624,6 +1624,11 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!82 &647846530 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5575419010495576133, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+  m_PrefabInstance: {fileID: 4684113090892515862}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &649258214 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
@@ -5117,13 +5122,57 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: audio
+      value: 
+      objectReference: {fileID: 647846530}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
       propertyPath: DialogAudio.Array.size
-      value: 0
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
       propertyPath: DialogLines.Array.size
-      value: 14
+      value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogAudio.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 464ef4b0a6c9fbd45a4958d3cb253ea0, type: 3}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogAudio.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 88d73dcb3f3acf14e9ab26e1378db351, type: 3}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogAudio.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 41601110f772fe9448815785113c78f3, type: 3}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogAudio.Array.data[3]'
+      value: 
+      objectReference: {fileID: 8300000, guid: ea87ea573641f1145adde9dbcbcc9102, type: 3}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogAudio.Array.data[4]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 0c953d4bb026d4544a9975c19448303d, type: 3}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogAudio.Array.data[5]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 71558c5c28b2ffc408c53ad6ee765770, type: 3}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogAudio.Array.data[6]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 274097d2003224e478385f648d0d0d78, type: 3}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogAudio.Array.data[7]'
+      value: 
+      objectReference: {fileID: 8300000, guid: b8deb2a523fa88948aa3a4152a86b2a3, type: 3}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogAudio.Array.data[8]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 83930b48a3876774f811897a7bec6a10, type: 3}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogAudio.Array.data[9]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 0704e88e099f3af4390501ea03c89d8b, type: 3}
     - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
       propertyPath: 'DialogLines.Array.data[0]'
       value: 'Hmm. Oh! You! A good wizard, finally! '
@@ -5155,34 +5204,65 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
       propertyPath: 'DialogLines.Array.data[7]'
-      value: 'The Evil Wizard, the menace that he is, ripped my '
+      value: The Evil Wizard, the menace that he is...
       objectReference: {fileID: 0}
     - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
       propertyPath: 'DialogLines.Array.data[8]'
-      value: elemental children from their dwellings and scattered them across the
-        land.
+      value: ripped my elemental children from their dwellings and...
       objectReference: {fileID: 0}
     - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
       propertyPath: 'DialogLines.Array.data[9]'
-      value: In most cases, I would be there to help my offspring and pulverize the
-        demon.
+      value: scattered them across the land.
       objectReference: {fileID: 0}
     - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogAudio.Array.data[10]'
+      value: 
+      objectReference: {fileID: 8300000, guid: f26ff74ffeb8dca459fddbb7eb501d11, type: 3}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogAudio.Array.data[11]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 5a513a53c0601a949adfaabb3b354ed5, type: 3}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogAudio.Array.data[12]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 52fc694a85246fa47b8f46fdc30364fc, type: 3}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogAudio.Array.data[13]'
+      value: 
+      objectReference: {fileID: 8300000, guid: b7369bdf1a0bc3346bcc6862fb6f793e, type: 3}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogAudio.Array.data[14]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 56b1c505967e7cd47b1a7272bd6b1fe4, type: 3}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogAudio.Array.data[15]'
+      value: 
+      objectReference: {fileID: 8300000, guid: a5589123a72a5b048bdc0b62e14e494e, type: 3}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
       propertyPath: 'DialogLines.Array.data[10]'
-      value: But he trapped me in this  before his assault, and I simply cannot pry
-        myself free.
+      value: In most cases, I would be there to help my offspring and pulverize the
+        demon but...
       objectReference: {fileID: 0}
     - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
       propertyPath: 'DialogLines.Array.data[11]'
-      value: I need you-or I need your help rather.
+      value: he trapped me in this  before his assault, and I simply cannot pry myself
+        free.
       objectReference: {fileID: 0}
     - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
       propertyPath: 'DialogLines.Array.data[12]'
-      value: My children act like small babies, they cannot sustain themselves without
-        my guidance. So please, my good wizard.
+      value: I need you-or I need your help rather.
       objectReference: {fileID: 0}
     - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
       propertyPath: 'DialogLines.Array.data[13]'
+      value: 'My children act like small babies, they cannot sustain themselves without
+        my guidance. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogLines.Array.data[14]'
+      value: So please, my good wizard.
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogLines.Array.data[15]'
       value: Find my babes and help them, and free me from this horrible prison.
       objectReference: {fileID: 0}
     m_RemovedComponents:
