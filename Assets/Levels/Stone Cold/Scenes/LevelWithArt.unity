@@ -2336,7 +2336,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -2365,7 +2365,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: fb9d196b738bd344bb0722b81879e915, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2404,8 +2404,8 @@ Transform:
   m_GameObject: {fileID: 966016382}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -69.89, y: 9.9, z: -34.03}
-  m_LocalScale: {x: 4.8177004, y: 1.2867, z: 3.9071}
+  m_LocalPosition: {x: -69.89, y: -3.42, z: -70.87}
+  m_LocalScale: {x: 12.073157, y: 61.40498, z: 13.08837}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2450,6 +2450,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   geyserJumpForce: 25
+  player: {fileID: 1778174837}
+  flyUp: 0
+  glide: {fileID: 1778174848}
 --- !u!1 &1031598037
 GameObject:
   m_ObjectHideFlags: 0
@@ -3013,6 +3016,7 @@ MonoBehaviour:
   boostDrag: 5
   boostControlLock: 0.2
   airDamping: 4
+  inGyser: 0
 --- !u!1 &1825130044
 GameObject:
   m_ObjectHideFlags: 0

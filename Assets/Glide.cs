@@ -32,6 +32,8 @@ public class Glide : MonoBehaviour
     private float boostLockTimer;
     private bool boostActive;
 
+    public bool inGyser;
+
 
 
     private void Start()
@@ -42,7 +44,7 @@ public class Glide : MonoBehaviour
 
     public void glideInput(InputAction.CallbackContext context) //detects input for crouch
     {
-
+        
         if (context.performed) // button pressed
         {
             glidePressed = true;
@@ -124,7 +126,7 @@ public class Glide : MonoBehaviour
 
         //gliding logic
 
-        if (gliding)
+        if (gliding && !inGyser)
         {
             player._velocity.y = -1;    // Slow down falling speed
             player.gravity = 0;         // No gravity
