@@ -1,0 +1,12 @@
+# Blender 4.5.0 MTL File: 'cavelevel-fixed-flat.blend'
+# www.blender.org
+
+newmtl Material.001
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd D:/mjb23b/DevLUp-Project-2025-2026/Assets/Levels/Crystalline Cavern/Assets/Materials/Rock/rock_face_03_diff_1k.jpg
+map_Ns D:/mjb23b/DevLUp-Project-2025-2026/Assets/Levels/Crystalline Cavern/Assets/Materials/Rock/rock_face_03_rough_1k.exr

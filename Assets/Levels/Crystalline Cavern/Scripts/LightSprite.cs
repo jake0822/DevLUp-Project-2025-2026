@@ -1,6 +1,4 @@
 using System;
-using TreeEditor;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 
@@ -9,11 +7,19 @@ using UnityEngine;
     the intensity of its light.
 */
 public class LightSprite : MonoBehaviour {
-    private bool hasSprite = true;
+    [SerializeField] private Transform spriteParent;
+    [SerializeField] private Transform spriteTransform;
+    [SerializeField] private Transform spriteReturnTransform;
+    [SerializeField] private Transform spriteModelTransform;
 
-    private Transform spriteTransform;
-    private Transform spriteParent;
-    private Transform spriteReturnTransform;
+    [Tooltip("The radius at which the sprite will be detected by the worm")]
+    [SerializeField] private float spriteDetectionRadius = 10.0f;
+
+    [SerializeField] private float spriteIdleFrequency = 0.5f;
+    [SerializeField] private float spriteIdleAmplitude = 0.05f;
+
+    private bool hasSprite = true;
+    private bool inCrystal = false;
     private Light spriteLight;
 
     private Vector3 animStartPos;
@@ -39,6 +45,15 @@ public class LightSprite : MonoBehaviour {
 
     public void RemoveSprite() {
         hasSprite = false;
+    }
+
+    public void SetInCrystal(bool state) {
+        inCrystal = state;
+    }
+
+    public bool IsInCrystal()
+    {
+        return inCrystal;
     }
 
     public void MoveSprite(Transform destination, float duration, AnimationCurve curve, Action arriveCallback = null) {
@@ -67,17 +82,30 @@ public class LightSprite : MonoBehaviour {
         lightAnimCurve = curve;
     }
 
+    public bool IsDetected(Vector3 point) {
+        return Vector3.Distance(point, spriteTransform.position) <= spriteDetectionRadius;
+    }
+
+    public Vector3 GetPosition() {
+        return spriteTransform.position;
+    }
+
     void Start() {
-        spriteParent = GetComponent<Transform>();
-        spriteTransform = transform.Find("Sprite");
-        spriteReturnTransform = transform.Find("SpritePosition");
         spriteLight = GetComponentInChildren<Light>();
+    }
+
+    void UpdateIdleAnimation() {
+        float yOffset = Mathf.Sin(Time.time * spriteIdleFrequency) * spriteIdleAmplitude;
+        Vector3 newPosition = spriteModelTransform.localPosition;
+        newPosition.y = yOffset;
+        spriteModelTransform.localPosition = newPosition;
     }
 
     void Update() {
         if (animTimer != -1f) {
             float t = animCurve.Evaluate(animTimer / animDuration);
             spriteTransform.position = Vector3.Lerp(animStartPos, animEndTransform.position, t);
+            spriteTransform.rotation = animEndTransform.rotation;
 
             animTimer += Time.deltaTime;
             if (animTimer >= animDuration) {
@@ -97,5 +125,12 @@ public class LightSprite : MonoBehaviour {
                 spriteLight.intensity = lightAnimBaseIntensity;
             }
         }
+
+        UpdateIdleAnimation();
+    }
+
+    void OnDrawGizmos() {
+        Gizmos.color = new Color(1.0f, 1.0f, 0.3f, 0.2f);
+        Gizmos.DrawSphere(spriteTransform.position, spriteDetectionRadius);
     }
 }

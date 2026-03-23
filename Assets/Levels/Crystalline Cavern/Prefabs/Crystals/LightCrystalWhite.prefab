@@ -43,9 +43,9 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 5
-  m_Range: 25
+  m_Color: {r: 1, g: 0.98896813, b: 0.9198113, a: 1}
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -121,6 +121,61 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1 &2348270165494538998
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8174149018616960567}
+  - component: {fileID: 4458910789233080}
+  m_Layer: 6
+  m_Name: Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8174149018616960567
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2348270165494538998}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 670097027205573406}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &4458910789233080
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2348270165494538998}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 3
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2473768280726475868
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,7 +187,7 @@ GameObject:
   - component: {fileID: 670097027205573406}
   - component: {fileID: 4421388592417099545}
   - component: {fileID: 1555320278281370744}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: LightCrystalWhite
   m_TagString: LightCrystal
   m_Icon: {fileID: 0}
@@ -154,6 +209,7 @@ Transform:
   m_Children:
   - {fileID: 1403058170979178514}
   - {fileID: 7732353013755589253}
+  - {fileID: 8174149018616960567}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &4421388592417099545
@@ -189,8 +245,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56b659b5d17746ce885f5ec41412004f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightIntensity: 50
+  lightIntensity: 10
   glowAnimDuration: 0.5
+  emissionColor: {r: 11.313708, g: 11.313708, b: 11.313708, a: 1}
+  lightRange: 30
   crystalMesh: {fileID: 4134965600022033442}
 --- !u!1 &4852913419057805431
 GameObject:

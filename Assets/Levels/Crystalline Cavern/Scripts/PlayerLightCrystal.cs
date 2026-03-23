@@ -29,7 +29,7 @@ public class PlayerLightCrystal : MonoBehaviour {
         spriteController = GetComponent<LightSprite>();
     }
 
-    void Update() {
+    void FixedUpdate() {
         CastLookRay();
     }
 
@@ -88,6 +88,7 @@ public class PlayerLightCrystal : MonoBehaviour {
                     LightCrystal crystal = inhabitedCrystal.GetComponent<LightCrystal>();
                     crystal.StartGlow();
                     spriteIsMoving = false;
+                    spriteController.SetInCrystal(true);
                 });
             }
         }
@@ -97,6 +98,7 @@ public class PlayerLightCrystal : MonoBehaviour {
             spriteController.ReturnSprite(spriteMoveTime, spriteMoveCurve, () => {
                 spriteIsMoving = false;
                 spriteController.GiveSprite();
+                spriteController.SetInCrystal(false);
             });
             LightCrystal crystal = inhabitedCrystal.GetComponent<LightCrystal>();
             crystal.StopGlow();

@@ -154,6 +154,7 @@ Transform:
   m_Children:
   - {fileID: 1403058170979178514}
   - {fileID: 2198058853893914089}
+  - {fileID: 7100089292537311837}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1555320278281370744
@@ -170,6 +171,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightIntensity: 50
   glowAnimDuration: 0.5
+  emissionStrength: 4
+  lightRange: 25
   crystalMesh: {fileID: 2741539923474746573}
 --- !u!135 &6894486603050207419
 SphereCollider:
@@ -191,6 +194,59 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 2
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &3236718761725357379
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7100089292537311837}
+  - component: {fileID: 8204497827125862758}
+  m_Layer: 0
+  m_Name: Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7100089292537311837
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3236718761725357379}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 670097027205573406}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8204497827125862758
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3236718761725357379}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2.3, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1804724765467007490
 PrefabInstance:

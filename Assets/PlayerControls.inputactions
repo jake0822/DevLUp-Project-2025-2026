@@ -86,15 +86,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "RightClick",
-                    "type": "Button",
-                    "id": "9de973fd-b430-49eb-9dc6-5da8492d889b",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -309,12 +300,12 @@
                 },
                 {
                     "name": "",
-                    "id": "c59c7473-31d5-4529-9938-68565e31f37f",
-                    "path": "<Mouse>/rightButton",
+                    "id": "79a0f6ae-edc9-41f6-9964-3439ef37bc4d",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "RightClick",
+                    "action": "LightThrow",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

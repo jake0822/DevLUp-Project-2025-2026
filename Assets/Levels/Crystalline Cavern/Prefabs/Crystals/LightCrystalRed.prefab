@@ -44,8 +44,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 0.9819509, g: 0.36011142, b: 0.32371345, a: 1}
-  m_Intensity: 5
-  m_Range: 25
+  m_Intensity: 1
+  m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 670097027205573406}
   - component: {fileID: 4421388592417099545}
   - component: {fileID: 1555320278281370744}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: LightCrystalRed
   m_TagString: LightCrystal
   m_Icon: {fileID: 0}
@@ -154,6 +154,7 @@ Transform:
   m_Children:
   - {fileID: 1403058170979178514}
   - {fileID: 2614602442285369317}
+  - {fileID: 5704951091897485815}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &4421388592417099545
@@ -191,7 +192,64 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightIntensity: 50
   glowAnimDuration: 0.5
+  emissionColor: {r: 8.47419, g: 1.8942307, b: 1.5619096, a: 1}
+  lightRange: 25
   crystalMesh: {fileID: 3201656027011058615}
+--- !u!1 &6146578505320606386
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5704951091897485815}
+  - component: {fileID: 7830949413525705900}
+  m_Layer: 6
+  m_Name: Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5704951091897485815
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6146578505320606386}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.25472426, y: -0.035407897, z: -0.09758536, w: 0.96142554}
+  m_LocalPosition: {x: 0.292, y: 0.001, z: -0.406}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 670097027205573406}
+  m_LocalEulerAnglesHint: {x: -29.782, y: -1.213, z: -11.269}
+--- !u!136 &7830949413525705900
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6146578505320606386}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.7
+  m_Height: 3.5
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2576716962825805838
 PrefabInstance:
   m_ObjectHideFlags: 0
