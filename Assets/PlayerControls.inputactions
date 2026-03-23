@@ -86,6 +86,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "RightClick",
+                    "type": "Button",
+                    "id": "9de973fd-b430-49eb-9dc6-5da8492d889b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -279,13 +288,11 @@
                 {
                     "name": "",
                     "id": "a615606c-d466-4ee5-b817-4540f0826803",
-                    "id": "1b577537-68a0-4ded-b5d3-aaa610af392d",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "LeftClick",
-                    "action": "LightThrow",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -297,6 +304,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "LightDash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c59c7473-31d5-4529-9938-68565e31f37f",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightClick",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
