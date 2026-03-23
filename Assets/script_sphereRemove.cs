@@ -20,7 +20,7 @@ public class script_sphereRemove : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("player"))
         {
             Destroy(gameObject);
         }
