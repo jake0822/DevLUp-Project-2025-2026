@@ -7,6 +7,9 @@ using UnityEngine.PlayerLoop;
 public class DialogSystem : MonoBehaviour
 {
     [SerializeField] private string[] DialogLines;
+    [SerializeField] private AudioClip[] DialogAudio;
+    public AudioSource audio;
+
     public TextMeshProUGUI activeText;
     public float textspeed = 0.1f;
 
@@ -14,6 +17,8 @@ public class DialogSystem : MonoBehaviour
 
     public int activeIndex = 0;
     public bool skip = false;
+    public bool autoPlay;
+    private bool lockDialog;
 
     private void Update()
     {
@@ -23,6 +28,10 @@ public class DialogSystem : MonoBehaviour
     IEnumerator typeDialog(string text)
     {
         if (!Application.isPlaying) yield break;
+
+        
+        audio.clip = DialogAudio[activeIndex];
+        audio.Play();
 
         canGoNext = false;
         int i = 0;
@@ -41,13 +50,29 @@ public class DialogSystem : MonoBehaviour
             
         }
         skip = false;
-        canGoNext = true;
+        
         activeIndex++;
+        
+        if (autoPlay)
+        {
+            StartCoroutine(AutoPlay());
+            canGoNext = false;
+        }
+        else
+            canGoNext = true;
+    }
+
+    IEnumerator AutoPlay()
+    {   canGoNext = false;
+        yield return new WaitForSeconds(0.5f);
+        lockDialog = true;
+        nextDialog(new InputAction.CallbackContext());
+        lockDialog = false;
     }
     
     public void nextDialog(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed || (autoPlay && lockDialog))
         {
             if (canGoNext && activeIndex < DialogLines.Length)
                 StartCoroutine(typeDialog(DialogLines[activeIndex]));

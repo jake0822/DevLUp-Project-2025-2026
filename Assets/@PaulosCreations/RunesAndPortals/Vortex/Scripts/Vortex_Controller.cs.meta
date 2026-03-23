@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 95e065bc50acd964cabffd7fe31bda2d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 85098
+  packageName: RunesAndPortals
+  packageVersion: 5.0
+  assetPath: Assets/@PaulosCreations/RunesAndPortals/Vortex/Scripts/Vortex_Controller.cs
+  uploadId: 609286

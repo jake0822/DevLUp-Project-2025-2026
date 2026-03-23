@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 5c9fd621af8828045a7cc40cdbf1c91d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 85098
+  packageName: RunesAndPortals
+  packageVersion: 5.0
+  assetPath: Assets/@PaulosCreations/RunesAndPortals/PortalGate_Simple/Script/Portal_Controller.cs
+  uploadId: 609286
