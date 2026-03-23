@@ -31,9 +31,10 @@ public class DialogSystem : MonoBehaviour
     {
         if (!Application.isPlaying) yield break;
 
-        
-        audio.clip = DialogAudio[activeIndex];
-        audio.Play();
+        if (audio != null){
+            audio.clip = DialogAudio[activeIndex];
+            audio.Play();
+        }
 
         canGoNext = false;
         int i = 0;
