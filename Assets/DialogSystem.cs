@@ -22,6 +22,8 @@ public class DialogSystem : MonoBehaviour
     public bool autoPlay;
     private bool lockDialog;
 
+    public GameplayTriggers gt;
+
     private void Update()
     {
        
@@ -81,6 +83,8 @@ public class DialogSystem : MonoBehaviour
                 StartCoroutine(typeDialog(DialogLines[activeIndex]));
             else if (activeIndex >= DialogLines.Length) {
                 finishedDialogue = true;
+                if(gt != null)
+                    gt.ActivatePortals();
             }
             else
             {

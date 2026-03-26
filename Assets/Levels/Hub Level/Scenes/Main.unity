@@ -1827,7 +1827,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetSceneName: LevelWithArt
   Text: {fileID: 1509404095}
-  portalDeactivate: 0
+  portalDeactivate: 1
 --- !u!65 &702410994
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2991,7 +2991,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetSceneName: CaveScene
   Text: {fileID: 356495925}
-  portalDeactivate: 0
+  portalDeactivate: 1
 --- !u!65 &1350508044
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3258,7 +3258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetSceneName: Oasis
   Text: {fileID: 2046007892}
-  portalDeactivate: 0
+  portalDeactivate: 1
 --- !u!65 &1435021250
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4435,6 +4435,23 @@ CapsuleCollider:
   m_Height: 0.99999994
   m_Direction: 1
   m_Center: {x: -0.00000023841858, y: 0.000000059604645, z: 0}
+--- !u!114 &1884758982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884758975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ac8afa7abef2fe469b342fa93e0eb25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levels:
+  - {fileID: 2108955207}
+  - {fileID: 702410993}
+  - {fileID: 1350508043}
+  - {fileID: 1435021249}
 --- !u!1 &1900432634 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5568371526223589888, guid: c5854e9a762113a4f8b6b46f78f6a5fa, type: 3}
@@ -4981,7 +4998,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetSceneName: VolcanoScene
   Text: {fileID: 627051238}
-  portalDeactivate: 0
+  portalDeactivate: 1
 --- !u!65 &2108955208
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5274,12 +5291,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8524902679452998156, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
       propertyPath: m_Name
-      value: Character
+      value: MotherOfSprites
       objectReference: {fileID: 0}
     - target: {fileID: 8524902679452998156, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: gt
+      value: 
+      objectReference: {fileID: 1884758982}
     - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
       propertyPath: audio
       value: 
@@ -5439,6 +5460,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8524902679452998156, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1884758979}
+    - targetCorrespondingSourceObject: {fileID: 8524902679452998156, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1884758982}
     - targetCorrespondingSourceObject: {fileID: 6461790673082701359, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1353437523}
