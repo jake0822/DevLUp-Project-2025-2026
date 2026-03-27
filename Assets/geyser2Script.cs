@@ -18,7 +18,7 @@ public class geyser2Script : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("player"))
         {
             print("geyser!");
             flyUp = true;
