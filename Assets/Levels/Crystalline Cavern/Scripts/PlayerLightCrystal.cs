@@ -30,7 +30,9 @@ public class PlayerLightCrystal : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        CastLookRay();
+        if (spriteController.IsSpriteUnlocked()) {
+            CastLookRay();
+        }
     }
 
     void CastLookRay() {
@@ -71,6 +73,9 @@ public class PlayerLightCrystal : MonoBehaviour {
 
     public void OnClick(InputAction.CallbackContext context) {
         if (!context.performed) {
+            return;
+        }
+        if (!spriteController.IsSpriteUnlocked()) {
             return;
         }
         if (spriteIsMoving) {

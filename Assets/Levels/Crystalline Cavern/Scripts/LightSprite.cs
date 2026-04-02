@@ -12,14 +12,17 @@ public class LightSprite : MonoBehaviour {
     [SerializeField] private Transform spriteReturnTransform;
     [SerializeField] private Transform spriteModelTransform;
 
+    [SerializeField] private GameObject spriteVisual;
+
     [Tooltip("The radius at which the sprite will be detected by the worm")]
     [SerializeField] private float spriteDetectionRadius = 10.0f;
 
     [SerializeField] private float spriteIdleFrequency = 0.5f;
     [SerializeField] private float spriteIdleAmplitude = 0.05f;
 
-    private bool hasSprite = true;
-    private bool inCrystal = false;
+    private bool isSpriteUnlocked = false; // Whether the sprite is unlocked; used for initially grabbing the sprite
+    private bool hasSprite = true;         // Whether the sprite is currently in the wand
+    private bool inCrystal = false;        // Whether the sprite is currently in a crystal
     private Light spriteLight;
 
     private Vector3 animStartPos;
@@ -34,6 +37,17 @@ public class LightSprite : MonoBehaviour {
     private float lightAnimTargetIntensity;
     private float lightAnimDuration;
     private AnimationCurve lightAnimCurve;
+
+    public bool IsSpriteUnlocked()
+    {
+        return isSpriteUnlocked;
+    }
+
+    public void UnlockSprite()
+    {
+        isSpriteUnlocked = true;
+        spriteVisual.SetActive(true);
+    }
 
     public bool HasSprite() {
         return hasSprite;
