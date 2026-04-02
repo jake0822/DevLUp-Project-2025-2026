@@ -1322,20 +1322,68 @@ PrefabInstance:
       value: Character (1)
       objectReference: {fileID: 0}
     - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: DialogAudio.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: DialogLines.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogAudio.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 6dc59dbac29d69448879900e9c1fbc66, type: 3}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogAudio.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 62e0601d3b5405b49bd03ede5e329259, type: 3}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogAudio.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: a2f430830fae84b459e9f2a3a8ff3df5, type: 3}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogAudio.Array.data[3]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 14959d13721cd0b48ad88dcd5d778137, type: 3}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogAudio.Array.data[4]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 856fad06bd49c1c418fb75eef8e10c10, type: 3}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogAudio.Array.data[5]'
+      value: 
+      objectReference: {fileID: 8300000, guid: d3e6687f930ae93439c3a452a2184338, type: 3}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogAudio.Array.data[6]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 1fdbba436d0afcd4c8704cea4622e7b1, type: 3}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
       propertyPath: 'DialogLines.Array.data[0]'
-      value: I am the spirit
+      value: Awwww....
       objectReference: {fileID: 0}
     - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
       propertyPath: 'DialogLines.Array.data[1]'
-      value: When you talk to me i will give you the dash
+      value: Who are you? I can't find my mom anywhere!
       objectReference: {fileID: 0}
     - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
       propertyPath: 'DialogLines.Array.data[2]'
-      value: Press shift in the air tto dash now bro!
+      value: Oh blub it's so hot in here!
       objectReference: {fileID: 0}
     - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
       propertyPath: 'DialogLines.Array.data[3]'
-      value: 'Help me outta here PLEASE '
+      value: At this rate, I'm gonna become steam :(
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogLines.Array.data[4]'
+      value: Can yo-can you help me out of here before I evaporate?
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogLines.Array.data[5]'
+      value: Here...I can give you some of my abilities...just make it to the portal
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogLines.Array.data[6]'
+      value: Awwww...BLUB MY BLUBBING LIFE!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
