@@ -29,17 +29,8 @@ public class geyser2Script : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        Debug.Log("Trigger Exit gyser");
         flyUp = false;
         glide.inGyser = false;
-    }
-
-
-
-    private void LateUpdate()
-    {
-        if(flyUp)
-            player.gravity = 8;
-        else
-            player.gravity = ogGravity;
     }
 }

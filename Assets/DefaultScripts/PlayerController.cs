@@ -84,10 +84,10 @@ public class PlayerController : MonoBehaviour
     {
         // print(_externalMomentum);
         _grounded = isGrounded(); //checks if the player is grounded
-        if (_grounded && gliding && canGlide)
-        {
-            ToggleGlide();
-        }
+        //if (_grounded && gliding && canGlide)
+        //{
+        //    ToggleGlide();
+        //}
         if (_grounded && coyoteJump) //checks if need to do coyote jump
         {
             _velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity); //applies jump force for coyote jump
@@ -148,10 +148,10 @@ public class PlayerController : MonoBehaviour
             _velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity); //applies jump force
             coyoteJump = false;
         }
-        else if (!_grounded && context.performed && canGlide)
-        {
-            ToggleGlide();
-        }
+        //else if (!_grounded && context.performed && canGlide)
+        //{
+        //    ToggleGlide();
+        //}
         else if (context.performed)
         {
             StartCoroutine(CoyoteJumpTimer());
