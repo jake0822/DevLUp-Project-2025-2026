@@ -28,6 +28,13 @@ public class DialogSystem : MonoBehaviour
     {
        
     }
+    public void SetDialog(string[] dialog, AudioClip[] audios)
+    {
+        DialogLines = null;
+        DialogLines = dialog;
+        DialogAudio = null;
+        DialogAudio = audios;
+    }
 
     IEnumerator typeDialog(string text)
     {
