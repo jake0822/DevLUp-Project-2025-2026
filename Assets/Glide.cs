@@ -106,15 +106,15 @@ public class Glide : MonoBehaviour
         }
 
 
-        if (player._grounded) 
+        if (player._grounded)
         {
             canGlideBoost = true;
-           
+
         }
 
 
         //intput logic
-        if (glidePressed && player._velocity.y < 0 && !player._grounded)
+        if (glidePressed && !player._grounded)
         {
             gliding = true;
 
@@ -125,21 +125,45 @@ public class Glide : MonoBehaviour
         //print(gliding);
 
         //gliding logic
-
-        if (gliding && !inGyser)
+        if (gliding)
         {
-            player._velocity.y = -1;    // Slow down falling speed
-            player.gravity = 0;         // No gravity
-            player.speed = ogSpeed * 2; // Increase horizontal speed when gliding
+            if (inGyser)  // Gliding and in gyser; make gravity positive to move player upwards
+            {
+                player.gravity = 8;
+            }
+            else {  // Gliding, but not in gyser
+                if (player._velocity.y < 0)  // Normal gliding behavior
+                {
+                    player._velocity.y = -1;    // Slow down falling speed
+                    player.gravity = 0;         // No gravity
+                    player.speed = ogSpeed * 2; // Increase horizontal speed when gliding
+                }
+                else  // Just been launched out of gyser
+                {
+                    player.gravity = -13;
+                }
+            }
         }
-        else 
-        { 
+        else
+        {
             // Reset player gravity and horizontal speed
             player.gravity = ogGravity;
             player.speed = ogSpeed;
         }
 
+        //if (gliding && !inGyser)
+        //{
+        //    player._velocity.y = -1;    // Slow down falling speed
+        //    player.gravity = 0;         // No gravity
+        //    player.speed = ogSpeed * 2; // Increase horizontal speed when gliding
+        //}
 
+        //if (!gliding)
+        //{
+        //    // Reset player gravity and horizontal speed
+        //    player.gravity = ogGravity;
+        //    player.speed = ogSpeed;
+        //}
     }
 
 }
