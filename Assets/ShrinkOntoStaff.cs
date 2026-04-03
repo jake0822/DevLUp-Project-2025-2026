@@ -26,6 +26,8 @@ public class ShrinkOntoStaff : MonoBehaviour
     public bool start = false;
     public CrystalMovements cm;
 
+    public DialogManager dialogManager;
+
     public void StartMove(Transform newTarget)
     {
         target = newTarget;
@@ -37,6 +39,10 @@ public class ShrinkOntoStaff : MonoBehaviour
 
     private void Update()
     {
+        if (dialogManager.hasCompletedDialgue() && cm.enabled == true) { 
+        start = true;
+        }
+
         if (start)
         {
             cm.enabled = false;
