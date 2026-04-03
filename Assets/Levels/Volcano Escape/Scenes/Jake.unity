@@ -173,11 +173,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7807538432633192378, guid: 31a8fe4a3c00f09e2835962653f0bb67, type: 3}
---- !u!82 &61985634 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 5575419010495576133, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
-  m_PrefabInstance: {fileID: 909883332}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &72522899
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,8 +233,6 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -261,11 +254,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &72522902
 MeshFilter:
@@ -443,23 +434,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
+  m_Version: 4
   m_UsePipelineSettings: 1
   m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
   m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
-  m_RenderingLayersMask:
-    serializedVersion: 0
-    m_Bits: 1
-  m_ShadowRenderingLayersMask:
-    serializedVersion: 0
-    m_Bits: 1
-  m_Version: 4
-  m_LightLayerMask: 1
-  m_ShadowLayerMask: 1
-  m_RenderingLayers: 1
-  m_ShadowRenderingLayers: 1
 --- !u!108 &259985138
 Light:
   m_ObjectHideFlags: 0
@@ -468,14 +453,14 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 259985136}
   m_Enabled: 1
-  serializedVersion: 12
+  serializedVersion: 11
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
-  m_CookieSize2D: {x: 10, y: 10}
+  m_CookieSize: 10
   m_Shadows:
     m_Type: 2
     m_Resolution: -1
@@ -932,8 +917,6 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -955,11 +938,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &695495188
 MeshFilter:
@@ -1044,8 +1025,6 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1067,11 +1046,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &723572088
 MeshFilter:
@@ -1344,98 +1321,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
-      propertyPath: audio
-      value: 
-      objectReference: {fileID: 61985634}
-    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
-      propertyPath: DialogAudio.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
-      propertyPath: DialogLines.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
-      propertyPath: 'DialogAudio.Array.data[0]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 6dc59dbac29d69448879900e9c1fbc66, type: 3}
-    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
-      propertyPath: 'DialogAudio.Array.data[1]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 62e0601d3b5405b49bd03ede5e329259, type: 3}
-    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
-      propertyPath: 'DialogAudio.Array.data[2]'
-      value: 
-      objectReference: {fileID: 8300000, guid: a2f430830fae84b459e9f2a3a8ff3df5, type: 3}
-    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
-      propertyPath: 'DialogAudio.Array.data[3]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 14959d13721cd0b48ad88dcd5d778137, type: 3}
-    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
-      propertyPath: 'DialogAudio.Array.data[4]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 856fad06bd49c1c418fb75eef8e10c10, type: 3}
-    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
-      propertyPath: 'DialogAudio.Array.data[5]'
-      value: 
-      objectReference: {fileID: 8300000, guid: d3e6687f930ae93439c3a452a2184338, type: 3}
-    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
-      propertyPath: 'DialogAudio.Array.data[6]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 1fdbba436d0afcd4c8704cea4622e7b1, type: 3}
-    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
-      propertyPath: 'DialogLines.Array.data[0]'
-      value: Helloo...
-      objectReference: {fileID: 0}
-    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
-      propertyPath: 'DialogLines.Array.data[1]'
-      value: Who are you? I can't find my mom anywhere!
-      objectReference: {fileID: 0}
-    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
-      propertyPath: 'DialogLines.Array.data[2]'
-      value: Oh blub it's so hot in here!
-      objectReference: {fileID: 0}
-    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
-      propertyPath: 'DialogLines.Array.data[3]'
-      value: At this rate, I'm gonna become steam :(
-      objectReference: {fileID: 0}
-    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
-      propertyPath: 'DialogLines.Array.data[4]'
-      value: Can yo-can you help me out of here before I evaporate?
-      objectReference: {fileID: 0}
-    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
-      propertyPath: 'DialogLines.Array.data[5]'
-      value: Here...I can give you some of my abilities...just make it to the portal
-      objectReference: {fileID: 0}
-    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
-      propertyPath: 'DialogLines.Array.data[6]'
-      value: Awwww...BLUB MY BLUBBING LIFE!
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8524902679452998156, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2073109953}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
---- !u!114 &909883333 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4164093066973635732, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
-  m_PrefabInstance: {fileID: 909883332}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dcef36153a23f0449e443456e63ceb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &909883334 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8524902679452998156, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
-  m_PrefabInstance: {fileID: 909883332}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &934898731
 GameObject:
   m_ObjectHideFlags: 0
@@ -1817,8 +1707,6 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1840,11 +1728,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1170782622
 MeshFilter:
@@ -2501,8 +2387,6 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2524,11 +2408,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1360009834
 MeshFilter:
@@ -2699,8 +2581,6 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2722,11 +2602,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1494303750
 MeshFilter:
@@ -2888,23 +2766,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Version: 3
   m_UsePipelineSettings: 1
   m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 3
   m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
-  m_RenderingLayersMask:
-    serializedVersion: 0
-    m_Bits: 3
-  m_ShadowRenderingLayersMask:
-    serializedVersion: 0
-    m_Bits: 1
-  m_Version: 4
-  m_LightLayerMask: 1
-  m_ShadowLayerMask: 1
-  m_RenderingLayers: 3
-  m_ShadowRenderingLayers: 1
 --- !u!108 &1670434015
 Light:
   m_ObjectHideFlags: 0
@@ -2913,14 +2785,14 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1670434012}
   m_Enabled: 1
-  serializedVersion: 12
+  serializedVersion: 11
   m_Type: 2
   m_Color: {r: 0.8930817, g: 0.7812147, b: 0.6768323, a: 1}
   m_Intensity: 3000
   m_Range: 20.838402
   m_SpotAngle: 179
   m_InnerSpotAngle: 179
-  m_CookieSize2D: {x: 10, y: 10}
+  m_CookieSize: 10
   m_Shadows:
     m_Type: 2
     m_Resolution: -1
@@ -3429,16 +3301,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
---- !u!4 &1992201137 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5709087150782053780, guid: 017ed5ee22b91cf478d1d6997cac1956, type: 3}
-  m_PrefabInstance: {fileID: 1992201134}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1992201138 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1884577418282670222, guid: 017ed5ee22b91cf478d1d6997cac1956, type: 3}
-  m_PrefabInstance: {fileID: 1992201134}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2048266848
 GameObject:
   m_ObjectHideFlags: 0
@@ -3499,8 +3361,6 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3522,11 +3382,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &2048266851
 MeshFilter:
@@ -3593,34 +3451,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9034089474176077287, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
   m_PrefabInstance: {fileID: 909883332}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 909883334}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b03a5b346ee3183409a407f13a03dc44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2073109953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 909883334}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41adc96a9cfe4ab4ab13f4d49f5ddcac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 1992201138}
-  parent: {fileID: 1992201137}
-  duration: 1.2
-  heightAmplitude: 2.51
-  sidewaysAmplitude: 1.75
-  frequency: 2
-  shrinkFactor: 0.07
-  start: 0
-  cm: {fileID: 909883333}
-  dialogManager: {fileID: 2073109952}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
