@@ -8,10 +8,16 @@ public class LevelSwitcher : MonoBehaviour
     public string targetSceneName;
     public TextMeshPro Text;
 
+    public bool portalDeactivate = false;
+
     private bool inCollider;
 
     private void OnTriggerEnter(Collider other)
     {
+        if (portalDeactivate)
+        {
+            return;
+        }
         print(other.tag);   
         if (other.CompareTag("player"))
         {
@@ -21,6 +27,10 @@ public class LevelSwitcher : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
+        if (portalDeactivate)
+        {
+            return;
+        }
         if (other.CompareTag("player"))
         {
             Text.enabled = false;
