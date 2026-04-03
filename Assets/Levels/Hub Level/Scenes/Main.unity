@@ -1003,6 +1003,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal
       objectReference: {fileID: 0}
+    - target: {fileID: 1593152643523336471, guid: 3faaef2db03cd4613ac904b3441d717a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2398,7 +2402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetSceneName: LevelWithArt
   Text: {fileID: 1509404095}
-  portalDeactivate: 0
+  portalDeactivate: 1
 --- !u!65 &702410994
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3629,6 +3633,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: 2360cf3b8c31d452ca7b5ec2aacdbc41, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -7304401971019630733, guid: 2360cf3b8c31d452ca7b5ec2aacdbc41, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3946,7 +3954,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetSceneName: CaveScene
   Text: {fileID: 356495925}
-  portalDeactivate: 0
+  portalDeactivate: 1
 --- !u!65 &1350508044
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4442,6 +4450,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 2360cf3b8c31d452ca7b5ec2aacdbc41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: 2360cf3b8c31d452ca7b5ec2aacdbc41, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -7304401971019630733, guid: 2360cf3b8c31d452ca7b5ec2aacdbc41, type: 3}
       propertyPath: m_IsActive
@@ -5014,6 +5026,62 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: c5854e9a762113a4f8b6b46f78f6a5fa, type: 3}
+--- !u!1 &1735004051
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1735004053}
+  - component: {fileID: 1735004052}
+  m_Layer: 0
+  m_Name: GameplayManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1735004052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735004051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ac8afa7abef2fe469b342fa93e0eb25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameplayTriggers
+  volcano: {fileID: 2108955207}
+  cavern: {fileID: 1350508043}
+  stoneCold: {fileID: 702410993}
+  volcanoSprite: {fileID: 0}
+  cavernSprite: {fileID: 0}
+  stoneColdSprite: {fileID: 0}
+  dm: {fileID: 449714155}
+  ds: {fileID: 649258214}
+  midDialogue: []
+  completeDialogue: []
+  midAudio: []
+  endAudio: []
+--- !u!4 &1735004053
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735004051}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.77386, y: -1.69237, z: 8.12164}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1742110292
 GameObject:
   m_ObjectHideFlags: 0
@@ -5589,23 +5657,6 @@ CapsuleCollider:
   m_Height: 0.99999994
   m_Direction: 1
   m_Center: {x: -0.00000023841858, y: 0.000000059604645, z: 0}
---- !u!114 &1884758982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1884758975}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ac8afa7abef2fe469b342fa93e0eb25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levels:
-  - {fileID: 2108955207}
-  - {fileID: 702410993}
-  - {fileID: 1350508043}
-  - {fileID: 1435021249}
 --- !u!1 &1900432634 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5568371526223589888, guid: c5854e9a762113a4f8b6b46f78f6a5fa, type: 3}
@@ -6163,7 +6214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetSceneName: VolcanoScene
   Text: {fileID: 627051238}
-  portalDeactivate: 0
+  portalDeactivate: 1
 --- !u!65 &2108955208
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6466,7 +6517,7 @@ PrefabInstance:
     - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
       propertyPath: gt
       value: 
-      objectReference: {fileID: 1884758982}
+      objectReference: {fileID: 0}
     - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
       propertyPath: audio
       value: 
@@ -6627,9 +6678,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8524902679452998156, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1884758979}
-    - targetCorrespondingSourceObject: {fileID: 8524902679452998156, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1884758982}
     - targetCorrespondingSourceObject: {fileID: 6461790673082701359, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1353437523}
@@ -6650,3 +6698,4 @@ SceneRoots:
   - {fileID: 2093410577}
   - {fileID: 1845935840}
   - {fileID: 1047321644}
+  - {fileID: 1735004053}

@@ -90,8 +90,7 @@ public class DialogSystem : MonoBehaviour
                 StartCoroutine(typeDialog(DialogLines[activeIndex]));
             else if (activeIndex >= DialogLines.Length) {
                 finishedDialogue = true;
-                if(gt != null)
-                    gt.ActivatePortals();
+         
             }
             else
             {

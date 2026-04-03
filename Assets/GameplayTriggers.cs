@@ -15,23 +15,46 @@ public class GameplayTriggers : MonoBehaviour
     [Header("Dialogue")]
     public DialogManager dm;
     public DialogSystem ds;
-    
+
     public string[] midDialogue;
     public string[] completeDialogue;
 
-    
     public AudioClip[] midAudio;
     public AudioClip[] endAudio;
-
 
     private bool introFinished = false;
 
     private bool volcanoComplete = false;
     private bool cavernComplete = false;
     private bool stoneColdComplete = false;
+#if UNITY_EDITOR
+    private static bool hasResetThisSession = false;
+#endif
 
+    void Awake()
+    {
+#if UNITY_EDITOR
+        if (!hasResetThisSession)
+        {
+            Debug.Log("Clearing PlayerPrefs (once per play session)");
+            PlayerPrefs.DeleteAll();
+            PlayerPrefs.Save();
+
+            hasResetThisSession = true;
+        }
+#endif
+    }
     void Start()
     {
+        // Load saved state
+        introFinished = PlayerPrefs.GetInt("IntroFinished", 0) == 1;
+
+        volcanoComplete = PlayerPrefs.GetInt("VolcanoComplete", 0) == 1;
+        cavernComplete = PlayerPrefs.GetInt("CavernComplete", 0) == 1;
+        stoneColdComplete = PlayerPrefs.GetInt("StoneColdComplete", 0) == 1;
+
+        // Apply everything
+        ApplyLevelState();
         UpdateHubState();
     }
 
@@ -41,46 +64,60 @@ public class GameplayTriggers : MonoBehaviour
         if (!introFinished && dm.hasCompletedDialgue())
         {
             introFinished = true;
+            PlayerPrefs.SetInt("IntroFinished", 1);
+
             ActivateAllPortals();
+            ApplyLevelState();   // ensure consistency
+            UpdateHubState();    // update dialogue
         }
     }
 
-    // 🔓 Unlock everything
+    // 🔓 Unlock all portals after intro
     void ActivateAllPortals()
     {
-        volcano.portalDeactivate = false;
-        cavern.portalDeactivate = false;
-        stoneCold.portalDeactivate = false;
+        if (volcano != null) volcano.portalDeactivate = false;
+        if (cavern != null) cavern.portalDeactivate = false;
+        if (stoneCold != null) stoneCold.portalDeactivate = false;
     }
 
-    // 🏁 Call this when returning from a level
-    public void OnLevelCompleted(string levelName)
+    // 🧠 Apply saved completion state to visuals + portals
+    void ApplyLevelState()
     {
-        switch (levelName)
+        // Volcano
+        if (volcanoComplete)
         {
-            case "Volcano":
-                volcanoComplete = true;
-                volcano.portalDeactivate = true;
-                volcanoSprite.SetActive(true);
-                break;
-
-            case "Cavern":
-                cavernComplete = true;
-                cavern.portalDeactivate = true;
-                cavernSprite.SetActive(true);
-                break;
-
-            case "StoneCold":
-                stoneColdComplete = true;
-                stoneCold.portalDeactivate = true;
-                stoneColdSprite.SetActive(true);
-                break;
+            if (volcano != null) volcano.portalDeactivate = true;
+            if (volcanoSprite != null) volcanoSprite.SetActive(true);
+        }
+        else
+        {
+            if (volcano != null) volcano.portalDeactivate = !introFinished;
         }
 
-        UpdateHubState();
+        // Cavern
+        if (cavernComplete)
+        {
+            if (cavern != null) cavern.portalDeactivate = true;
+            if (cavernSprite != null) cavernSprite.SetActive(true);
+        }
+        else
+        {
+            if (cavern != null) cavern.portalDeactivate = !introFinished;
+        }
+
+        // StoneCold
+        if (stoneColdComplete)
+        {
+            if (stoneCold != null) stoneCold.portalDeactivate = true;
+            if (stoneColdSprite != null) stoneColdSprite.SetActive(true);
+        }
+        else
+        {
+            if (stoneCold != null) stoneCold.portalDeactivate = !introFinished;
+        }
     }
 
-    // 🧠 Decides what dialogue should be active
+    // 🧠 Decide which dialogue plays
     void UpdateHubState()
     {
         if (AllLevelsComplete())
@@ -93,7 +130,7 @@ public class GameplayTriggers : MonoBehaviour
         }
         else
         {
-            //ds.SetDialog(introDialogue, introAudio);
+            // Intro dialogue handled elsewhere
         }
     }
 
