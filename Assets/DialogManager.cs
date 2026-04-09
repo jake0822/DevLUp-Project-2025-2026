@@ -11,6 +11,60 @@ public class DialogManager : MonoBehaviour
     public GameObject DialogPanel;
     public DialogSystem ds;
 
+    public AudioClip[] defaultClips;
+    private int voiceLineIndex = 0;
+    private bool startedDefaults;
+    public AudioSource audio;
+
+    private bool talkedOnce = false;
+
+    
+    private float clipTimer;
+    private void Start()
+    {
+        clipTimer = 0f;
+    }
+    private void PlayDefaultVoiceLoop()
+    {
+        if (talkedOnce) return;
+        if (defaultClips == null || defaultClips.Length == 0) return;
+
+        // wait until timer allows next line
+        if (audio.isPlaying) return;
+
+        clipTimer -= Time.deltaTime;
+        if (clipTimer > 0) return;
+
+        AudioClip clip = defaultClips[voiceLineIndex];
+
+        if (clip != null)
+        {
+            audio.clip = clip;
+            audio.Play();
+
+            clipTimer =  0.25f;
+        }
+
+        voiceLineIndex++;
+
+        
+        if (voiceLineIndex >= defaultClips.Length)
+        {
+            voiceLineIndex = 0;
+        }
+    }
+    private void Update()
+    {
+
+        if (inDialog)
+        {
+            audio.Stop();
+            return;
+        }
+
+        PlayDefaultVoiceLoop();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         print(other.tag);
@@ -31,6 +85,7 @@ public class DialogManager : MonoBehaviour
             DialogPanel.SetActive(false);
             inDialog = false;
             
+            
         }
     }
 
@@ -38,6 +93,8 @@ public class DialogManager : MonoBehaviour
     {
         if (context.performed && Time.timeScale != 0 && !inDialog && inCollider)
         {
+            talkedOnce = true;
+            audio.Stop();
             inDialog = true;
             DialogPanel.SetActive(true);
             ds.activeText.text = string.Empty;

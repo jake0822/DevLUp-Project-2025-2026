@@ -28,6 +28,13 @@ public class DialogSystem : MonoBehaviour
     {
        
     }
+    public void SetDialog(string[] dialog, AudioClip[] audios)
+    {
+        DialogLines = null;
+        DialogLines = dialog;
+        DialogAudio = null;
+        DialogAudio = audios;
+    }
 
     IEnumerator typeDialog(string text)
     {
@@ -83,8 +90,7 @@ public class DialogSystem : MonoBehaviour
                 StartCoroutine(typeDialog(DialogLines[activeIndex]));
             else if (activeIndex >= DialogLines.Length) {
                 finishedDialogue = true;
-                if(gt != null)
-                    gt.ActivatePortals();
+         
             }
             else
             {
