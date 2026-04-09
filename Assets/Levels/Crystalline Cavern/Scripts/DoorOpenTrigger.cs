@@ -16,7 +16,7 @@ public class DoorOpenTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (canOpenDoor && other.CompareTag("Player"))
+        if (canOpenDoor && other.CompareTag("player"))
         {
             doorOpenEvent.Invoke();
             Destroy(gameObject);

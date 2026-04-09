@@ -11,7 +11,7 @@ public class Key : MonoBehaviour {
     }
 
     void OnTriggerEnter(Collider other) {
-        if (other.gameObject.CompareTag("Player")) {
+        if (other.gameObject.CompareTag("player")) {
             PlayerKeys keyHandler = other.gameObject.GetComponent<PlayerKeys>();
             keyHandler.AddKey();
             Debug.Log("key collected");
