@@ -42,7 +42,7 @@ public class DialogManager : MonoBehaviour
             audio.clip = clip;
             audio.Play();
 
-            clipTimer =  0.25f;
+            clipTimer =  2f;
         }
 
         voiceLineIndex++;
