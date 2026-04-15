@@ -9,7 +9,7 @@ public class ChaseTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("player"))
         {
             Debug.Log("Chase started");
             gameObject.SetActive(false);
