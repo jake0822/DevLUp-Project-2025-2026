@@ -61,6 +61,8 @@ public class lavaDeath : MonoBehaviour
 
         // Re-enable controller
         if (cc != null) cc.enabled = true;
+
+        lr.ResetLava();
     }
 
 }
