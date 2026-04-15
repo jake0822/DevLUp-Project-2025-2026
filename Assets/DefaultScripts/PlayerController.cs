@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Start()
     {
+        
         _collider = GetComponent<CapsuleCollider>();
         _controller = GetComponent<CharacterController>();
         

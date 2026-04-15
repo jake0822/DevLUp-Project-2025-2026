@@ -288,6 +288,75 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 1750968577933419670, guid: c825339db8392f043ab36f1b14394ff7, type: 3}
+--- !u!1001 &32543588
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 199699138002717302, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 449714155}
+    - target: {fileID: 199699138002717302, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
+      propertyPath: 'messages.Array.data[0]'
+      value: You may now enter the portals and go save the babes
+      objectReference: {fileID: 0}
+    - target: {fileID: 199699138002717302, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
+      propertyPath: 'messages.Array.data[1]'
+      value: They need your help!
+      objectReference: {fileID: 0}
+    - target: {fileID: 1562075397180336264, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
+      propertyPath: m_Name
+      value: Fading Instructions
+      objectReference: {fileID: 0}
+    - target: {fileID: 6843365894535244416, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 52.92086
+      objectReference: {fileID: 0}
+    - target: {fileID: 6843365894535244416, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 31.80514
+      objectReference: {fileID: 0}
+    - target: {fileID: 6843365894535244416, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.78763
+      objectReference: {fileID: 0}
+    - target: {fileID: 6843365894535244416, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6843365894535244416, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6843365894535244416, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6843365894535244416, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6843365894535244416, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6843365894535244416, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6843365894535244416, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
 --- !u!1 &34174629
 GameObject:
   m_ObjectHideFlags: 0
@@ -6288,7 +6357,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 8.49
+  m_Radius: 11.47
   m_Height: 0.99999994
   m_Direction: 1
   m_Center: {x: -0.00000023841858, y: 0.000000059604645, z: 0}
@@ -7353,3 +7422,4 @@ SceneRoots:
   - {fileID: 1047321644}
   - {fileID: 1735004053}
   - {fileID: 1046694043}
+  - {fileID: 32543588}
