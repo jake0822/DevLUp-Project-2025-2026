@@ -14,6 +14,7 @@ public class TextFade : MonoBehaviour
     public DialogManager manager;
     public float fadeDuration = 1f;
     public float waitTime = 2f;
+    public float fadeDelay = 1.9f;
 
     [Header("Audio")]
     public AudioClip fadeOutSound;
@@ -51,7 +52,7 @@ public class TextFade : MonoBehaviour
 
     IEnumerator SequenceCoroutine()
     {
-        yield return new WaitForSeconds(1.9f);
+        yield return new WaitForSeconds(fadeDelay);
         isPlaying = true;
 
         for (int i = 0; i < messages.Count; i++)

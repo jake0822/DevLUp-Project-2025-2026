@@ -301,6 +301,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 449714155}
     - target: {fileID: 199699138002717302, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
+      propertyPath: fadeDelay
+      value: 4.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 199699138002717302, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
       propertyPath: 'messages.Array.data[0]'
       value: You may now enter the portals and go save the babes
       objectReference: {fileID: 0}
@@ -311,6 +315,26 @@ PrefabInstance:
     - target: {fileID: 1562075397180336264, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
       propertyPath: m_Name
       value: Fading Instructions
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000340862920960859, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.9800003
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000340862920960859, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.9800003
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000340862920960859, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.9800003
+      objectReference: {fileID: 0}
+    - target: {fileID: 6694037860901054403, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
+      propertyPath: m_margin.x
+      value: -139.48431
+      objectReference: {fileID: 0}
+    - target: {fileID: 6694037860901054403, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
+      propertyPath: m_margin.z
+      value: -133.06998
       objectReference: {fileID: 0}
     - target: {fileID: 6843365894535244416, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
       propertyPath: m_LocalPosition.x
@@ -351,6 +375,10 @@ PrefabInstance:
     - target: {fileID: 6843365894535244416, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6843365894535244416, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
