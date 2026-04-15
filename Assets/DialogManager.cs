@@ -16,7 +16,7 @@ public class DialogManager : MonoBehaviour
     private bool startedDefaults;
     public AudioSource audio;
 
-    private bool talkedOnce = false;
+    public bool talkedOnce = false;
 
     
     private float clipTimer;

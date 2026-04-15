@@ -2358,9 +2358,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3003e59b0cf7f424080ff8e512387f31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetSceneName: LevelWithArt
+  targetSceneName: Level
   Text: {fileID: 1509404095}
   portalDeactivate: 1
+  volcanoEnd: 0
+  CavernEnd: 0
+  SkyEnd: 0
 --- !u!65 &702410994
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3493,6 +3496,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 449714151}
+  - {fileID: 1225680180}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1054128999 stripped
@@ -3841,6 +3845,105 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1201647743}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1225680179
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1047321644}
+    m_Modifications:
+    - target: {fileID: 4240382246897817368, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 4240382246897817368, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4240382246897817368, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 22.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 4240382246897817368, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.79545605
+      objectReference: {fileID: 0}
+    - target: {fileID: 4240382246897817368, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4240382246897817368, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.6060114
+      objectReference: {fileID: 0}
+    - target: {fileID: 4240382246897817368, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4240382246897817368, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4240382246897817368, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 285.397
+      objectReference: {fileID: 0}
+    - target: {fileID: 4240382246897817368, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7612236738880392094, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99993235
+      objectReference: {fileID: 0}
+    - target: {fileID: 7612236738880392094, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.0028412908
+      objectReference: {fileID: 0}
+    - target: {fileID: 7612236738880392094, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.011258629
+      objectReference: {fileID: 0}
+    - target: {fileID: 7612236738880392094, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.000765099
+      objectReference: {fileID: 0}
+    - target: {fileID: 7612236738880392094, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0.325
+      objectReference: {fileID: 0}
+    - target: {fileID: 7612236738880392094, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -1.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 7612236738880392094, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -0.091
+      objectReference: {fileID: 0}
+    - target: {fileID: 8524902679452998156, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: m_Name
+      value: BlubPostLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8524902679452998156, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+--- !u!4 &1225680180 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4240382246897817368, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+  m_PrefabInstance: {fileID: 1225680179}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1225680181 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8524902679452998156, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+  m_PrefabInstance: {fileID: 1225680179}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1227494531 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8391222552659086748, guid: 2360cf3b8c31d452ca7b5ec2aacdbc41, type: 3}
@@ -4024,6 +4127,9 @@ MonoBehaviour:
   targetSceneName: CaveScene
   Text: {fileID: 356495925}
   portalDeactivate: 1
+  volcanoEnd: 0
+  CavernEnd: 0
+  SkyEnd: 0
 --- !u!65 &1350508044
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4323,6 +4429,9 @@ MonoBehaviour:
   targetSceneName: Oasis
   Text: {fileID: 2046007892}
   portalDeactivate: 0
+  volcanoEnd: 0
+  CavernEnd: 0
+  SkyEnd: 0
 --- !u!65 &1435021250
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5110,18 +5219,27 @@ MonoBehaviour:
   volcano: {fileID: 2108955207}
   cavern: {fileID: 1350508043}
   stoneCold: {fileID: 702410993}
-  volcanoPortal: {fileID: 1190843552}
-  cavernPortal: {fileID: 0}
-  stoneColdPortal: {fileID: 292495449}
-  volcanoSprite: {fileID: 0}
+  volcanoSprite: {fileID: 1225680181}
   cavernSprite: {fileID: 0}
   stoneColdSprite: {fileID: 0}
-  dm: {fileID: 449714155}
   ds: {fileID: 649258214}
-  midDialogue: []
-  completeDialogue: []
-  midAudio: []
-  endAudio: []
+  dm: {fileID: 449714155}
+  volcanoCompleteDialogue:
+  - test volcano
+  cavernCompleteDialogue:
+  - test cavern
+  stoneColdCompleteDialogue:
+  - test stoen cold
+  completeDialogue:
+  - test all complete
+  volcanoCompleteAudio:
+  - {fileID: 8300000, guid: 25e005261279c3043b6e1214f1f8d4fa, type: 3}
+  cavernCompleteAudio:
+  - {fileID: 8300000, guid: 65eb3cbbeabe43d4fb1c18a7644e25d1, type: 3}
+  stoneColdCompleteAudio:
+  - {fileID: 8300000, guid: b9c88f1f78b156e42a69079d5f13551a, type: 3}
+  completeAudio:
+  - {fileID: 8300000, guid: 43bff995c2ea79b48b2ccdb2bfecbe67, type: 3}
 --- !u!4 &1735004053
 Transform:
   m_ObjectHideFlags: 0
@@ -6253,6 +6371,9 @@ MonoBehaviour:
   targetSceneName: VolcanoScene
   Text: {fileID: 627051238}
   portalDeactivate: 1
+  volcanoEnd: 0
+  CavernEnd: 0
+  SkyEnd: 0
 --- !u!65 &2108955208
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6571,7 +6692,7 @@ PrefabInstance:
     - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
       propertyPath: 'DialogAudio.Array.data[0]'
       value: 
-      objectReference: {fileID: 8300000, guid: 464ef4b0a6c9fbd45a4958d3cb253ea0, type: 3}
+      objectReference: {fileID: 8300000, guid: af0d2382548538940aeae54531109787, type: 3}
     - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
       propertyPath: 'DialogAudio.Array.data[1]'
       value: 
@@ -6610,7 +6731,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 0704e88e099f3af4390501ea03c89d8b, type: 3}
     - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
       propertyPath: 'DialogLines.Array.data[0]'
-      value: 'Hmm. Oh! You! A good wizard, finally! '
+      value: 'You! A good wizard, finally! '
       objectReference: {fileID: 0}
     - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
       propertyPath: 'DialogLines.Array.data[1]'

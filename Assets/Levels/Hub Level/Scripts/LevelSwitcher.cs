@@ -12,6 +12,8 @@ public class LevelSwitcher : MonoBehaviour
 
     private bool inCollider;
 
+    public bool volcanoEnd, CavernEnd, SkyEnd;
+
     private void OnTriggerEnter(Collider other)
     {
         if (portalDeactivate)
@@ -42,6 +44,14 @@ public class LevelSwitcher : MonoBehaviour
     {
         if (inCollider)
         {
+            if (volcanoEnd)
+                PlayerPrefs.SetInt("VolcanoComplete", 1);
+            else if (CavernEnd)
+                PlayerPrefs.SetInt("CavernComplete", 1);
+            else if(SkyEnd)
+                PlayerPrefs.SetInt("StoneColdComplete", 1);
+            
+            
             SceneManager.LoadScene(targetSceneName);
         }
     }

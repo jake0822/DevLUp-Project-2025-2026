@@ -1716,6 +1716,10 @@ PrefabInstance:
       value: PortalTeleportation
       objectReference: {fileID: 0}
     - target: {fileID: 3017206667125140751, guid: 878e5076218b12d43afa586b9e42bf5a, type: 3}
+      propertyPath: volcanoEnd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3017206667125140751, guid: 878e5076218b12d43afa586b9e42bf5a, type: 3}
       propertyPath: targetSceneName
       value: Main
       objectReference: {fileID: 0}

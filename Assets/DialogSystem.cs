@@ -22,7 +22,7 @@ public class DialogSystem : MonoBehaviour
     public bool autoPlay;
     private bool lockDialog;
 
-    public GameplayTriggers gt;
+    
 
     private void Update()
     {

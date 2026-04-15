@@ -13,7 +13,8 @@ public class lavaDeath : MonoBehaviour
     public Transform respawnPoint;
     private void Start()
     {
-       lrT = lr.transform;
+        if(lrT != null)
+            lrT = lr.transform;
     }
     private void OnTriggerEnter(Collider other)
     {

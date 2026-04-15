@@ -3358,6 +3358,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19824d1bd4ff3644d983cf9f1c539da4, type: 3}
+--- !u!82 &1364545301 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5575419010495576133, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+  m_PrefabInstance: {fileID: 1541666553}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1443346532
 GameObject:
   m_ObjectHideFlags: 0
@@ -3672,6 +3677,66 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: audio
+      value: 
+      objectReference: {fileID: 1364545301}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: DialogAudio.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogAudio.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 51c94b4f69ed5844799b4f28512994c9, type: 3}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogAudio.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 013630a193d156049ae0b45550a2a5f9, type: 3}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogAudio.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 074ecf993a7a38f4389cf2d339fe9666, type: 3}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogAudio.Array.data[3]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 344cb00507328a143a0c42c70d1584fc, type: 3}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogAudio.Array.data[4]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 4d0d001b68cdb8c4083355c44b8d22e8, type: 3}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogAudio.Array.data[5]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 31ba65038f6dfbd4793d6fae25974b47, type: 3}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogAudio.Array.data[6]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 4060e8d67afd5fe4fb0385a75c37e115, type: 3}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogAudio.Array.data[7]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 061c2d3e3f732054aa62e00587802a00, type: 3}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogAudio.Array.data[8]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 634f509a3d10e9b4791a6ef270776995, type: 3}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogAudio.Array.data[9]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 344cb00507328a143a0c42c70d1584fc, type: 3}
+    - target: {fileID: 9034089474176077287, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: audio
+      value: 
+      objectReference: {fileID: 1364545301}
+    - target: {fileID: 9034089474176077287, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: defaultClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9034089474176077287, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'defaultClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: e6935d3012717a3408f10f2606519b60, type: 3}
     - target: {fileID: 9166558279810211912, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -4322,6 +4387,9 @@ MonoBehaviour:
   targetSceneName: Main
   Text: {fileID: 1969188231}
   portalDeactivate: 0
+  volcanoEnd: 0
+  CavernEnd: 0
+  SkyEnd: 1
 --- !u!65 &1911011346
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4373,7 +4441,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: de475b6ed1cb9084d81c7be560fdbc69, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -5039,6 +5107,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: {fileID: 1912670718}
+  thisIslava: 0
+  lr: {fileID: 0}
+  player: {fileID: 0}
+  respawnPoint: {fileID: 0}
 --- !u!65 &2034232391
 BoxCollider:
   m_ObjectHideFlags: 0
