@@ -3683,7 +3683,11 @@ PrefabInstance:
       objectReference: {fileID: 1364545301}
     - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
       propertyPath: DialogAudio.Array.size
-      value: 9
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: DialogLines.Array.size
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
       propertyPath: 'DialogAudio.Array.data[0]'
@@ -3696,7 +3700,7 @@ PrefabInstance:
     - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
       propertyPath: 'DialogAudio.Array.data[2]'
       value: 
-      objectReference: {fileID: 8300000, guid: 074ecf993a7a38f4389cf2d339fe9666, type: 3}
+      objectReference: {fileID: 8300000, guid: c33e4d8a0a6c7084ab79704336c0ebd1, type: 3}
     - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
       propertyPath: 'DialogAudio.Array.data[3]'
       value: 
@@ -3716,7 +3720,7 @@ PrefabInstance:
     - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
       propertyPath: 'DialogAudio.Array.data[7]'
       value: 
-      objectReference: {fileID: 8300000, guid: 061c2d3e3f732054aa62e00587802a00, type: 3}
+      objectReference: {fileID: 8300000, guid: 634f509a3d10e9b4791a6ef270776995, type: 3}
     - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
       propertyPath: 'DialogAudio.Array.data[8]'
       value: 
@@ -3725,6 +3729,38 @@ PrefabInstance:
       propertyPath: 'DialogAudio.Array.data[9]'
       value: 
       objectReference: {fileID: 8300000, guid: 344cb00507328a143a0c42c70d1584fc, type: 3}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogLines.Array.data[0]'
+      value: Oh Fizzle! I'm all the way up here in this fizzlin castle!
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogLines.Array.data[1]'
+      value: No way to get down
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogLines.Array.data[2]'
+      value: Whats a guy gotta do to get to the ground around here!
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogLines.Array.data[3]'
+      value: Yo tuff guy, care to help a friend out?
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogLines.Array.data[4]'
+      value: I been floatin up here way too long for my liking
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogLines.Array.data[5]'
+      value: And I wanna get down and see my Ma!
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogLines.Array.data[6]'
+      value: Here, I'll give you an extra boost and we can jump our way outa here
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003078385388726310, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
+      propertyPath: 'DialogLines.Array.data[7]'
+      value: You ain't half bad for a wizard!
+      objectReference: {fileID: 0}
     - target: {fileID: 9034089474176077287, guid: 3c974c0399c04804ea7ea5d1ff402c96, type: 3}
       propertyPath: audio
       value: 
