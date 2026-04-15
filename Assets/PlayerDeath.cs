@@ -28,9 +28,6 @@ public class lavaDeath : MonoBehaviour
             }
             else
             {
-                lr.transform.position = lrT.position;
-                lr.start = false;
-
                 audio.Play();
 
                 RespawnPlayer(player);
