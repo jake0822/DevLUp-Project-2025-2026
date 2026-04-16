@@ -24,8 +24,11 @@ EditorBuildSettings:
     path: Assets/Levels/Oasis/Scenes/Oasis.unity
     guid: 0e373f0e784b10e469a8378ef80ac1ec
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Levels/MainMenu/MainMenu.unity
     guid: 27fbc6188e3b4ac46848aba776f2a149
+  - enabled: 1
+    path: Assets/Levels/Credits/Credits Scene.unity
+    guid: 9f0336d7415ed7348b153a9d22209406
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
