@@ -22,6 +22,13 @@ public class TextFade : MonoBehaviour
 
     private bool isPlaying = false;
     bool didit;
+    private bool introDone;
+    public bool inHubWorld = false;
+
+    private void Start()
+    {
+        introDone = PlayerPrefs.GetInt("IntroFinished", 0) == 1;
+    }
 
     void Awake()
     {
@@ -33,6 +40,8 @@ public class TextFade : MonoBehaviour
     }
     private void Update()
     {
+        if (introDone && inHubWorld)
+            return;
         if (manager.hasCompletedDialgue() && didit == false)
         {
             PlaySequence();

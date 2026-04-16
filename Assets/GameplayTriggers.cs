@@ -33,6 +33,7 @@ public class GameplayTriggers : MonoBehaviour
     private bool volcanoComplete;
     private bool cavernComplete;
     private bool stoneColdComplete;
+    private string MostRecentLevelComplete;
 
     void Start()
     {
@@ -51,6 +52,7 @@ public class GameplayTriggers : MonoBehaviour
 
     void LoadState()
     {
+        MostRecentLevelComplete = PlayerPrefs.GetString("MostRecentLevelComplete", "");
         introFinished = PlayerPrefs.GetInt("IntroFinished", 0) == 1;
         volcanoComplete = PlayerPrefs.GetInt("VolcanoComplete", 0) == 1;
         cavernComplete = PlayerPrefs.GetInt("CavernComplete", 0) == 1;
@@ -119,25 +121,25 @@ public class GameplayTriggers : MonoBehaviour
         if (!introFinished)
             return;
 
-        if (dm != null)
-            dm.talkedOnce = true;
+        dm.talkedOnce = true;
 
         if (AllLevelsComplete())
         {
             ds.SetDialog(completeDialogue, completeAudio);
         }
-        else if (volcanoComplete && !cavernComplete && !stoneColdComplete)
+        else if (MostRecentLevelComplete == "Volcano")
         {
             ds.SetDialog(volcanoCompleteDialogue, volcanoCompleteAudio);
         }
-        else if (cavernComplete && !volcanoComplete && !stoneColdComplete)
+        else if (MostRecentLevelComplete == "Cavern")
         {
             ds.SetDialog(cavernCompleteDialogue, cavernCompleteAudio);
         }
-        else if (stoneColdComplete && !volcanoComplete && !cavernComplete)
+        else if (MostRecentLevelComplete == "StoneCold")
         {
             ds.SetDialog(stoneColdCompleteDialogue, stoneColdCompleteAudio);
         }
+
     }
 
     void SetPortalState(LevelSwitcher portal, bool deactivate)
