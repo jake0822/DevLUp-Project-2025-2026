@@ -124,6 +124,37 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3847036595616180440, guid: 8498e14b1d759024fb989e9cddb05299, type: 3}
   m_PrefabInstance: {fileID: 662513752}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &59844271
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 59844272}
+  m_Layer: 0
+  m_Name: PlayerRespawnPointDoor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &59844272
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59844271}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.87, y: 10.28, z: -24.83}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &93386941
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4214,9 +4245,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 28241112}
   respawnPoint: {fileID: 413510482}
-  keysObject: {fileID: 539131165}
+  doorRespawnPoint: {fileID: 59844272}
   worm: {fileID: 831577975}
   wormRespawnPoint: {fileID: 165668465}
+  keysObject: {fileID: 539131165}
+  chaseTriggerObject: {fileID: 1199267817}
   fadeImage: {fileID: 1020801231}
   fadeDuration: 1
 --- !u!4 &845041000
@@ -8888,7 +8921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa284cdd1a895f7489bc480787f2421d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalKeys: 4
+  totalKeys: 1
   collectAllEvent:
     m_PersistentCalls:
       m_Calls:
@@ -10384,6 +10417,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 662513752}
   - {fileID: 413510482}
+  - {fileID: 59844272}
   - {fileID: 1242916971}
   - {fileID: 635365066}
   - {fileID: 403378945}

@@ -21,4 +21,9 @@ public class PlayerKeys : MonoBehaviour
     {
         keys = 0;
     }
+
+    public bool HasAllKeys()
+    {
+        return keys == totalKeys;
+    }
 }
