@@ -14,8 +14,7 @@ public class Key : MonoBehaviour {
         if (other.gameObject.CompareTag("player")) {
             PlayerKeys keyHandler = other.gameObject.GetComponent<PlayerKeys>();
             keyHandler.AddKey();
-            Debug.Log("key collected");
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

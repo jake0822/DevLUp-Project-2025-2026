@@ -55,7 +55,7 @@ public class LightDash : MonoBehaviour {
     }
 
     public void Dash(InputAction.CallbackContext context) {
-        if (canDash && context.performed && spriteController.HasSprite()) {
+        if (canDash && context.performed && spriteController.HasSprite() && spriteController.IsSpriteUnlocked()) {
             canDash = false;
             isDashing = true;
             dashTimer = 0.0f;
@@ -63,5 +63,11 @@ public class LightDash : MonoBehaviour {
 
             spriteController.GlowSprite(glowIntensity, dashDuration, glowCurve);
         }
+    }
+
+    public void StopDashing()
+    {
+        isDashing = false;
+        dashTimer = 0.0f;
     }
 }

@@ -16,4 +16,9 @@ public class PlayerKeys : MonoBehaviour
             collectAllEvent.Invoke();
         }
     }
+
+    public void ResetKeys()
+    {
+        keys = 0;
+    }
 }
