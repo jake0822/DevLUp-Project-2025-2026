@@ -11,6 +11,7 @@ public class Worm : MonoBehaviour {
 
     [SerializeField] private GameObject head;
     [SerializeField] private GameObject segmentPrefab;
+    [SerializeField] private GameObject segmentsObject;
 
     [Header("Segment Settings")]
     [SerializeField] private int segmentCount = 10;
@@ -61,6 +62,15 @@ public class Worm : MonoBehaviour {
         state = State.PermaChase;
     }
 
+    public void ClearPastTransforms(Vector3 pos)
+    {
+        pastTransforms.Clear();
+        for (int i = 0; i < positionQueueSize; i++)
+        {
+            pastTransforms.Enqueue((pos, Quaternion.Euler(0, 0, 0)));
+        }
+    }
+
     void Start() {
         headPositionOffset = head.transform.localPosition;
         float segmentScaleFactor = transform.localScale.x;
@@ -68,6 +78,7 @@ public class Worm : MonoBehaviour {
         // Create the segments
         for (int i = 0; i < segmentCount; i++) {
             GameObject segmentObject = Instantiate(segmentPrefab);
+            segmentObject.transform.SetParent(segmentsObject.transform, false);
             segmentObject.transform.localScale = Vector3.one * segmentSizeCurve.Evaluate((float)i / segmentCount) * segmentScaleFactor;
             segments.Add(segmentObject);
         }
@@ -185,7 +196,7 @@ public class Worm : MonoBehaviour {
         }
     }
 
-    void ToWanderState() {
+    public void ToWanderState() {
         Debug.Log("Changed to wander state");
         state = State.Wander;
         chaseCooldownTimer = chaseCooldown;
