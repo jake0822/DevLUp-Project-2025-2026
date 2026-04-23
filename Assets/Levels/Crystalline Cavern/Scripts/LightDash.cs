@@ -7,6 +7,7 @@ public class LightDash : MonoBehaviour {
     public CharacterController characterController;
     public CinemachineCamera playerFpsCamera;
     public Transform playerFacingTransform;
+    public AudioSource dashAudioSource;
 
     [Header("Dash Settings")]
     public float dashDuration = 1.0f;  // The amount of time the player should dash for
@@ -62,6 +63,8 @@ public class LightDash : MonoBehaviour {
             dashVector = playerFacingTransform.rotation * Vector3.forward * dashStrength;
 
             spriteController.GlowSprite(glowIntensity, dashDuration, glowCurve);
+
+            dashAudioSource.Play();
         }
     }
 
