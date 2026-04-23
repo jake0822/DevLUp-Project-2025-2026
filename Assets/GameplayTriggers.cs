@@ -1,5 +1,9 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.Video;
 
 
 public class GameplayTriggers : MonoBehaviour
@@ -18,6 +22,9 @@ public class GameplayTriggers : MonoBehaviour
     [Header("Mother Dialogue")]
     public DialogSystem ds;
     public DialogManager dm;
+
+    public GameObject DionCubes;
+    public Image black;
 
     public string[] volcanoCompleteDialogue;
     public string[] cavernCompleteDialogue;
@@ -39,6 +46,7 @@ public class GameplayTriggers : MonoBehaviour
     {
         LoadState();
         ApplyHubState();
+        
     }
 
     void Update()
@@ -79,6 +87,30 @@ public class GameplayTriggers : MonoBehaviour
         UpdatePortals();
         UpdateSprites();
         UpdateDialogue();
+    }
+
+    void endingSequence()
+    {
+              if (DionCubes != null)
+            
+              StartCoroutine(endingSequenceCoroutine());
+
+    }
+    IEnumerator endingSequenceCoroutine()
+    {
+        DionCubes.SetActive(true);
+        yield return new WaitForSeconds((float)DionCubes.GetComponentInChildren<VideoPlayer>().clip.length + 3f);
+        print("Ending sequence finished");
+        while (black.color.a < 1f)
+        {
+            Color c = black.color;
+            c.a += Time.deltaTime / 3f; // Fade to black over 3 seconds
+            black.color = c;
+            yield return null;
+        }
+        SceneManager.LoadScene("Credits Scene");
+
+
     }
 
     void ActivateAllPortals()
@@ -126,6 +158,7 @@ public class GameplayTriggers : MonoBehaviour
         if (AllLevelsComplete())
         {
             ds.SetDialog(completeDialogue, completeAudio);
+            endingSequence();
         }
         else if (MostRecentLevelComplete == "Volcano")
         {
