@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class motion : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class motion : MonoBehaviour
     {
         if (transform.position.y >= (m_TextComponent.bounds.size.y) + 100 + startingPos)
         {
-            //open main menu
+            SceneManager.LoadScene("MainMenu");
         }
         else
         {
