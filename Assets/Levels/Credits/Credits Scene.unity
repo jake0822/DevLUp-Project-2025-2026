@@ -431,7 +431,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 3e8501484384bb7409c113ec39994db1, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -810,11 +810,16 @@ MonoBehaviour:
 
     Animating:
 
-    AAAAAAAAAAAAAAAA
+    Laura
+    Diaz
 
-    BBBBBBBBBBBBB
+    LJ Dunphy
 
-    CCCCC
+    John King
+
+    Jake Younan
+
+    Marco ?.
 
 
     Voice
@@ -829,17 +834,15 @@ MonoBehaviour:
 
     Audio Team:
 
-    AAAAAAAAAAAAAAAA
+    Laura
+    Diaz
 
-    BBBBBBBBBBBBB
+    LJ Dunphy
 
-    CCCCC
-
-    DD
+    John King
 
 
-    Special
-    Thanks:
+    Special Thanks:
 
     Dion Tryban'
   m_isRightToLeft: 0
