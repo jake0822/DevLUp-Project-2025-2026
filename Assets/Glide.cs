@@ -144,7 +144,7 @@ public class Glide : MonoBehaviour
                     }
                     else  // Just been launched out of gyser
                     {
-                        player.gravity = -13;
+                        player.gravity = -10;
                     }
                 }
             }
