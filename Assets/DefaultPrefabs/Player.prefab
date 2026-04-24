@@ -32,6 +32,7 @@ Transform:
   - {fileID: 6964016839333920705}
   - {fileID: 3611742105917704305}
   - {fileID: 5801360209016335436}
+  - {fileID: 151390208520776254}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3485157986150982362
@@ -481,7 +482,19 @@ MonoBehaviour:
     m_ActionId: 574a299c-76c6-4705-b05f-695b5ebb73a6
     m_ActionName: Gameplay/LightDash
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3550733127445903471}
+        m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
+        m_MethodName: HandlePauseInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 89357e8a-e8ea-4393-89d1-925682d1bfe5
     m_ActionName: Gameplay/PauseGame
   - m_PersistentCalls:
@@ -525,6 +538,53 @@ MonoBehaviour:
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!1 &7601280394091160331
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 151390208520776254}
+  - component: {fileID: 3550733127445903471}
+  m_Layer: 0
+  m_Name: PauseManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &151390208520776254
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7601280394091160331}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.97676593, z: -0, w: 0.21430884}
+  m_LocalPosition: {x: -22.777407, y: -7.884646, z: -16.834444}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1318521418731542056}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3550733127445903471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7601280394091160331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4871a04cf1627b149ac6eb7a90fff539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenuUI: {fileID: 0}
+  levelSelectSceneName: LevelSelectGrid
+  isPaused: 0
 --- !u!1 &7656626702662861067
 GameObject:
   m_ObjectHideFlags: 0
