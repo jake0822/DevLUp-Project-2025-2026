@@ -18,4 +18,9 @@ public class ButtonLogic : MonoBehaviour
     {
         SceneManager.LoadScene("Credits Scene");
     }
+
+    public void ShowControls()
+    {
+        SceneManager.LoadScene("Credits Scene");
+    }
 }

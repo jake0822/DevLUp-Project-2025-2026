@@ -14,7 +14,7 @@ public class motion : MonoBehaviour
     }
     void Update()
     {
-        if (transform.position.y >= (m_TextComponent.bounds.size.y) + 100 + startingPos)
+        if (transform.position.y >= (m_TextComponent.bounds.size.y) + 700 + startingPos)
         {
             SceneManager.LoadScene("MainMenu");
         }
