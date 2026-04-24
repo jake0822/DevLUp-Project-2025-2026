@@ -1286,89 +1286,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Dawn of Dion Contributors
-
-
-    Project Facilitator:
-
-    Jake Younan
-
-
-    Programming:
-
-    AAAAAAAAAAAAAAAA
-
-    BBBBBBBBBBBBB
-
-    CCCCC
-
-
-    Level
-    Design:
-
-    AAAAAAAAAAAAAAAA
-
-    BBBBBBBBBBBBB
-
-    CCCCC
-
-
-    3D Art:
-
-    AAAAAAAAAAAAAAAA
-
-    BBBBBBBBBBBBB
-
-    CCCCC
-
-
-    2D
-    Art:
-
-    AAAAAAAAAAAAAAAA
-
-    BBBBBBBBBBBBB
-
-    CCCCC
-
-
-    Animating:
-
-    AAAA
-
-    BBBBB
-
-    CCC
-
-
-    Voice
-    Acting:
-
-    Laura Diaz
-
-    LJ Dunphy
-
-    John King
-
-    Jake Younan
-
-    Marco
-    Ocram
-
-
-    Audio Team:
-
-    Laura Diaz
-
-    LJ Dunphy
-
-    John King
-
-
-    Special
-    Thanks:
-
-    Dion Tryban'
+  m_text: "Dawn of Dion Contributors\n\nProject Facilitator:\nJake Younan\n\nProgramming:\nDavid
+    Berger\nYusong Liang\nMiles Burkart\nAshi\nHailie Tucker\n\nLevel Design:\nChamee\n\n3D
+    Art:\nSean McGill\nAres Gregory\n\n\n2D Art:\nKaydence Montenegro\n\nVoice Acting:\nLaura
+    Diaz\nLJ Dunphy\nJohn King\nJake Younan\nMarco Casta\xF1o\n\nMusic:\nMarco Casta\xF1o\nAlec
+    Trembly\nLee Anderson\n\n\nAudio Team:\nLaura Diaz\nLJ Dunphy\nJohn King\nCamryn
+    Whitley\n\nSpecial Thanks:\nDion Tryban\n\nDisclaimer: All developers listed
+    here contributed to more than just their listed role, many hats were worn by
+    all in the production of Dawn of Dion"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
