@@ -8,8 +8,6 @@ public class PauseManager : MonoBehaviour
 
     public bool isPaused = false;
    
-    
-
     private void Start()
     {
 
@@ -21,7 +19,7 @@ public class PauseManager : MonoBehaviour
     {
         isPaused = state;
         pauseMenuUI.SetActive(state);
-        Time.timeScale = state ? 1.0f : 0;
+        Time.timeScale = state ? 0.0f : 1.0f;
         Cursor.visible = state;
         Cursor.lockState = state ? CursorLockMode.None : CursorLockMode.Locked;
     }
