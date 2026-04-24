@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class ButtonLogic : MonoBehaviour
 {
+    public GameObject controlPopUp;
     public void StartGame()
     {
         SceneManager.LoadScene("Main");
@@ -14,13 +15,19 @@ public class ButtonLogic : MonoBehaviour
         Application.Quit();
     }
     
+    public void showControls() {
+        controlPopUp.SetActive(true);
+    }
+    
+    public void hideControls() {
+        controlPopUp.SetActive(false);
+    }
+    
+
     public void RunCredits()
     {
         SceneManager.LoadScene("Credits Scene");
     }
 
-    public void ShowControls()
-    {
-        SceneManager.LoadScene("Credits Scene");
-    }
+  
 }
