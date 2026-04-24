@@ -46,7 +46,7 @@ public class GameplayTriggers : MonoBehaviour
     {
         LoadState();
         ApplyHubState();
-        PlayerPrefs.SetInt("CavernComplete", 1);
+        
         
     }
 
