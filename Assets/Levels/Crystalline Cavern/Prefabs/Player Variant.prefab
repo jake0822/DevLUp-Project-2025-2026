@@ -44,8 +44,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.9598958, b: 0.8066038, a: 1}
-  m_Intensity: 7
-  m_Range: 15
+  m_Intensity: 10
+  m_Range: 30
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -466,7 +466,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3611742105917704305, guid: 017ed5ee22b91cf478d1d6997cac1956, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.028
+      value: 0.797
       objectReference: {fileID: 0}
     - target: {fileID: 3611742105917704305, guid: 017ed5ee22b91cf478d1d6997cac1956, type: 3}
       propertyPath: m_LocalPosition.z
@@ -610,31 +610,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5801360209016335436, guid: 017ed5ee22b91cf478d1d6997cac1956, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -41.600475
       objectReference: {fileID: 0}
     - target: {fileID: 5801360209016335436, guid: 017ed5ee22b91cf478d1d6997cac1956, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.028
+      value: 10.526998
       objectReference: {fileID: 0}
     - target: {fileID: 5801360209016335436, guid: 017ed5ee22b91cf478d1d6997cac1956, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 111.46017
       objectReference: {fileID: 0}
     - target: {fileID: 5801360209016335436, guid: 017ed5ee22b91cf478d1d6997cac1956, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9324018
+      value: 0.08267493
       objectReference: {fileID: 0}
     - target: {fileID: 5801360209016335436, guid: 017ed5ee22b91cf478d1d6997cac1956, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.3510585
+      value: -0.0009667972
       objectReference: {fileID: 0}
     - target: {fileID: 5801360209016335436, guid: 017ed5ee22b91cf478d1d6997cac1956, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.08042378
+      value: 0.996576
       objectReference: {fileID: 0}
     - target: {fileID: 5801360209016335436, guid: 017ed5ee22b91cf478d1d6997cac1956, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.030280352
+      value: -0.00044361752
       objectReference: {fileID: 0}
     - target: {fileID: 6389863775855389145, guid: 017ed5ee22b91cf478d1d6997cac1956, type: 3}
       propertyPath: m_RenderPostProcessing
@@ -738,8 +738,10 @@ MonoBehaviour:
   characterController: {fileID: 7583509865728048406}
   playerFpsCamera: {fileID: 180231982282726650}
   playerFacingTransform: {fileID: 992958682567812962}
+  dashAudioSource: {fileID: 0}
   dashDuration: 0.5
   dashStrength: 30
+  dashCooldown: 0
   dashStrengthCurve:
     serializedVersion: 2
     m_Curve:
@@ -895,6 +897,7 @@ MonoBehaviour:
   spriteTransform: {fileID: 7557028221536746464}
   spriteReturnTransform: {fileID: 6754276341376458206}
   spriteModelTransform: {fileID: 4312542247036281987}
+  spriteVisual: {fileID: 0}
   spriteDetectionRadius: 10
   spriteIdleFrequency: 1.5
   spriteIdleAmplitude: 0.015

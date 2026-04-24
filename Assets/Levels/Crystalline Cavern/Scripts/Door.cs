@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Door : MonoBehaviour
 {
@@ -8,17 +9,25 @@ public class Door : MonoBehaviour
     [SerializeField] private AudioSource openSound;
     [SerializeField] private float disableColliderAfter = 1.0f;
 
+    [SerializeField] private UnityEvent onOpenEvent;
+
     private float disableColliderTimer = -1;
+    private bool isDoorOpen = false;
 
     public void FixedUpdate()
     {
-
-        if (disableColliderTimer != -1)
+        if (!isDoorOpen && disableColliderTimer != -1)
         {
             disableColliderTimer = Mathf.MoveTowards(disableColliderTimer, 0, Time.fixedDeltaTime);
             if (disableColliderTimer == 0)
             {
                 doorCollider.SetActive(false);
+            }
+
+            if (disableColliderTimer == 0)
+            {
+                isDoorOpen = true;
+                onOpenEvent.Invoke();
             }
         }
     }

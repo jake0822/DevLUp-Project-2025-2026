@@ -32,6 +32,16 @@ public class PlayerKeys : MonoBehaviour
         return keys == totalKeys;
     }
 
+    public int GetKeys()
+    {
+        return keys;
+    }
+
+    public int GetTotalKeys()
+    {
+        return totalKeys;
+    }
+
     void UpdateDoorKeyObjects()
     {
         for (int i = 0; i < totalKeys; i++)

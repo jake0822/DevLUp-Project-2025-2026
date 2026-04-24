@@ -6,6 +6,7 @@ public class SpritePickup : MonoBehaviour
     [SerializeField] private LightSprite spriteController;
     [SerializeField] private DialogManager dialogManager;
     [SerializeField] private IntroDoor introDoor;
+    [SerializeField] private GameObject keysUI;
 
     [SerializeField] private GameObject spriteVisual;
     [SerializeField] private Transform playerTransform;
@@ -26,6 +27,7 @@ public class SpritePickup : MonoBehaviour
         {
             spriteController.UnlockSprite();
             introDoor.OpenDoor();
+            keysUI.SetActive(true);
             Destroy(gameObject);
         }
     }

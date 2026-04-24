@@ -8,6 +8,7 @@ public class DeathHandler : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private Transform respawnPoint;
     [SerializeField] private Transform doorRespawnPoint;
+    [SerializeField] private AudioSource deathAudioSource;
 
     [Header("Worm")]
     [SerializeField] private GameObject worm;
@@ -39,13 +40,6 @@ public class DeathHandler : MonoBehaviour
         {
             // Respawn in front of entrance
             respawnPosition = respawnPoint.position;
-            playerKeys.ResetKeys();
-
-            // Re-enable any inactive keys
-            foreach (Transform keyTransform in keysObject.transform)
-            {
-                keyTransform.gameObject.SetActive(true);
-            }
         }
            
         // Teleport player to respawn point
@@ -67,6 +61,8 @@ public class DeathHandler : MonoBehaviour
 
         // Do fade
         fadeTimer = 0;
+
+        deathAudioSource.Play();
     }
 
     void Update()
