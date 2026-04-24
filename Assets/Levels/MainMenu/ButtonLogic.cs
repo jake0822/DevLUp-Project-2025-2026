@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ButtonLogic : MonoBehaviour
 {
@@ -27,6 +28,11 @@ public class ButtonLogic : MonoBehaviour
     public void RunCredits()
     {
         SceneManager.LoadScene("Credits Scene");
+    }
+
+    public void newGame()
+    {
+        PlayerPrefs.DeleteAll();
     }
 
   
