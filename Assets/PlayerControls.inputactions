@@ -267,6 +267,17 @@
                 },
                 {
                     "name": "",
+                    "id": "472c942a-07e1-4ed0-b980-7281c42ca7e1",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "24feebea-07e7-47d4-901b-d9439bd053fd",
                     "path": "",
                     "interactions": "",
@@ -300,6 +311,17 @@
                 },
                 {
                     "name": "",
+                    "id": "27e55587-4d5e-4736-8856-a45657111582",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LightDash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "79a0f6ae-edc9-41f6-9964-3439ef37bc4d",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
@@ -311,8 +333,30 @@
                 },
                 {
                     "name": "",
+                    "id": "0743010f-0312-4df8-9960-91ce9effb49e",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LightThrow",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "3368e0ec-5b9f-4004-b142-e4e26f904b06",
                     "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PauseGame",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "135f6b75-b475-4b85-808a-dc1a5e1b9f5d",
+                    "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
