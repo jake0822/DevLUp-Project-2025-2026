@@ -23,6 +23,7 @@ public class DialogManager : MonoBehaviour
     private void Start()
     {
         clipTimer = 0f;
+        PlayerPrefs.SetInt("CavernComplete", 1);
     }
     private void PlayDefaultVoiceLoop()
     {
@@ -58,7 +59,8 @@ public class DialogManager : MonoBehaviour
 
         if (inDialog)
         {
-            audio.Stop();
+            if (audio != null) 
+                audio.Stop();
             return;
         }
 
@@ -94,7 +96,8 @@ public class DialogManager : MonoBehaviour
         if (context.performed && Time.timeScale != 0 && !inDialog && inCollider)
         {
             talkedOnce = true;
-            audio.Stop();
+            if (audio != null)
+                audio.Stop();
             inDialog = true;
             DialogPanel.SetActive(true);
             ds.activeText.text = string.Empty;
