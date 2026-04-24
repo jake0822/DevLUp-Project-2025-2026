@@ -34800,7 +34800,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 199699138002717302, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
       propertyPath: 'messages.Array.data[0]'
-      value: You may now hold SPACE to hover while in the air...
+      value: You may now hold SPACE to glide while in the air...
       objectReference: {fileID: 0}
     - target: {fileID: 199699138002717302, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
       propertyPath: 'messages.Array.data[1]'
