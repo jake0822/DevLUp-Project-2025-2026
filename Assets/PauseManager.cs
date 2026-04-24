@@ -1,46 +1,37 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
 {
     public GameObject pauseMenuUI;
     public string levelSelectSceneName;
 
-    public bool isPaused;
+    public bool isPaused = false;
    
-    
-
     private void Start()
     {
 
         pauseMenuUI.SetActive(false);
-        isPaused = false;
         Time.timeScale = 1.0f;
     }
 
-    public void PauseOrResumeGame(InputAction.CallbackContext context)
+    public void SetPause(bool state)
     {
-        if (isPaused)
-        {
-            
-            isPaused = false;
-            pauseMenuUI.SetActive(false);
-            Time.timeScale = 1;
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
-        }
-        else 
-        {
-            
-            isPaused = true;
-            pauseMenuUI.SetActive(true);
-            Time.timeScale = 0;
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-
-        }
+        isPaused = state;
+        pauseMenuUI.SetActive(state);
+        Time.timeScale = state ? 0.0f : 1.0f;
+        Cursor.visible = state;
+        Cursor.lockState = state ? CursorLockMode.None : CursorLockMode.Locked;
     }
-    
 
+    public void TogglePause()
+    {
+        SetPause(!isPaused);
+    }
+
+    // Connects to the pause event from InputAction.
+    public void HandlePauseInput(InputAction.CallbackContext context)
+    {
+        TogglePause();
+    }
 }

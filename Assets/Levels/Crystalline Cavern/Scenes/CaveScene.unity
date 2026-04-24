@@ -5873,7 +5873,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 992958682567812962, guid: 8498e14b1d759024fb989e9cddb05299, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0000011437805
+      value: -0.0000011441298
       objectReference: {fileID: 0}
     - target: {fileID: 992958682567812962, guid: 8498e14b1d759024fb989e9cddb05299, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5881,7 +5881,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 992958682567812962, guid: 8498e14b1d759024fb989e9cddb05299, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.00000022095628
+      value: -0.00000022083987
       objectReference: {fileID: 0}
     - target: {fileID: 992958682567812962, guid: 8498e14b1d759024fb989e9cddb05299, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6069,7 +6069,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8023827638371140447, guid: 8498e14b1d759024fb989e9cddb05299, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0000011437805
+      value: -0.0000011441298
       objectReference: {fileID: 0}
     - target: {fileID: 8023827638371140447, guid: 8498e14b1d759024fb989e9cddb05299, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6077,7 +6077,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8023827638371140447, guid: 8498e14b1d759024fb989e9cddb05299, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.00000022095628
+      value: -0.00000022083987
       objectReference: {fileID: 0}
     - target: {fileID: 8285460088539570788, guid: 8498e14b1d759024fb989e9cddb05299, type: 3}
       propertyPath: field of view
@@ -15823,7 +15823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa284cdd1a895f7489bc480787f2421d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalKeys: 1
+  totalKeys: 4
   collectAllEvent:
     m_PersistentCalls:
       m_Calls:
