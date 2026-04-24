@@ -23,7 +23,7 @@ public class DialogManager : MonoBehaviour
     private void Start()
     {
         clipTimer = 0f;
-        PlayerPrefs.SetInt("CavernComplete", 1);
+       
     }
     private void PlayDefaultVoiceLoop()
     {
