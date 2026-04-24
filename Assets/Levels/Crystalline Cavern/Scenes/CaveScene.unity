@@ -4680,7 +4680,7 @@ Transform:
   m_GameObject: {fileID: 831577975}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.731, y: 8.412, z: 70.284}
+  m_LocalPosition: {x: 5.08, y: 9.19, z: -20.86}
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -4818,7 +4818,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.055555556
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -5969,7 +5969,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6000340862920960859, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -490
+      value: -404
       objectReference: {fileID: 0}
     - target: {fileID: 6694037860901054403, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
       propertyPath: m_fontSize
@@ -10529,8 +10529,8 @@ RectTransform:
   m_GameObject: {fileID: 2014245987}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 403378945}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -70,6 +70,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyModel: {fileID: 2758050150675035715}
   rotateSpeed: 0.5
+  pickupSound: {fileID: 8300000, guid: c4486283402dd2049b7613629d5abd53, type: 3}
 --- !u!1 &2206957735845192249
 GameObject:
   m_ObjectHideFlags: 0
