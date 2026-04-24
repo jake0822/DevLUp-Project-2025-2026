@@ -1,5 +1,9 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.Video;
 
 
 public class GameplayTriggers : MonoBehaviour
@@ -19,6 +23,9 @@ public class GameplayTriggers : MonoBehaviour
     public DialogSystem ds;
     public DialogManager dm;
 
+    public GameObject DionCubes;
+    public Image black;
+
     public string[] volcanoCompleteDialogue;
     public string[] cavernCompleteDialogue;
     public string[] stoneColdCompleteDialogue;
@@ -33,11 +40,13 @@ public class GameplayTriggers : MonoBehaviour
     private bool volcanoComplete;
     private bool cavernComplete;
     private bool stoneColdComplete;
+    private string MostRecentLevelComplete;
 
     void Start()
     {
         LoadState();
         ApplyHubState();
+        
     }
 
     void Update()
@@ -51,6 +60,7 @@ public class GameplayTriggers : MonoBehaviour
 
     void LoadState()
     {
+        MostRecentLevelComplete = PlayerPrefs.GetString("MostRecentLevelComplete", "");
         introFinished = PlayerPrefs.GetInt("IntroFinished", 0) == 1;
         volcanoComplete = PlayerPrefs.GetInt("VolcanoComplete", 0) == 1;
         cavernComplete = PlayerPrefs.GetInt("CavernComplete", 0) == 1;
@@ -77,6 +87,30 @@ public class GameplayTriggers : MonoBehaviour
         UpdatePortals();
         UpdateSprites();
         UpdateDialogue();
+    }
+
+    void endingSequence()
+    {
+              if (DionCubes != null)
+            
+              StartCoroutine(endingSequenceCoroutine());
+
+    }
+    IEnumerator endingSequenceCoroutine()
+    {
+        DionCubes.SetActive(true);
+        yield return new WaitForSeconds((float)DionCubes.GetComponentInChildren<VideoPlayer>().clip.length + 3f);
+        print("Ending sequence finished");
+        while (black.color.a < 1f)
+        {
+            Color c = black.color;
+            c.a += Time.deltaTime / 3f; // Fade to black over 3 seconds
+            black.color = c;
+            yield return null;
+        }
+        SceneManager.LoadScene("Credits Scene");
+
+
     }
 
     void ActivateAllPortals()
@@ -119,25 +153,26 @@ public class GameplayTriggers : MonoBehaviour
         if (!introFinished)
             return;
 
-        if (dm != null)
-            dm.talkedOnce = true;
+        dm.talkedOnce = true;
 
         if (AllLevelsComplete())
         {
             ds.SetDialog(completeDialogue, completeAudio);
+            endingSequence();
         }
-        else if (volcanoComplete && !cavernComplete && !stoneColdComplete)
+        else if (MostRecentLevelComplete == "Volcano")
         {
             ds.SetDialog(volcanoCompleteDialogue, volcanoCompleteAudio);
         }
-        else if (cavernComplete && !volcanoComplete && !stoneColdComplete)
+        else if (MostRecentLevelComplete == "Cavern")
         {
             ds.SetDialog(cavernCompleteDialogue, cavernCompleteAudio);
         }
-        else if (stoneColdComplete && !volcanoComplete && !cavernComplete)
+        else if (MostRecentLevelComplete == "StoneCold")
         {
             ds.SetDialog(stoneColdCompleteDialogue, stoneColdCompleteAudio);
         }
+
     }
 
     void SetPortalState(LevelSwitcher portal, bool deactivate)
