@@ -12,6 +12,7 @@ public class LightDash : MonoBehaviour {
     [Header("Dash Settings")]
     public float dashDuration = 1.0f;  // The amount of time the player should dash for
     public float dashStrength = 0.1f;  // The strength of the dash
+    public float dashCooldown = 0f;    // The cooldown between dashes
     public AnimationCurve dashStrengthCurve;  // Determines how the strength changes over the course of the dash
 
     public float fovChange = 5.0f;  // How many degrees the FOV changes during a dash
@@ -28,6 +29,7 @@ public class LightDash : MonoBehaviour {
     private bool canDash = false;
     private bool isDashing = false;
     private float dashTimer = 0.0f;
+    private float cooldownTimer = 0.0f;
     private Vector3 dashVector;
 
     void Start() {
@@ -36,7 +38,10 @@ public class LightDash : MonoBehaviour {
     }
 
     void Update() {
+        cooldownTimer = Mathf.MoveTowards(cooldownTimer, 0, Time.deltaTime);
+
         if (isDashing) {
+
             float t = dashTimer / dashDuration;
             float dashStrengthT = dashStrengthCurve.Evaluate(t) * Time.deltaTime;
             characterController.Move(dashVector * dashStrengthT);
@@ -56,10 +61,11 @@ public class LightDash : MonoBehaviour {
     }
 
     public void Dash(InputAction.CallbackContext context) {
-        if (canDash && context.performed && spriteController.HasSprite() && spriteController.IsSpriteUnlocked()) {
+        if (canDash && context.performed && spriteController.HasSprite() && spriteController.IsSpriteUnlocked() && cooldownTimer == 0) {
             canDash = false;
             isDashing = true;
             dashTimer = 0.0f;
+            cooldownTimer = dashCooldown;
             dashVector = playerFacingTransform.rotation * Vector3.forward * dashStrength;
 
             spriteController.GlowSprite(glowIntensity, dashDuration, glowCurve);
