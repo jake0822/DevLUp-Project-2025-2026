@@ -402,25 +402,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fading Instructions
       objectReference: {fileID: 0}
-    - target: {fileID: 6000340862920960859, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.9800003
+    - target: {fileID: 3069784664514996688, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6000340862920960859, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.9800003
-      objectReference: {fileID: 0}
-    - target: {fileID: 6000340862920960859, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.9800003
-      objectReference: {fileID: 0}
-    - target: {fileID: 6694037860901054403, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
-      propertyPath: m_margin.x
-      value: -139.48431
-      objectReference: {fileID: 0}
-    - target: {fileID: 6694037860901054403, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
-      propertyPath: m_margin.z
-      value: -133.06998
+    - target: {fileID: 4864018207988683690, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6843365894535244416, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
       propertyPath: m_LocalPosition.x

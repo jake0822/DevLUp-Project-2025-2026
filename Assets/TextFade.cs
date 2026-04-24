@@ -25,6 +25,8 @@ public class TextFade : MonoBehaviour
     private bool introDone;
     public bool inHubWorld = false;
 
+    public GameObject box;
+
     private void Start()
     {
         introDone = PlayerPrefs.GetInt("IntroFinished", 0) == 1;
@@ -62,6 +64,8 @@ public class TextFade : MonoBehaviour
     IEnumerator SequenceCoroutine()
     {
         yield return new WaitForSeconds(fadeDelay);
+
+        box.SetActive(true);
         isPlaying = true;
 
         for (int i = 0; i < messages.Count; i++)
@@ -85,6 +89,7 @@ public class TextFade : MonoBehaviour
             yield return StartCoroutine(FadeText(1f, 0f));
         }
 
+        box.SetActive(false);
         isPlaying = false;
     }
 
