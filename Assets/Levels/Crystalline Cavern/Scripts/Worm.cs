@@ -33,6 +33,9 @@ public class Worm : MonoBehaviour {
     [Tooltip("The amount of time the worm won't chase the player after exiting chase state")]
     [SerializeField] private float chaseCooldown = 5.0f;
 
+    [Header("Final Chase Config.")]
+    [SerializeField] private float finalChaseSpeed = 15.0f;
+
     enum State {
         Wander,
         Chase,
@@ -231,6 +234,7 @@ public class Worm : MonoBehaviour {
     void PermaChaseUpdate() {
         SetTargetPosition(playerTransform.position);
         stateChangeTimer = loseTargetWaitTime;
+        agent.speed = finalChaseSpeed;
         SetFrozen(false);
     }
 
