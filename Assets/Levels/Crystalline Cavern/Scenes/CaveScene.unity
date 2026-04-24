@@ -9252,6 +9252,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fading Instructions
       objectReference: {fileID: 0}
+    - target: {fileID: 3069784664514996688, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -436
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000340862920960859, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 6000340862920960859, guid: e7ed10671174ced47a841d51cb969e93, type: 3}
       propertyPath: m_LocalScale.x
       value: 3
